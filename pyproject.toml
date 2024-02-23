@@ -36,7 +36,7 @@ optional = true
 [tool.poetry.group.doc.dependencies]
 Sphinx = "^5.3.0"
 numpydoc = "^1.5.0"
-ansys-sphinx-theme = "^0.9.7"
+ansys-sphinx-theme = "^0.14.0"
 sphinx-copybutton = "^0.5.1"
 
 # Optional testing dependencies

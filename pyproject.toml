@@ -51,7 +51,7 @@ pytest-cov = "^4.0.0"
 optional = true
 [tool.poetry.group.build.dependencies]
 build = "^0.10.0"
-twine = "^4.0.2"
+twine = "^5.0.0"
 
 [tool.black]
 line-length = 100

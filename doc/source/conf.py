@@ -5,10 +5,10 @@ import os
 from ansys_sphinx_theme import get_version_match
 from ansys_sphinx_theme import pyansys_logo_black as logo
 
-from ansys.additive.parametric_study_gui import __version__
+from ansys.additive_parametric_study_gui.panel import __version__
 
 # Project information
-project = "ansys-additive-parametric-study-gui"
+project = "ansys-additive-parametric-study-gui-panel"
 copyright = f"(c) {datetime.now().year} ANSYS, Inc. All rights reserved"
 author = "ANSYS, Inc."
 release = version = __version__
@@ -17,11 +17,11 @@ cname = os.getenv("DOCUMENTATION_CNAME", "docs.pyansys.com")
 # Select desired logo, theme, and declare the html title
 html_logo = logo
 html_theme = "ansys_sphinx_theme"
-html_short_title = html_title = "pyadditive-parametric-study-gui"
+html_short_title = html_title = "pyadditive-parametric-study-gui-panel"
 
 # specify the location of your github repo
 html_theme_options = {
-    "github_url": "https://github.com/ansys/pyadditive-parametric-study-gui",
+    "github_url": "https://github.com/ansys/pyadditive-parametric-study-gui-panel",
     "show_prev_next": False,
     "show_breadcrumbs": True,
     "additional_breadcrumbs": [

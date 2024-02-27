@@ -1,2 +1,2 @@
 # pyadditive-parametric-study-gui
-A python script to visualize additive parametric study results
+A python script to visualize additive parametric studies

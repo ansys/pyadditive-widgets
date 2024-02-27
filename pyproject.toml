@@ -4,14 +4,14 @@ build-backend = "poetry.core.masonry.api"
 
 [tool.poetry]
 # Check https://python-poetry.org/docs/pyproject/ for all available sections
-name = "ansys-additive-parametric-study-gui"
+name = "ansys-additive-parametric-study-gui-panel"
 version = "0.1.dev0"
 description = "A python script to visualize additive parametric studies"
 license = "MIT"
 authors = ["ANSYS, Inc. <pyansys.core@ansys.com>"]
 maintainers = ["PyAnsys developers <pyansys.core@ansys.com>"]
 readme = "README.rst"
-repository = "https://github.com/ansys/pyadditive-parametric-study-gui"
+repository = "https://github.com/ansys/pyadditive-parametric-study-gui-panel"
 classifiers = [
     "Development Status :: 4 - Beta",
     "Programming Language :: Python :: 3",
@@ -23,7 +23,7 @@ packages = [
 ]
 
 [tool.poetry.dependencies]
-python = ">=3.9,<4.0"
+python = ">=3.10,<4.0"
 importlib-metadata = {version = "^4.0", python = "<3.8"}
 ansys-additive-core = {version = "^0.17.0"}
 
@@ -64,7 +64,7 @@ default_section = "THIRDPARTY"
 src_paths = ["doc", "src", "tests"]
 
 [tool.coverage.run]
-source = ["ansys.additive"]
+source = ["ansys.additive_parametric_study_gui"]
 
 [tool.coverage.report]
 show_missing = true

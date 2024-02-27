@@ -1,7 +1,7 @@
 """
-additive.
+additive/parametric_study_gui.
 
-parametric-study-gui
+panel
 """
 
 try:

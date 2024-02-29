@@ -19,9 +19,10 @@
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 # SOFTWARE.
+"""Provides plots and interactive interfaces for parametric study results."""
 
-from ansys.additive_parametric_study_gui.panel import __version__
-
-
-def test_pkg_version():
-    assert __version__ == "0.1.dev0"
+from .ave_grain_size_plot import ave_grain_size_plot
+from .porosity_contour_plot import porosity_contour_plot
+from .porosity_eval_plot import porosity_eval_plot
+from .show_table import show_table
+from .single_bead_eval_plot import single_bead_eval_plot

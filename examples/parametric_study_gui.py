@@ -38,7 +38,7 @@ Units are SI (m, kg, s, K) unless otherwise noted.
 from ansys.additive.core import Additive, SimulationStatus, SimulationType
 from ansys.additive.core.parametric_study import ColumnNames, ParametricStudy
 
-from ansys.additive.parametric_study_gui import display
+from ansys.additive_parametric_study_gui.panel import display
 
 study = ParametricStudy("demo-study")
 

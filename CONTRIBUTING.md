@@ -11,8 +11,8 @@ The following contribution information is specific to PyAdditive-Parametric-Stud
 To clone PyAdditive-Parametric-Study-Gui, run:
 
 ```text
-    git clone https://github.com/ansys/pyadditive-parametric-study-gui
-    cd pyadditive-parametric-study-gui
+    git clone https://github.com/ansys/pyadditive-parametric-study-gui-panel
+    cd pyadditive-parametric-study-gui-panel
 ```
 
 ## Getting help

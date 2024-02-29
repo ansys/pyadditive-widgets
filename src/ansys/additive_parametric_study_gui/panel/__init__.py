@@ -1,4 +1,4 @@
-# Copyright (C) 2023 - 2024 ANSYS, Inc. and/or its affiliates.
+# Copyright (C) 2024 ANSYS, Inc. and/or its affiliates.
 # SPDX-License-Identifier: MIT
 #
 #
@@ -19,10 +19,11 @@
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 # SOFTWARE.
-"""Provides plots and interactive interfaces for parametric study results."""
+"""Python library to visualize Additive Parametric Studies."""
 
-from .ave_grain_size_plot import ave_grain_size_plot
-from .porosity_contour_plot import porosity_contour_plot
-from .porosity_eval_plot import porosity_eval_plot
-from .show_table import show_table
-from .single_bead_eval_plot import single_bead_eval_plot
+try:
+    import importlib.metadata as importlib_metadata
+except ModuleNotFoundError:
+    import importlib_metadata
+
+__version__ = importlib_metadata.version(__name__.replace(".", "-"))

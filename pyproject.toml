@@ -24,7 +24,7 @@ packages = [
 
 [tool.poetry.dependencies]
 python = ">=3.9,<4.0"
-importlib-metadata = {version = "^4.0", python = "<3.8"}
+importlib-metadata = {version = "^7.1", python = "<3.8"}
 ansys-additive-core = {version = "^0.17.0"}
 
 # Optional documentation dependencies

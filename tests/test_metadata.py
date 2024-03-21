@@ -20,7 +20,7 @@
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 # SOFTWARE.
 
-from ansys.additive_parametric_study_gui.panel import __version__
+from ansys.additive.widgets import __version__
 
 
 def test_pkg_version():

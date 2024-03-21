@@ -1,6 +1,6 @@
 # CHANGELOG
 
-## PyAdditive-Parametric-Study-Panel-Gui 0.1.0
+## PyAdditive-Widgets 0.1.0
 
 ### Breaking Changes
 

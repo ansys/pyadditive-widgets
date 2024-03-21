@@ -1,57 +1,54 @@
 [build-system]
-requires = ["poetry-core>=1.0.0"]
-build-backend = "poetry.core.masonry.api"
+requires = ["flit_core >=3.2,<4"]
+build-backend = "flit_core.buildapi"
 
-[tool.poetry]
-# Check https://python-poetry.org/docs/pyproject/ for all available sections
-name = "ansys-additive-parametric-study-gui-panel"
+[project]
+# Check https://flit.readthedocs.io/en/latest/pyproject_toml.html for all available sections
+name = "ansys-additive-widgets"
 version = "0.1.dev0"
-description = "A python script to visualize additive parametric studies"
-license = "MIT"
-authors = ["ANSYS, Inc. <pyansys.core@ansys.com>"]
-maintainers = ["PyAnsys developers <pyansys.core@ansys.com>"]
+description = "Visualization toolkit for parametric additive simulations "
 readme = "README.rst"
-repository = "https://github.com/ansys/pyadditive-parametric-study-gui-panel"
+requires-python = ">=3.9"
+license = {file = "LICENSE"}
+authors = [
+    {name = "ANSYS, Inc.", email = "pyansys.support@ansys.com"},
+]
+maintainers = [
+    {name = "PyAnsys developers", email = "pyansys.core@ansys.com"},
+]
+
 classifiers = [
     "Development Status :: 4 - Beta",
     "Programming Language :: Python :: 3",
     "License :: OSI Approved :: MIT License",
     "Operating System :: OS Independent",
 ]
-packages = [
-    { include = "ansys", from = "src" },
+dependencies = [
+    "importlib-metadata >=4.0",
+    "ansys-additive-core >=0.17"
 ]
 
-[tool.poetry.dependencies]
-python = ">=3.9,<4.0"
-importlib-metadata = {version = "^4.0", python = "<3.8"}
-ansys-additive-core = {version = "^0.17.0"}
+[project.optional-dependencies]
+tests = [
+    "pytest==7.4.3",
+    "pytest-cov==4.1.0",
+]
+doc = [
+    "ansys-sphinx-theme==0.12.5",
+    "numpydoc==1.6.0",
+    "sphinx==7.2.6",
+    "sphinx-copybutton==0.5.2",
+]
 
-# Optional documentation dependencies
-tox = "^4.13.0"
-pre-commit = "^3.6.2"
-[tool.poetry.group.doc]
-optional = true
 
-[tool.poetry.group.doc.dependencies]
-Sphinx = "^5.3.0"
-numpydoc = "^1.5.0"
-ansys-sphinx-theme = "^0.9.7"
-sphinx-copybutton = "^0.5.1"
+[tool.flit.module]
+name = "ansys.additive.widgets"
 
-# Optional testing dependencies
-[tool.poetry.group.tests]
-optional = true
-[tool.poetry.group.tests.dependencies]
-pytest = "^7.3.0"
-pytest-cov = "^4.0.0"
+[project.urls]
+Source = "https://github.com/ansys/pyadditive-widgets"
+Tracker = "https://github.com/ansys/pyadditive-widgets/issues"
+Homepage = "https://github.com/ansys/pyadditive-widgets"
 
-# Optional build requirements
-[tool.poetry.group.build]
-optional = true
-[tool.poetry.group.build.dependencies]
-build = "^0.10.0"
-twine = "^4.0.2"
 
 [tool.black]
 line-length = 100
@@ -64,7 +61,7 @@ default_section = "THIRDPARTY"
 src_paths = ["doc", "src", "tests"]
 
 [tool.coverage.run]
-source = ["ansys.additive_parametric_study_gui"]
+source = ["ansys.additive"]
 
 [tool.coverage.report]
 show_missing = true

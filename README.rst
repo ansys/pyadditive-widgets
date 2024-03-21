@@ -1,25 +1,25 @@
-Pyadditive Parametric Study GUI using Panel
-=============================================
+Pyadditive widgets
+==================
 |pyansys| |python| |pypi| |GH-CI| |codecov| |MIT| |black|
 
 .. |pyansys| image:: https://img.shields.io/badge/Py-Ansys-ffc107.svg?logo=data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAIAAACQkWg2AAABDklEQVQ4jWNgoDfg5mD8vE7q/3bpVyskbW0sMRUwofHD7Dh5OBkZGBgW7/3W2tZpa2tLQEOyOzeEsfumlK2tbVpaGj4N6jIs1lpsDAwMJ278sveMY2BgCA0NFRISwqkhyQ1q/Nyd3zg4OBgYGNjZ2ePi4rB5loGBhZnhxTLJ/9ulv26Q4uVk1NXV/f///////69du4Zdg78lx//t0v+3S88rFISInD59GqIH2esIJ8G9O2/XVwhjzpw5EAam1xkkBJn/bJX+v1365hxxuCAfH9+3b9/+////48cPuNehNsS7cDEzMTAwMMzb+Q2u4dOnT2vWrMHu9ZtzxP9vl/69RVpCkBlZ3N7enoDXBwEAAA+YYitOilMVAAAAAElFTkSuQmCC
    :target: https://docs.pyansys.com/
    :alt: PyAnsys
 
-.. |python| image:: https://img.shields.io/pypi/pyversions/pyadditive-parametric-study-gui-panel?logo=pypi
-   :target: https://pypi.org/project/pyadditive-parametric-study-gui-panel/
+.. |python| image:: https://img.shields.io/pypi/pyversions/pyadditive-widgets?logo=pypi
+   :target: https://pypi.org/project/pyadditive-widgets/
    :alt: Python
 
-.. |pypi| image:: https://img.shields.io/pypi/v/pyadditive-parametric-study-gui-panel.svg?logo=python&logoColor=white
-   :target: https://pypi.org/project/pyadditive-parametric-study-gui-panel
+.. |pypi| image:: https://img.shields.io/pypi/v/pyadditive-widgets.svg?logo=python&logoColor=white
+   :target: https://pypi.org/project/pyadditive-widgets
    :alt: PyPI
 
-.. |codecov| image:: https://codecov.io/gh/ansys/pyadditive-parametric-study-gui-panel/branch/main/graph/badge.svg
-   :target: https://codecov.io/gh/ansys/pyadditive-parametric-study-gui-panel
+.. |codecov| image:: https://codecov.io/gh/ansys/pyadditive-widgets/branch/main/graph/badge.svg
+   :target: https://codecov.io/gh/ansys/pyadditive-widgets
    :alt: Codecov
 
-.. |GH-CI| image:: https://github.com/ansys/pyadditive-parametric-study-gui-panel/actions/workflows/ci_cd.yml/badge.svg
-   :target: https://github.com/ansys/pyadditive-parametric-study-gui-panel/actions/workflows/ci_cd.yml
+.. |GH-CI| image:: https://github.com/ansys/pyadditive-widgets/actions/workflows/ci_cd.yml/badge.svg
+   :target: https://github.com/ansys/pyadditive-widgets/actions/workflows/ci_cd.yml
    :alt: GH-CI
 
 .. |MIT| image:: https://img.shields.io/badge/License-MIT-yellow.svg
@@ -31,7 +31,7 @@ Pyadditive Parametric Study GUI using Panel
    :alt: Black
 
 
-A python script to visualize additive parametric studies
+Visualization toolkit for Parametric Additive Simulations
 
 
 How to install
@@ -42,7 +42,7 @@ At least two installation modes are provided: user and developer.
 For users
 ^^^^^^^^^
 
-In order to install Pyadditive/parametric_study_gui panel, make sure you
+In order to install Pyadditive widgets, make sure you
 have the latest version of `pip`_. To do so, run:
 
 .. code:: bash
@@ -53,12 +53,12 @@ Then, you can simply execute:
 
 .. code:: bash
 
-    poetry run python -m pip install ansys-additive-parametric-study-gui-panel
+    python -m pip install ansys-additive-widgets
 
 For developers
 ^^^^^^^^^^^^^^
 
-Installing Pyadditive/parametric_study_gui panel in developer mode allows
+Installing Pyadditive widgets in developer mode allows
 you to modify the source and enhance it.
 
 Before contributing to the project, please refer to the `PyAnsys Developer's guide`_. You will
@@ -68,7 +68,7 @@ need to follow these steps:
 
    .. code:: bash
 
-      git clone https://github.com/ansys/pyadditive-parametric-study-gui-panel
+      git clone https://github.com/ansys/pyadditive-widgets
 
 #. Create a fresh-clean Python environment and activate it:
 
@@ -90,7 +90,7 @@ need to follow these steps:
 
    .. code:: bash
 
-      python -m pip install -U pip poetry tox
+      python -m pip install -U pip flit tox
       python -m pip install -r requirements/requirements_build.txt
       python -m pip install -r requirements/requirements_doc.txt
       python -m pip install -r requirements/requirements_tests.txt
@@ -100,7 +100,7 @@ need to follow these steps:
 
     .. code:: bash
 
-      poetry run python -m pip install ansys-additive-parametric-study-gui-panel
+      python -m pip install --editable ansys-additive-widgets
 
     #. Finally, verify your development installation by running:
 

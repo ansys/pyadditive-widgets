@@ -4,15 +4,15 @@ Please, refer to the [PyAnsys Developer's Guide] for contributing to this projec
 
 [PyAnsys Developer's Guide]: https://dev.docs.pyansys.com/index.html
 
-The following contribution information is specific to PyAdditive-Parametric-Study-Gui
+The following contribution information is specific to PyAdditive-Widgets
 
 ## Cloning the repository
 
-To clone PyAdditive-Parametric-Study-Gui, run:
+To clone PyAdditive-Widgets, run:
 
 ```text
-    git clone https://github.com/ansys/pyadditive-parametric-study-gui-panel
-    cd pyadditive-parametric-study-gui-panel
+    git clone https://github.com/ansys/pyadditive-widgets
+    cd pyadditive-widgets
 ```
 
 ## Getting help

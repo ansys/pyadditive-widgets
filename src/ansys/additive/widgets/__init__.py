@@ -19,7 +19,12 @@
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 # SOFTWARE.
-"""Python library to visualize Additive Parametric Studies."""
+
+"""
+additive.
+
+widgets
+"""
 
 try:
     import importlib.metadata as importlib_metadata

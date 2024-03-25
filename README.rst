@@ -1,10 +1,20 @@
-Pyadditive widgets
-==================
-|pyansys| |python| |pypi| |GH-CI| |codecov| |MIT| |black|
+.. _ref_readme:
+
+##################
+PyAdditive-Widgets
+##################
+
+.. readme_start
+
+|pyansys| |pyadditive| |python| |pypi| |GH-CI| |codecov| |MIT| |black|
 
 .. |pyansys| image:: https://img.shields.io/badge/Py-Ansys-ffc107.svg?logo=data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAIAAACQkWg2AAABDklEQVQ4jWNgoDfg5mD8vE7q/3bpVyskbW0sMRUwofHD7Dh5OBkZGBgW7/3W2tZpa2tLQEOyOzeEsfumlK2tbVpaGj4N6jIs1lpsDAwMJ278sveMY2BgCA0NFRISwqkhyQ1q/Nyd3zg4OBgYGNjZ2ePi4rB5loGBhZnhxTLJ/9ulv26Q4uVk1NXV/f///////69du4Zdg78lx//t0v+3S88rFISInD59GqIH2esIJ8G9O2/XVwhjzpw5EAam1xkkBJn/bJX+v1365hxxuCAfH9+3b9/+////48cPuNehNsS7cDEzMTAwMMzb+Q2u4dOnT2vWrMHu9ZtzxP9vl/69RVpCkBlZ3N7enoDXBwEAAA+YYitOilMVAAAAAElFTkSuQmCC
    :target: https://docs.pyansys.com/
    :alt: PyAnsys
+
+.. |pyadditive| image:: https://img.shields.io/pypi/pyversions/ansys-additive-core?logo=pypi
+   :target: https://pypi.org/project/ansys-additive-core/
+   :alt: Python
 
 .. |python| image:: https://img.shields.io/pypi/pyversions/pyadditive-widgets?logo=pypi
    :target: https://pypi.org/project/pyadditive-widgets/
@@ -30,19 +40,20 @@ Pyadditive widgets
    :target: https://github.com/psf/black
    :alt: Black
 
+Overview
+========
 
-Visualization toolkit for Parametric Additive Simulations
+PyAdditive-Widgets is a widget toolkit for PyAdditive Simulations. It is an addon to the `PyAdditive`_ library.
 
+Installation
+============
 
-How to install
---------------
-
-At least two installation modes are provided: user and developer.
+Two modes of installation are available: for users and for developers.
 
 For users
 ^^^^^^^^^
 
-In order to install Pyadditive widgets, make sure you
+In order to install Pyadditive-Widgets, make sure you
 have the latest version of `pip`_. To do so, run:
 
 .. code:: bash
@@ -58,126 +69,66 @@ Then, you can simply execute:
 For developers
 ^^^^^^^^^^^^^^
 
-Installing Pyadditive widgets in developer mode allows
-you to modify the source and enhance it.
+To install the latest development version, run these commands:
 
-Before contributing to the project, please refer to the `PyAnsys Developer's guide`_. You will
-need to follow these steps:
+.. code:: bash
 
-#. Start by cloning this repository:
+   git clone https://github.com/ansys/ansys-additive-widgets
+   cd pyadditive-widgets
+   pip install -e .
 
-   .. code:: bash
-
-      git clone https://github.com/ansys/pyadditive-widgets
-
-#. Create a fresh-clean Python environment and activate it:
-
-   .. code:: bash
-
-      # Create a virtual environment
-      python -m venv .venv
-
-      # Activate it in a POSIX system
-      source .venv/bin/activate
-
-      # Activate it in Windows CMD environment
-      .venv\Scripts\activate.bat
-
-      # Activate it in Windows Powershell
-      .venv\Scripts\Activate.ps1
-
-#. Make sure you have the latest required build system and doc, testing, and CI tools:
-
-   .. code:: bash
-
-      python -m pip install -U pip flit tox
-      python -m pip install -r requirements/requirements_build.txt
-      python -m pip install -r requirements/requirements_doc.txt
-      python -m pip install -r requirements/requirements_tests.txt
-
-
-#. Install the project in editable mode:
-
-    .. code:: bash
-
-      python -m pip install --editable ansys-additive-widgets
-
-    #. Finally, verify your development installation by running:
-
-   .. code:: bash
-
-      tox
-
-
-How to testing
---------------
-
-This project takes advantage of `tox`_. This tool allows to automate common
-development tasks (similar to Makefile) but it is oriented towards Python
-development.
-
-Using tox
-^^^^^^^^^
-
-As Makefile has rules, `tox`_ has environments. In fact, the tool creates its
-own virtual environment so anything being tested is isolated from the project in
-order to guarantee project's integrity. The following environments commands are provided:
-
-- **tox -e style**: will check for coding style quality.
-- **tox -e py**: checks for unit tests.
-- **tox -e py-coverage**: checks for unit testing and code coverage.
-- **tox -e doc**: checs for documentation building process.
-
-
-Raw testing
+Basic usage
 ^^^^^^^^^^^
 
-If required, you can always call the style commands (`black`_, `isort`_,
-`flake8`_...) or unit testing ones (`pytest`_) from the command line. However,
-this does not guarantee that your project is being tested in an isolated
-environment, which is the reason why tools like `tox`_ exist.
+This code shows how to import PyAdditive-Widgets and use some basic capabilities
+to show a the simulations of parametric study generated using the `PyAdditive`_ library
+as a table:
 
+.. code:: python
 
-A note on pre-commit
-^^^^^^^^^^^^^^^^^^^^
+   from ansys.additive.core.parametric_study import ParametricStudy
+   from ansys.additive.widgets import display
 
-The style checks take advantage of `pre-commit`_. Developers are not forced but
-encouraged to install this tool via:
+   study = ParametricStudy("demo-study")
 
-.. code:: bash
+   bead_length = 0.005
+   powers = [50, 250, 700]
+   scan_speeds = [0.35, 1, 2.4]
+   layer_thicknesses = [30e-6, 50e-6]
+   heater_temperatures = [80, 100]
+   beam_diameters = [2e-5]
 
-    python -m pip install pre-commit && pre-commit install
+   study.generate_single_bead_permutations(
+      "material",
+      powers,
+      scan_speeds,
+      bead_length=bead_length,
+      layer_thicknesses=layer_thicknesses,
+      heater_temperatures=heater_temperatures,
+      beam_diameters=beam_diameters,
+   )
 
+   display.show_table(study)
+
+For comprehensive usage information, see `Examples`_ in the `PyAdditive-Widgets documentation`_.
+For information on how to use the PyAdditive library for the `Ansys Additive`_ service,
+refer to the documentation hosted at `PyAdditive documentation`_.
 
 Documentation
--------------
+^^^^^^^^^^^^^
 
-For building documentation, you can either run the usual rules provided in the
-`Sphinx`_ Makefile, such us:
+Documentation for the latest stable release of PyAdditive-Widgets is hosted at `PyAdditive-Widgets documentation`_.
 
-.. code:: bash
+In the upper right corner of the documentation's title bar, there is an option for switching from
+viewing the documentation for the latest stable release to viewing the documentation for the
+development version or previously released versions.
 
-    make -C doc/ html && open doc/html/index.html
+On the `PyAdditive-Widgets Issues <https://github.com/ansys/pyadditive-widgets/issues>`_ page,
+you can create issues to report bugs and request new features. On the `PyAdditive-Widgets Discussions
+<https://github.com/ansys/pyadditive-widgets/discussions>`_ page or the `Discussions <https://discuss.ansys.com/>`_
+page on the Ansys Developer portal, you can post questions, share ideas, and get community feedback.
 
-However, the recommended way of checking documentation integrity is using:
-
-.. code:: bash
-
-    tox -e doc && open .tox/doc_out/index.html
-
-
-Distributing
-------------
-
-If you would like to create either source or wheel files, start by installing
-the building requirements and then executing the build module:
-
-.. code:: bash
-
-    python -m pip install -r requirements/requirements_build.txt
-    python -m build
-    python -m twine check dist/*
-
+To reach the project support team, email `pyansys.core@ansys.com <mailto:pyansys.core@ansys.com>`_.
 
 .. LINKS AND REFERENCES
 .. _black: https://github.com/psf/black
@@ -189,3 +140,9 @@ the building requirements and then executing the build module:
 .. _pytest: https://docs.pytest.org/en/stable/
 .. _Sphinx: https://www.sphinx-doc.org/en/master/
 .. _tox: https://tox.wiki/
+.. _Ansys Additive: https://www.ansys.com/products/additive
+.. _Examples: https://additive-widgets.docs.pyansys.com/version/stable/examples/gallery_examples/index.html
+.. _PyAdditive: https://additive.docs.pyansys.com/version/stable/index.html
+.. _PyAdditive documentation: https://additive.docs.pyansys.com/version/stable/index.html
+.. _PyAdditive Getting Started: https://additive.docs.pyansys.com/version/stable/getting_started/index.html
+.. _PyAdditive-Widgets documentation: https://additive-widgets.docs.pyansys.com/version/stable/index.html

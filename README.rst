@@ -43,79 +43,21 @@ PyAdditive-Widgets
 Overview
 ========
 
-PyAdditive-Widgets is a widget toolkit for PyAdditive Simulations. It is an addon to the `PyAdditive`_ library.
+PyAdditive-Widgets is a widget toolkit for `PyAdditive`_ Simulations.
 
 Installation
 ============
 
-Two modes of installation are available: for users and for developers.
+.. include:: ../../INSTALLATION.rst
+   :start-after: .. basic_installation_start
+   :end-before: .. basic_installation_end
 
-For users
-^^^^^^^^^
-
-In order to install Pyadditive-Widgets, make sure you
-have the latest version of `pip`_. To do so, run:
-
-.. code:: bash
-
-    python -m pip install -U pip
-
-Then, you can simply execute:
-
-.. code:: bash
-
-    python -m pip install ansys-additive-widgets
-
-For developers
-^^^^^^^^^^^^^^
-
-To install the latest development version, run these commands:
-
-.. code:: bash
-
-   git clone https://github.com/ansys/ansys-additive-widgets
-   cd pyadditive-widgets
-   pip install -e .
-
-Basic usage
-^^^^^^^^^^^
-
-This code shows how to import PyAdditive-Widgets and use some basic capabilities
-to show a the simulations of parametric study generated using the `PyAdditive`_ library
-as a table:
-
-.. code:: python
-
-   from ansys.additive.core.parametric_study import ParametricStudy
-   from ansys.additive.widgets import display
-
-   study = ParametricStudy("demo-study")
-
-   bead_length = 0.005
-   powers = [50, 250, 700]
-   scan_speeds = [0.35, 1, 2.4]
-   layer_thicknesses = [30e-6, 50e-6]
-   heater_temperatures = [80, 100]
-   beam_diameters = [2e-5]
-
-   study.generate_single_bead_permutations(
-      "material",
-      powers,
-      scan_speeds,
-      bead_length=bead_length,
-      layer_thicknesses=layer_thicknesses,
-      heater_temperatures=heater_temperatures,
-      beam_diameters=beam_diameters,
-   )
-
-   display.show_table(study)
-
-For comprehensive usage information, see `Examples`_ in the `PyAdditive-Widgets documentation`_.
-For information on how to use the PyAdditive library for the `Ansys Additive`_ service,
-refer to the documentation hosted at `PyAdditive documentation`_.
+For instructions on setting up your development environment, see
+:ref:`ref_getting_started`, particularly the :ref:`ref_install_in_developer_mode`
+section.
 
 Documentation
-^^^^^^^^^^^^^
+-------------
 
 Documentation for the latest stable release of PyAdditive-Widgets is hosted at `PyAdditive-Widgets documentation`_.
 

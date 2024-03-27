@@ -1,3 +1,29 @@
 ANSYS
 Ansys
 ansys
+API
+Direct API
+Fluent API
+Additive API
+Geometry Service
+Geometry models
+PyGeometry
+PyAdditive
+PyAdditive-Widgets
+api
+Protobuf
+Scipy
+PyPI
+py
+pytest
+jupyter
+Jupyter
+Jupytext
+Makefile
+isort
+pandoc
+Ansys Lab
+subpackages
+single sign-on
+sign-on
+pre-commmit

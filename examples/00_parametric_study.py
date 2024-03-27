@@ -37,7 +37,8 @@ Units are SI (m, kg, s, K) unless otherwise noted.
 # Perform the required import and create a :class:`ParametricStudy` instance.
 from ansys.additive.core import Additive, SimulationStatus, SimulationType
 from ansys.additive.core.parametric_study import ColumnNames, ParametricStudy
-from ansys.additive_parametric_study_gui.panel import display
+
+from ansys.additive.widgets import display
 
 study = ParametricStudy("demo-study")
 
@@ -106,7 +107,7 @@ study.generate_single_bead_permutations(
 ###############################################################################
 # Show the simulations as a table
 # -------------------------------
-# You can use the :obj:`display <ansys.additive.core.parametric_study.display>`
+# You can use the :obj:`display <ansys.additive.widgets.display>`
 # package to list the simulations as a table.
 
 display.show_table(study)
@@ -159,7 +160,7 @@ display.show_table(study2)
 # Plot single bead results
 # ------------------------
 # Plot the single bead results using the
-# :func:`~ansys.additive.core.parametric_study.display.single_bead_eval_plot` method.
+# :func:`~ansys.additive.widgets.display.single_bead_eval_plot` method.
 
 display.single_bead_eval_plot(study)
 
@@ -211,7 +212,7 @@ study.run_simulations(additive)
 # Plot porosity results
 # ---------------------
 # Plot the porosity simulation results using the
-# :func:`~ansys.additive.core.parametric_study.display.porosity_contour_plot` method.
+# :func:`~ansys.additive.widgets.display.porosity_contour_plot` method.
 
 display.porosity_contour_plot(study)
 
@@ -256,7 +257,7 @@ study.run_simulations(additive)
 # Plot microstructure results
 # ---------------------------
 # Plot and compare the average grain sizes from the microstructure simulations
-# using the :func:`~ansys.additive.core.parametric_study.display.ave_grain_size_plot`
+# using the :func:`~ansys.additive.widgets.display.ave_grain_size_plot`
 # method.
 
 display.ave_grain_size_plot(study)

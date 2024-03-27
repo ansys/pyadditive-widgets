@@ -3,8 +3,7 @@
    Provide any documentation specific to your online documentation
    here.
 
-===========================================
-PyAdditive-Widgets documentation  |version|
+PyAdditive-Widgets Documentation  |version|
 ===========================================
 
 .. include:: ../../README.rst

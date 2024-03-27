@@ -9,7 +9,7 @@ on:
 
 env:
   MAIN_PYTHON_VERSION: '3.9'
-  DOCUMENTATION_CNAME: 'additive-widgets.docs.pyansys.com'
+  DOCUMENTATION_CNAME: 'widgets.additive.docs.pyansys.com'
   LIBRARY_NAME: 'ansys-additive-widgets'
   ANSYS_PRODUCT_IMAGE: "ghcr.io/ansys-internal/additive:latest"
   ANSYS_PRODUCT_CONTAINER: "ansys-additive-container"

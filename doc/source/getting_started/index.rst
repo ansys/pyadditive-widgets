@@ -6,8 +6,7 @@
 Getting started
 ###############
 
-PyAdditive-Widgets is a widget toolkit for PyAdditive Simulations. The `PyAdditive`_ library
-will be automatically installed with this package.
+PyAdditive-Widgets is a widget toolkit for PyAdditive Simulations.
 The widget provides methods to visualize the results of parametric additive simulations.
 You can view the study as a table, view the single bead simulation results as a heat map or
 view the porosity relative density results as a contour plot and so on.
@@ -42,10 +41,10 @@ As Makefile has rules, `tox`_ has environments. In fact, the tool creates its
 own virtual environment so anything being tested is isolated from the project in
 order to guarantee project's integrity. The following environments commands are provided:
 
-- **tox -e style**: will check for coding style quality.
+- **tox -e style**: checks for coding style quality.
 - **tox -e py**: checks for unit tests.
 - **tox -e py-coverage**: checks for unit testing and code coverage.
-- **tox -e doc**: checs for documentation building process.
+- **tox -e doc**: checks for documentation building process.
 
 
 Raw testing

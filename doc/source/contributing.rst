@@ -13,8 +13,7 @@ Configure your development environment
 --------------------------------------
 
 For instructions on setting up your development environment, see
-:ref:`ref_getting_started`, particularly the :ref:`ref_install_in_developer_mode`
-section.
+:ref:`ref_getting_started`
 
 Post issues
 -----------

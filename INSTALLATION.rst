@@ -44,8 +44,6 @@ Then, you can simply execute:
 
 .. basic_installation_end
 
-.. _ref_install_in_developer_mode:
-
 For developers
 --------------
 

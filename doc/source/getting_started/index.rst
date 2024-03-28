@@ -24,8 +24,8 @@ view the porosity relative density results as a contour plot and so on.
 Installation
 ============
 
-.. .. include:: ../../../INSTALLATION.rst
-..    :start-after: .. installation_start
+.. include:: ../../../INSTALLATION.rst
+   :start-after: .. installation_start
 
 For testing
 -----------

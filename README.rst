@@ -48,8 +48,7 @@ PyAdditive-Widgets is a widget toolkit for `PyAdditive`_ Simulations.
 Installation
 ============
 
-For instructions on setting up your development environment, see
-:ref:`ref_getting_started`
+For instructions on setting up your development environment, see `Getting Started`_.
 
 Documentation
 ============
@@ -83,3 +82,4 @@ To reach the project support team, email `pyansys.core@ansys.com <mailto:pyansys
 .. _PyAdditive documentation: https://additive.docs.pyansys.com/version/stable/index.html
 .. _PyAdditive Getting Started: https://additive.docs.pyansys.com/version/stable/getting_started/index.html
 .. _PyAdditive-Widgets documentation: https://widgets.additive.docs.pyansys.com/version/stable/index.html
+.. _Getting Started: https://widgets.additive.docs.pyansys.com/version/stable/getting_started/index.html

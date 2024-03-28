@@ -37,7 +37,7 @@ View documentation
 ------------------
 
 Documentation for the latest stable release of PyAdditive-Widgets is hosted at
-`PyAdditive-Widgets Documentation <https://additive-widgets.docs.pyansys.com>`_.
+`PyAdditive-Widgets Documentation <https://widgets.additive.docs.pyansys.com>`_.
 
 In the upper right corner of the documentation's title bar, there is an option
 for switching from viewing the documentation for the latest stable release

@@ -120,7 +120,7 @@ intersphinx_mapping = {
     "panel": ("https://panel.holoviz.org/", None),
     # "ansys.additive.core": ("https://additive.docs.pyansys.com/", None),
     # "ansys.additive.widgets": (
-    #     f"https://additive-widgets.docs.pyansys.com/version/{switcher_version}",
+    #     f"https://widgets.additive.docs.pyansys.com/version/{switcher_version}",
     #     None,
     # ),
     "grpc": ("https://grpc.github.io/grpc/python/", None),

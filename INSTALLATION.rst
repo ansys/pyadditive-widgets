@@ -207,8 +207,8 @@ refer to the documentation hosted at `PyAdditive documentation`_.
 .. _Sphinx: https://www.sphinx-doc.org/en/master/
 .. _tox: https://tox.wiki/
 .. _Ansys Additive: https://www.ansys.com/products/additive
-.. _Examples: https://additive-widgets.docs.pyansys.com/version/stable/examples/gallery_examples/index.html
+.. _Examples: https://widgets.additive.docs.pyansys.com/version/stable/examples/gallery_examples/index.html
 .. _PyAdditive: https://additive.docs.pyansys.com/version/stable/index.html
 .. _PyAdditive documentation: https://additive.docs.pyansys.com/version/stable/index.html
 .. _PyAdditive Getting Started: https://additive.docs.pyansys.com/version/stable/getting_started/index.html
-.. _PyAdditive-Widgets documentation: https://additive-widgets.docs.pyansys.com/version/stable/index.html
+.. _PyAdditive-Widgets documentation: https://widgets.additive.docs.pyansys.com/version/stable/index.html

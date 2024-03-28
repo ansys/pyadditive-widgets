@@ -137,7 +137,7 @@ display.show_table(study)
 # Run the simulations using the :meth:`~ParametricStudy.run_simulations` method. All simulations
 # with a :obj:`SimulationStatus.PENDING` status are executed.
 
-study.run_simulations(additive)
+# study.run_simulations(additive)
 
 ###############################################################################
 # Save the study to a CSV file
@@ -206,7 +206,7 @@ study.generate_porosity_permutations(
 # ------------------------
 # Run the simulations using the :meth:`~ParametricStudy.run_simulations` method.
 
-study.run_simulations(additive)
+# study.run_simulations(additive)
 
 ###############################################################################
 # Plot porosity results
@@ -251,7 +251,7 @@ study.generate_microstructure_permutations(
 # ------------------------------
 # Run the simulations using the :meth:`~ParametricStudy.run_simulations` method.
 
-study.run_simulations(additive)
+# study.run_simulations(additive)
 
 ###############################################################################
 # Plot microstructure results

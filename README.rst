@@ -51,7 +51,7 @@ Installation
 For instructions on setting up your development environment, see `Getting Started`_.
 
 Documentation
-============
+=============
 
 Documentation for the latest stable release of PyAdditive-Widgets is hosted at `PyAdditive-Widgets documentation`_.
 

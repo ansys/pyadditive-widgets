@@ -48,15 +48,11 @@ PyAdditive-Widgets is a widget toolkit for `PyAdditive`_ Simulations.
 Installation
 ============
 
-.. include:: ../../INSTALLATION.rst
-   :start-after: .. basic_installation_start
-   :end-before: .. basic_installation_end
-
 For instructions on setting up your development environment, see
 :ref:`ref_getting_started`
 
 Documentation
--------------
+============
 
 Documentation for the latest stable release of PyAdditive-Widgets is hosted at `PyAdditive-Widgets documentation`_.
 

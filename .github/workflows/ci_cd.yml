@@ -72,9 +72,10 @@ jobs:
     # This is dumb but the schema checker doesn't allow the runner name
     # `public-ubuntu-latest-8-cores`. Circumvent this by using a matrix
     # strategy.
+    # [safee 3/27/24] - check github actions to see available runners
     strategy:
       matrix:
-        runner: [public-ubuntu-latest-8-cores]
+        runner: [ubuntu-latest-8-cores]
     runs-on: ${{ matrix.runner }}
     needs: [doc-style]
     steps:
@@ -143,15 +144,15 @@ jobs:
           ANSYS_ADDITIVE_ADDRESS: "localhost:50052"
 
       # Remove when auto-api is updated
-      - name: Build the long examples
-        if: github.event_name == 'push'
-        run: |
-          ./.venv/bin/activate
-          make -C doc html SPHINXOPTS="-j auto"
-          make -C doc pdf
-        env:
-          GENERATING_DOCS: 1
-          ANSYS_ADDITIVE_ADDRESS: "localhost:50052"
+      # - name: Build the long examples
+      #   if: github.event_name == 'push'
+      #   run: |
+      #     ./.venv/bin/activate
+      #     make -C doc html SPHINXOPTS="-j auto"
+      #     make -C doc pdf
+      #   env:
+      #     GENERATING_DOCS: 1
+      #     ANSYS_ADDITIVE_ADDRESS: "localhost:50052"
 
       - name: Upload HTML documentation
         uses: actions/upload-artifact@v4
@@ -214,26 +215,26 @@ jobs:
           library-name: ${{ env.LIBRARY_NAME }}
           python-version: ${{ env.MAIN_PYTHON_VERSION }}
 
-  # doc-deploy-dev:
-  #   name: "Deploy development documentation"
-  #   runs-on: ubuntu-latest
-  #   needs: [build-library]
-  #   if: github.event_name == 'push' && !contains(github.ref, 'refs/tags')
-  #   steps:
-  #     - uses: ansys/actions/doc-deploy-dev@v5
-  #       with:
-  #         cname: ${{ env.DOCUMENTATION_CNAME }}
-  #         token: ${{ secrets.GITHUB_TOKEN }}
+  doc-deploy-dev:
+    name: "Deploy development documentation"
+    runs-on: ubuntu-latest
+    needs: [build-library]
+    if: github.event_name == 'push' && !contains(github.ref, 'refs/tags')
+    steps:
+      - uses: ansys/actions/doc-deploy-dev@v5
+        with:
+          cname: ${{ env.DOCUMENTATION_CNAME }}
+          token: ${{ secrets.GITHUB_TOKEN }}
 
-  # doc-deploy-stable:
-  #   name: "Deploy stable documentation"
-  #   runs-on: ubuntu-latest
-  #   needs: [build-library]
-  #   if: github.event_name == 'push' && contains(github.ref, 'refs/tags')
-  #   steps:
-  #     - uses: ansys/actions/doc-deploy-stable@v5
-  #       with:
-  #         cname: ${{ env.DOCUMENTATION_CNAME }}
-  #         token: ${{ secrets.GITHUB_TOKEN }}
+  doc-deploy-stable:
+    name: "Deploy stable documentation"
+    runs-on: ubuntu-latest
+    needs: [build-library]
+    if: github.event_name == 'push' && contains(github.ref, 'refs/tags')
+    steps:
+      - uses: ansys/actions/doc-deploy-stable@v5
+        with:
+          cname: ${{ env.DOCUMENTATION_CNAME }}
+          token: ${{ secrets.GITHUB_TOKEN }}
 
 

@@ -24,9 +24,6 @@ view the porosity relative density results as a contour plot and so on.
 Installation
 ============
 
-.. include:: ../../../INSTALLATION.rst
-   :start-after: .. installation_start
-
 For testing
 -----------
 
@@ -107,8 +104,8 @@ the building requirements and then executing the build module:
 .. _Sphinx: https://www.sphinx-doc.org/en/master/
 .. _tox: https://tox.wiki/
 .. _Ansys Additive: https://www.ansys.com/products/additive
-.. _Examples: https://additive-widgets.docs.pyansys.com/version/stable/examples/gallery_examples/index.html
+.. _Examples: https://widgets.additive.docs.pyansys.com/version/stable/examples/gallery_examples/index.html
 .. _PyAdditive: https://additive.docs.pyansys.com/version/stable/index.html
 .. _PyAdditive documentation: https://additive.docs.pyansys.com/version/stable/index.html
 .. _PyAdditive Getting Started: https://additive.docs.pyansys.com/version/stable/getting_started/index.html
-.. _PyAdditive-Widgets documentation: https://additive-widgets.docs.pyansys.com/version/stable/index.html
+.. _PyAdditive-Widgets documentation: https://widgets.additive.docs.pyansys.com/version/stable/index.html

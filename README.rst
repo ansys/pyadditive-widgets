@@ -48,16 +48,10 @@ PyAdditive-Widgets is a widget toolkit for `PyAdditive`_ Simulations.
 Installation
 ============
 
-.. include:: ../../INSTALLATION.rst
-   :start-after: .. basic_installation_start
-   :end-before: .. basic_installation_end
-
-For instructions on setting up your development environment, see
-:ref:`ref_getting_started`, particularly the :ref:`ref_install_in_developer_mode`
-section.
+For instructions on setting up your development environment, see `Getting Started`_.
 
 Documentation
--------------
+=============
 
 Documentation for the latest stable release of PyAdditive-Widgets is hosted at `PyAdditive-Widgets documentation`_.
 
@@ -83,8 +77,9 @@ To reach the project support team, email `pyansys.core@ansys.com <mailto:pyansys
 .. _Sphinx: https://www.sphinx-doc.org/en/master/
 .. _tox: https://tox.wiki/
 .. _Ansys Additive: https://www.ansys.com/products/additive
-.. _Examples: https://additive-widgets.docs.pyansys.com/version/stable/examples/gallery_examples/index.html
+.. _Examples: https://widgets.additive.docs.pyansys.com/version/stable/examples/gallery_examples/index.html
 .. _PyAdditive: https://additive.docs.pyansys.com/version/stable/index.html
 .. _PyAdditive documentation: https://additive.docs.pyansys.com/version/stable/index.html
 .. _PyAdditive Getting Started: https://additive.docs.pyansys.com/version/stable/getting_started/index.html
-.. _PyAdditive-Widgets documentation: https://additive-widgets.docs.pyansys.com/version/stable/index.html
+.. _PyAdditive-Widgets documentation: https://widgets.additive.docs.pyansys.com/version/stable/index.html
+.. _Getting Started: https://widgets.additive.docs.pyansys.com/version/stable/getting_started/index.html

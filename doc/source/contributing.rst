@@ -13,8 +13,7 @@ Configure your development environment
 --------------------------------------
 
 For instructions on setting up your development environment, see
-:ref:`ref_getting_started`, particularly the :ref:`ref_install_in_developer_mode`
-section.
+:ref:`ref_getting_started`
 
 Post issues
 -----------
@@ -37,7 +36,7 @@ View documentation
 ------------------
 
 Documentation for the latest stable release of PyAdditive-Widgets is hosted at
-`PyAdditive-Widgets Documentation <https://additive-widgets.docs.pyansys.com>`_.
+`PyAdditive-Widgets Documentation <https://widgets.additive.docs.pyansys.com>`_.
 
 In the upper right corner of the documentation's title bar, there is an option
 for switching from viewing the documentation for the latest stable release

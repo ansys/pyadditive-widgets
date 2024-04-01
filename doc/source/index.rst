@@ -9,9 +9,6 @@ PyAdditive-Widgets Documentation  |version|
 .. include:: ../../README.rst
    :start-after: .. readme_start
 
-.. include:: ../../INSTALLATION.rst
-   :start-after: .. installation_start
-
 .. jinja:: main_toctree
 
    .. toctree::

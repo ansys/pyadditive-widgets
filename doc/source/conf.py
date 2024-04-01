@@ -17,6 +17,7 @@ from ansys.additive.widgets import __version__
 
 path_root = Path(__file__).parents[0]
 sys.path.append(str(path_root))
+from _utils.png_scraper import PNGScraper
 
 # Manage errors
 pyvista.set_error_output_file("errors.txt")
@@ -223,7 +224,7 @@ if BUILD_EXAMPLES is True:
         "backreferences_dir": None,
         # Modules for which function level galleries are created.
         "doc_module": "ansys-additive-widgets",
-        # "image_scrapers": ("pyvista", "matplotlib", PNGScraper()),
+        "image_scrapers": ("pyvista", "matplotlib", PNGScraper()),
         "ignore_pattern": r"\b(" + "|".join(ignore_patterns) + r")\b",
         "thumbnail_size": (350, 350),
         # Set plot_gallery to False for building docs without running examples.

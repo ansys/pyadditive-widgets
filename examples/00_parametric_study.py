@@ -162,7 +162,7 @@ display.show_table(study2)
 # Plot the single bead results using the
 # :func:`~ansys.additive.widgets.display.single_bead_eval_plot` method.
 
-# display.single_bead_eval_plot(study)
+display.single_bead_eval_plot(study)
 
 ###############################################################################
 # Create a porosity evaluation
@@ -206,7 +206,7 @@ study.generate_porosity_permutations(
 # ------------------------
 # Run the simulations using the :meth:`~ParametricStudy.run_simulations` method.
 
-# study.run_simulations(additive)
+study.run_simulations(additive)
 
 ###############################################################################
 # Plot porosity results
@@ -214,7 +214,7 @@ study.generate_porosity_permutations(
 # Plot the porosity simulation results using the
 # :func:`~ansys.additive.widgets.display.porosity_contour_plot` method.
 
-# display.porosity_contour_plot(study)
+display.porosity_contour_plot(study)
 
 ###############################################################################
 # Create a microstructure evaluation
@@ -251,7 +251,7 @@ study.generate_microstructure_permutations(
 # ------------------------------
 # Run the simulations using the :meth:`~ParametricStudy.run_simulations` method.
 
-# study.run_simulations(additive)
+study.run_simulations(additive)
 
 ###############################################################################
 # Plot microstructure results
@@ -260,4 +260,4 @@ study.generate_microstructure_permutations(
 # using the :func:`~ansys.additive.widgets.display.ave_grain_size_plot`
 # method.
 
-# display.ave_grain_size_plot(study)
+display.ave_grain_size_plot(study)

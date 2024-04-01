@@ -11,6 +11,7 @@ PyGeometry
 PyAdditive
 PyAdditive-Widgets
 Documentation
+documentation
 api
 Protobuf
 Scipy

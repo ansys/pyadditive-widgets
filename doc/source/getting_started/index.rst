@@ -3,7 +3,7 @@
 .. _ref_getting_started:
 
 ###############
-Getting Started
+Getting started
 ###############
 
 PyAdditive-Widgets is a widget toolkit for PyAdditive Simulations.
@@ -56,8 +56,10 @@ For developers
 Installing PyAdditive-Widgets in developer mode allows
 you to modify the source and enhance it.
 
-Before contributing to the project, please refer to the `PyAnsys Developer's guide`_. You will
-need to follow these steps:
+.. note::
+Before contributing to the project, please refer to the `PyAnsys Developer's guide`_ and
+`Contributing to PyAdditive-Widgets`_ section.
+You will need to follow these steps:
 
 #. Start by cloning this repository:
 
@@ -161,7 +163,7 @@ Basic usage
 -----------
 
 This code shows how to import PyAdditive-Widgets and use some basic capabilities
-to show a the simulations of parametric study generated using the `PyAdditive`_ library
+to visualize the results of a parametric study generated using the `PyAdditive`_ library
 as a table:
 
 .. code:: python
@@ -191,7 +193,7 @@ as a table:
    # Display the study as a table with the generated single bead simulations
    display.show_table(study)
 
-Advanced Usage
+Advanced usage
 --------------
 
 For comprehensive usage information, see `Examples`_ in the `PyAdditive-Widgets documentation`_.
@@ -242,7 +244,7 @@ Documentation
 =============
 
 For building documentation, you can either run the usual rules provided in the
-`Sphinx`_ Makefile, such us:
+`Sphinx`_ Makefile, such as:
 
 .. code:: bash
 
@@ -282,4 +284,5 @@ the building requirements and then executing the build module:
 .. _PyAdditive documentation: https://additive.docs.pyansys.com/version/stable/index.html
 .. _PyAdditive Getting Started: https://additive.docs.pyansys.com/version/stable/getting_started/index.html
 .. _PyAdditive-Widgets documentation: https://widgets.additive.docs.pyansys.com/version/stable/index.html
+.. _Contributing to PyAdditive-Widgets: https://widgets.additive.docs.pyansys.com/version/stable/contributing.html
 .. _Examples: https://widgets.additive.docs.pyansys.com/version/stable/examples/gallery_examples/index.html

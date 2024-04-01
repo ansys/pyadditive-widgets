@@ -58,8 +58,9 @@ you to modify the source and enhance it.
 
 .. note::
    Before contributing to the project, please refer to the `PyAnsys Developer's guide`_ and
-`Contributing to PyAdditive-Widgets`_ section.
-You will need to follow these steps:
+   `Contributing to PyAdditive-Widgets`_ section.
+
+Follow these steps to install PyAdditive-Widgets in developer mode:
 
 #. Start by cloning this repository:
 

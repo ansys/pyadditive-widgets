@@ -57,7 +57,7 @@ Installing PyAdditive-Widgets in developer mode allows
 you to modify the source and enhance it.
 
 .. note::
-Before contributing to the project, please refer to the `PyAnsys Developer's guide`_ and
+   Before contributing to the project, please refer to the `PyAnsys Developer's guide`_ and
 `Contributing to PyAdditive-Widgets`_ section.
 You will need to follow these steps:
 

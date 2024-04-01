@@ -3,7 +3,7 @@
 .. _ref_getting_started:
 
 ###############
-Getting started
+Getting Started
 ###############
 
 PyAdditive-Widgets is a widget toolkit for PyAdditive Simulations.
@@ -37,7 +37,7 @@ in these dependencies are these projects:
 Install the package
 ===================
 
-In order to install Pyadditive-Widgets, make sure you
+In order to install PyAdditive-Widgets, make sure you
 have the latest version of `pip`_. To do so, run:
 
 .. code:: bash
@@ -191,7 +191,7 @@ as a table:
    # Display the study as a table with the generated single bead simulations
    display.show_table(study)
 
-Advanced usage
+Advanced Usage
 --------------
 
 For comprehensive usage information, see `Examples`_ in the `PyAdditive-Widgets documentation`_.

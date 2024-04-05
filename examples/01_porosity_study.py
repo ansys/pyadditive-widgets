@@ -20,14 +20,11 @@
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 # SOFTWARE.
 """
-Porosity parametric study
-=========================
+Porosity evaluation plot
+========================
 
 This example shows how you can use PyAdditive-Wdigets to visualize the results
 of a parametric study containing porosity simulations.
-Here, the :class:`ParametricStudy` class is used to conduct a parametric study.
-While not essential, the :class:`ParametricStudy` class provides data management
-and visualization features that make the work easier.
 The :obj:`display <ansys.additive.widgets.display>` package is used to
 visualize the results of the study.
 
@@ -88,7 +85,7 @@ beam_diameters = [80e-6]
 start_angles = [45]
 rotation_angles = [67.5]
 hatch_spacings = [100e-6]
-min_build_rate = 5e-9
+stripe_widths = [0.05]
 
 study.generate_porosity_permutations(
     material_name=material,
@@ -103,7 +100,7 @@ study.generate_porosity_permutations(
     start_angles=start_angles,
     rotation_angles=rotation_angles,
     hatch_spacings=hatch_spacings,
-    min_build_rate=min_build_rate,
+    stripe_widths=stripe_widths,
     iteration=1,
 )
 

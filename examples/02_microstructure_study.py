@@ -20,14 +20,11 @@
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 # SOFTWARE.
 """
-Microstructure parametric study
-===============================
+Microstructure average grain size plot
+======================================
 
 This example shows how you can use PyAdditive-Wdigets to visualize the results
 of a parametric study containing microstructure simulations.
-Here, the :class:`ParametricStudy` class is used to conduct a parametric study.
-While not essential, the :class:`ParametricStudy` class provides data management
-and visualization features that make the work easier.
 The :obj:`display <ansys.additive.widgets.display>` package is used to
 visualize the results of the study.
 

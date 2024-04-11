@@ -72,9 +72,9 @@ material = "IN718"
 # microstructure simulations to the study.
 
 # Specify a range of laser powers. Valid values are 50 to 700 W.
-laser_powers = [50, 150, 250, 350, 550]
+laser_powers = [150, 250, 350]
 # Specify a range of laser scan speeds. Valid values are 0.35 to 2.5 m/s.
-scan_speeds = [0.35, 0.5, 0.7]
+scan_speeds = [0.5, 0.7]
 # Specify a range of layer thicknesses. Valid values are 10-6 to 100e-6 m.
 layer_thicknesses = [40e-6]
 # Specify a range of heater temperatures. Valid values 20 - 500 C.

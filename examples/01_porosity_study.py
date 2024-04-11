@@ -72,7 +72,7 @@ material = "IN718"
 # values defined in the :class:`MachineConstants` class.
 
 # Specify a range of laser powers. Valid values are 50 to 700 W.
-laser_powers = [50, 150, 250, 350, 550]
+laser_powers = [150, 250, 350]
 # Specify a range of laser scan speeds. Valid values are 0.35 to 2.5 m/s.
 scan_speeds = [0.35, 0.5, 0.7]
 # Specify a range of layer thicknesses. Valid values are 10-6 to 100e-6 m.

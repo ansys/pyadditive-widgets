@@ -20,14 +20,13 @@
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 # SOFTWARE.
 """
-Parametric study
-================
+Single bead evaluation plot
+===========================
 
-This example shows how you can use PyAdditive to perform a parametric study.
-The intended audience is a user who desires to optimize additive machine parameters
-to achieve a specific result. Here, the :class:`ParametricStudy` class is used to
-conduct a parametric study. While this is not required, the :class:`ParametricStudy`
-class provides data management and visualization features that ease the task.
+This example shows how you can use PyAdditive-Wdigets to visualize the results
+of a parametric study containing single bead simulations.
+The :obj:`display <ansys.additive.widgets.display>` package is used to
+visualize the results of the study.
 
 Units are SI (m, kg, s, K) unless otherwise noted.
 """
@@ -40,7 +39,7 @@ from ansys.additive.core.parametric_study import ColumnNames, ParametricStudy
 
 from ansys.additive.widgets import display
 
-study = ParametricStudy("demo-study")
+study = ParametricStudy("single-bead-study")
 
 ###############################################################################
 # Get the study file name
@@ -65,9 +64,7 @@ material = "IN718"
 ###############################################################################
 # Create a single bead evaluation
 # -------------------------------
-# Parametric studies often start with single bead simulations in order to
-# determine melt pool statistics. Here, the
-# :meth:`~ParametricStudy.generate_single_bead_permutations` method is used to
+# Here, the :meth:`~ParametricStudy.generate_single_bead_permutations` method is used to
 # generate single bead simulation permutations. The parameters
 # for the :meth:`~ParametricStudy.generate_single_bead_permutations` method allow you to
 # specify a range of machine parameters and filter them by energy density. Not all
@@ -140,124 +137,9 @@ display.show_table(study)
 study.run_simulations(additive)
 
 ###############################################################################
-# Save the study to a CSV file
-# ----------------------------
-# The parametric study is saved with each update in a binary format.
-# For other formats, use the ``to_*`` methods provided by the :class:`~pandas.DataFrame` class.
-
-study.data_frame().to_csv("demo-study.csv")
-
-###############################################################################
-# Load a previously saved study
-# -----------------------------
-# Load a previously saved study using the static
-# :meth:`ParameticStudy.load() <ParametricStudy.load>` method.
-
-study2 = ParametricStudy.load("demo-study.ps")
-display.show_table(study2)
-
-###############################################################################
 # Plot single bead results
 # ------------------------
 # Plot the single bead results using the
 # :func:`~ansys.additive.widgets.display.single_bead_eval_plot` method.
 
 display.single_bead_eval_plot(study)
-
-###############################################################################
-# Create a porosity evaluation
-# ----------------------------
-# You can use the insights gained from the single bead evaluation to
-# generate parameters for a porosity evaluation. Alternatively, you can
-# perform a porosity evaluation without a previous single bead evaluation.
-# Here, the laser power and scan speeds are determined by filtering the
-# single bead results where the ratio of the melt pool reference depth
-# to reference width is within a specified range. Additionally, the simulations
-# are restricted to a minimum build rate, which is calculated as
-# scan speed * layer thickness * hatch spacing. The
-# :meth:`~ParametricStudy.generate_porosity_permutations` method is used to add
-# porosity simulations to the study.
-
-df = study.data_frame()
-df = df[
-    (df[ColumnNames.MELT_POOL_REFERENCE_DEPTH_OVER_WIDTH] >= 0.3)
-    & (df[ColumnNames.MELT_POOL_REFERENCE_DEPTH_OVER_WIDTH] <= 0.65)
-]
-
-study.generate_porosity_permutations(
-    material_name=material,
-    laser_powers=df[ColumnNames.LASER_POWER].unique(),
-    scan_speeds=df[ColumnNames.SCAN_SPEED].unique(),
-    size_x=1e-3,
-    size_y=1e-3,
-    size_z=1e-3,
-    layer_thicknesses=[40e-6],
-    heater_temperatures=[80],
-    beam_diameters=[80e-6],
-    start_angles=[45],
-    rotation_angles=[67.5],
-    hatch_spacings=[100e-6],
-    min_build_rate=5e-9,
-    iteration=1,
-)
-
-################################################################################
-# Run porosity simulations
-# ------------------------
-# Run the simulations using the :meth:`~ParametricStudy.run_simulations` method.
-
-study.run_simulations(additive)
-
-###############################################################################
-# Plot porosity results
-# ---------------------
-# Plot the porosity simulation results using the
-# :func:`~ansys.additive.widgets.display.porosity_contour_plot` method.
-
-display.porosity_contour_plot(study)
-
-###############################################################################
-# Create a microstructure evaluation
-# ----------------------------------
-# Here a set of microstructure simulations is generated using many of the same
-# parameters used for the porosity simulations. The parameters ``cooling_rate``,
-# ``thermal_gradient``, ``melt_pool_width``, and ``melt_pool_depth`` are not
-# specified so they are calculated. The
-# :meth:`~ParametricStudy.generate_microstructure_permutations` method is used to add
-# microstructure simulations to the study.
-
-df = study.data_frame()
-df = df[(df[ColumnNames.TYPE] == SimulationType.POROSITY)]
-
-study.generate_microstructure_permutations(
-    material_name=material,
-    laser_powers=df[ColumnNames.LASER_POWER].unique(),
-    scan_speeds=df[ColumnNames.SCAN_SPEED].unique(),
-    size_x=1e-3,
-    size_y=1e-3,
-    size_z=1.1e-3,
-    sensor_dimension=1e-4,
-    layer_thicknesses=df[ColumnNames.LAYER_THICKNESS].unique(),
-    heater_temperatures=df[ColumnNames.HEATER_TEMPERATURE].unique(),
-    beam_diameters=df[ColumnNames.BEAM_DIAMETER].unique(),
-    start_angles=df[ColumnNames.START_ANGLE].unique(),
-    rotation_angles=df[ColumnNames.ROTATION_ANGLE].unique(),
-    hatch_spacings=df[ColumnNames.HATCH_SPACING].unique(),
-    iteration=2,
-)
-
-###############################################################################
-# Run microstructure simulations
-# ------------------------------
-# Run the simulations using the :meth:`~ParametricStudy.run_simulations` method.
-
-study.run_simulations(additive)
-
-###############################################################################
-# Plot microstructure results
-# ---------------------------
-# Plot and compare the average grain sizes from the microstructure simulations
-# using the :func:`~ansys.additive.widgets.display.ave_grain_size_plot`
-# method.
-
-display.ave_grain_size_plot(study)

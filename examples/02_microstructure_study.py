@@ -23,7 +23,7 @@
 Microstructure average grain size plot
 ======================================
 
-This example shows how you can use PyAdditive-Wdigets to visualize the results
+This example shows how you can use PyAdditive-Widgets to visualize the results
 of a parametric study containing microstructure simulations.
 The :obj:`display <ansys.additive.widgets.display>` package is used to
 visualize the results of the study.

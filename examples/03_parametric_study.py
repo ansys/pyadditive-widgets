@@ -66,13 +66,12 @@ material = "IN718"
 ###############################################################################
 # Create a single bead evaluation
 # -------------------------------
-# Parametric studies often start with single bead simulations in order to
-# determine melt pool statistics. Here, the
-# :meth:`~ParametricStudy.generate_single_bead_permutations` method is used to
-# generate single bead simulation permutations. The parameters
+# Parametric studies often start with single bead simulations to determine melt
+# pool statistics. Here, the :meth:`~ParametricStudy.generate_single_bead_permutations`
+# method is used to generate single bead simulation permutations. The parameters
 # for the :meth:`~ParametricStudy.generate_single_bead_permutations` method allow you to
 # specify a range of machine parameters and filter them by energy density. Not all
-# the parameters shown are required. Optional parameters that are not specified
+# of the parameters listed are required. Optional parameters that are not specified
 # use default values defined in the :class:`MachineConstants` class.
 import numpy as np
 
@@ -118,7 +117,7 @@ display.show_table(study)
 # ---------------------
 # If you are working with a large parametric study, you may want to skip some
 # simulations to reduce processing time. To do so, set the simulation status
-# to :obj:`SimulationStatus.SKIP` which is defined in the :class:`SimulationStatus`
+# to :obj:`SimulationStatus.SKIP`, which is defined in the :class:`SimulationStatus`
 # class. Here, a :class:`~pandas.DataFrame` object is obtained, a filter is
 # applied to get a list of simulation IDs, and then the status is updated on the
 # simulations with those IDs.

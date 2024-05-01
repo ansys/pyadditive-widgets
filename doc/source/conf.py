@@ -119,7 +119,7 @@ intersphinx_mapping = {
     "pyvista": ("https://docs.pyvista.org/", None),
     "pypim": ("https://pypim.docs.pyansys.com/version/stable", None),
     "panel": ("https://panel.holoviz.org/", None),
-    # "ansys.additive.core": ("https://additive.docs.pyansys.com/", None),
+    "ansys.additive.core": ("https://additive.docs.pyansys.com/version/stable", None),
     # "ansys.additive.widgets": (
     #     f"https://widgets.additive.docs.pyansys.com/version/{switcher_version}",
     #     None,

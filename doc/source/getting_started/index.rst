@@ -22,7 +22,7 @@ view the porosity relative density results as a contour plot and so on.
 Package dependencies
 ====================
 
-PyAdditive-Wdigets is supported on Python version 3.9 and later. Previous versions of Python are
+PyAdditive-Widgets is supported on Python version 3.9 and later. Previous versions of Python are
 no longer supported as outlined in this `Moving to require Python 3 <https://python3statement.org/>`_
 statement.
 

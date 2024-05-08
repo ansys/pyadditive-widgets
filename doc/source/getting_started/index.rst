@@ -8,8 +8,8 @@ Getting started
 
 PyAdditive-Widgets is a widget toolkit for PyAdditive Simulations.
 The widget provides methods to visualize the results of parametric additive simulations.
-You can view the study as a table, view the single bead simulation results as a heat map or
-view the porosity relative density results as a contour plot and so on.
+You can view the study as a table, view the single bead simulation results as a heat map,
+view the porosity relative density results as a contour plot and more.
 
 .. note::
    Requires Ansys 2024 R1 or later.
@@ -89,10 +89,7 @@ Follow these steps to install PyAdditive-Widgets in developer mode:
    .. code:: bash
 
       python -m pip install -U pip flit tox
-      python -m pip install -r requirements/requirements_build.txt
-      python -m pip install -r requirements/requirements_doc.txt
-      python -m pip install -r requirements/requirements_tests.txt
-
+      python -m pip install -e .[doc,tests]
 
 #. Install the project in editable mode:
 

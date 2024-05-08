@@ -11,10 +11,10 @@ readme = "README.rst"
 requires-python = ">=3.9"
 license = {file = "LICENSE"}
 authors = [
-    {name = "ANSYS, Inc.", email = "pyansys.support@ansys.com"},
+    {name = "ANSYS, Inc.", email = "pyansys.core@ansys.com"},
 ]
 maintainers = [
-    {name = "PyAnsys developers", email = "pyansys.core@ansys.com"},
+    {name = "ANSYS, Inc.", email = "pyansys.core@ansys.com"},
 ]
 
 classifiers = [
@@ -65,7 +65,7 @@ name = "ansys.additive.widgets"
 Source = "https://github.com/ansys/pyadditive-widgets"
 Tracker = "https://github.com/ansys/pyadditive-widgets/issues"
 Homepage = "https://github.com/ansys/pyadditive-widgets"
-
+Documentation = "https://widgets.additive.docs.pyansys.com"
 
 [tool.black]
 line-length = 100

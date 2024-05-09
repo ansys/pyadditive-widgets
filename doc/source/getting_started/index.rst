@@ -222,7 +222,7 @@ Raw testing
 -----------
 
 If required, you can always call the style commands (`black`_, `isort`_,
-`flake8`_...) or unit testing ones (`pytest`_) from the command line. However,
+`flake8`_) or unit testing ones (`pytest`_) from the command line. However,
 this does not guarantee that your project is being tested in an isolated
 environment, which is the reason why tools like `tox`_ exist.
 

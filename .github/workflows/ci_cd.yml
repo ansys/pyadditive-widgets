@@ -98,8 +98,8 @@ jobs:
           path: .coverage
           retention-days: 7
 
-      - name: Upload Coverage Results
-        if: always()
+      - name: Upload HTML Coverage Results
+        if: env.MAIN_PYTHON_VERSION == matrix.python-version
         uses: actions/upload-artifact@v4
         with:
           name: coverage-html-${{ matrix.os }}

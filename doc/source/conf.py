@@ -256,3 +256,11 @@ def prepare_jinja_env(jinja_env) -> None:
 
 
 autoapi_prepare_jinja_env = prepare_jinja_env
+
+# Remove GitHub and PyPI links once the repository becomes public
+linkcheck_ignore = [
+    "https://github.com/ansys/pyadditive-widgets/*",
+    "https://pypi.org/project/pyadditive-widgets",
+    "https://www.ansys.com/products/additive",
+    "https://www.ansys.com/contact-us",
+]

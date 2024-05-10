@@ -8,13 +8,13 @@ name = "ansys-additive-widgets"
 version = "0.1.dev2"
 description = "Visualization toolkit for parametric additive simulations "
 readme = "README.rst"
-requires-python = ">=3.9"
+requires-python = ">=3.9,<4"
 license = {file = "LICENSE"}
 authors = [
-    {name = "ANSYS, Inc.", email = "pyansys.support@ansys.com"},
+    {name = "ANSYS, Inc.", email = "pyansys.core@ansys.com"},
 ]
 maintainers = [
-    {name = "PyAnsys developers", email = "pyansys.core@ansys.com"},
+    {name = "ANSYS, Inc.", email = "pyansys.core@ansys.com"},
 ]
 
 classifiers = [
@@ -36,7 +36,7 @@ tests = [
     "panel==1.3.8"
 ]
 doc = [
-    "ansys-sphinx-theme==0.14.1",
+    "ansys-sphinx-theme[autoapi]==0.15.2",
     "enum-tools==0.11.0",
     "jupyter_sphinx==0.5.3",
     "matplotlib==3.8.3",
@@ -46,8 +46,6 @@ doc = [
     "pyvista==0.43.4",
     "selenium==4.18.1",
     "sphinx==7.2.6",
-    "sphinx-autoapi==3.0.0",
-    #"sphinx-autoapi @ git+https://github.com/ansys/sphinx-autoapi@feat/single-page-stable",
     "sphinx-autodoc-typehints==2.0.0",
     "sphinx-copybutton==0.5.2",
     "sphinx-design==0.5.0",
@@ -65,7 +63,7 @@ name = "ansys.additive.widgets"
 Source = "https://github.com/ansys/pyadditive-widgets"
 Tracker = "https://github.com/ansys/pyadditive-widgets/issues"
 Homepage = "https://github.com/ansys/pyadditive-widgets"
-
+Documentation = "https://widgets.additive.docs.pyansys.com"
 
 [tool.black]
 line-length = 100

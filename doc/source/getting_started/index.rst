@@ -10,6 +10,8 @@ This section describes how to install PyAdditive-Widgets in user mode and quickl
 using it. If you are interested in contributing to PyAdditive-Widgets, see :ref:`contribute`
 for information on installing in developer mode.
 
+.. _prerequisites:
+
 Prerequisites
 =============
 
@@ -20,6 +22,8 @@ The `PyAdditive`_ simulations described in this documentation also require a lic
 `Ansys Additive Suite <https://www.ansys.com/products/additive/ansys-additive-suite>`_.
 To obtain a license, contact your Ansys sales representative or complete this
 `inquiry form <https://www.ansys.com/contact-us>`_.
+
+.. _package_dependencies:
 
 Package dependencies
 ====================

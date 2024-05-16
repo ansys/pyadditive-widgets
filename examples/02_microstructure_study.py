@@ -23,9 +23,9 @@
 Microstructure average grain size plot
 ======================================
 
-This example shows how you can use PyAdditive-Widgets to visualize the results
+This example shows how to use PyAdditive-Widgets to visualize the results
 of a parametric study containing microstructure simulations.
-The :obj:`display <ansys.additive.widgets.display>` package is used to
+It uses the :obj:`display <ansys.additive.widgets.display>` package to
 visualize the results of the study.
 
 Units are SI (m, kg, s, K) unless otherwise noted.
@@ -33,7 +33,7 @@ Units are SI (m, kg, s, K) unless otherwise noted.
 ###############################################################################
 # Perform required imports and create a study
 # -------------------------------------------
-# Perform the required import and create a :class:`ParametricStudy` instance.
+# Perform the required imports and create a :class:`ParametricStudy` instance.
 from ansys.additive.core import Additive
 from ansys.additive.core.parametric_study import ParametricStudy
 
@@ -44,8 +44,8 @@ study = ParametricStudy("microstructure-study")
 ###############################################################################
 # Get the study file name
 # -----------------------
-# The current state of the parametric study is saved to a file upon each
-# update. You can retrieve the name of the file as shown below. This file
+# The current state of the parametric study is saved to a file on each
+# update. This code retrieves the name of the file. This file
 # uses a binary format and is not human readable.
 
 print(study.file_name)
@@ -64,12 +64,12 @@ material = "IN718"
 ###############################################################################
 # Create a microstructure evaluation
 # ----------------------------------
-# Here a set of microstructure simulations is generated using many of the same
+# The following code generates a set of microstructure simulations using many of the same
 # parameters used for the porosity simulations in the previous example.
-# The parameters ``cooling_rate``, ``thermal_gradient``, ``melt_pool_width``,
-# and ``melt_pool_depth`` are not specified so they are calculated. The
-# :meth:`~ParametricStudy.generate_microstructure_permutations` method is used to add
-# microstructure simulations to the study.
+# Because the ``cooling_rate``, ``thermal_gradient``, ``melt_pool_width``,
+# and ``melt_pool_depth`` parameters are not specified, they are calculated. The
+# code then uses the :meth:`~ParametricStudy.generate_microstructure_permutations` method
+# to add microstructure simulations to the study.
 
 # Specify a range of laser powers. Valid values are 50 to 700 W.
 laser_powers = [150, 250, 350]
@@ -106,7 +106,7 @@ study.generate_microstructure_permutations(
 ###############################################################################
 # Show the simulations as a table
 # -------------------------------
-# You can use the :obj:`display <ansys.additive.widgets.display>`
+# Use the :obj:`display <ansys.additive.widgets.display>`
 # package to list the simulations as a table.
 
 display.show_table(study)
@@ -123,6 +123,6 @@ study.run_simulations(additive)
 # ---------------------------
 # Plot and compare the average grain sizes from the microstructure simulations
 # using the :func:`~ansys.additive.widgets.display.ave_grain_size_plot`
-# method.
+# function.
 
 display.ave_grain_size_plot(study)

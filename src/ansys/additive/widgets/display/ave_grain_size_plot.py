@@ -203,9 +203,9 @@ def __normalized_markers(
     x: list[float]
         Values to normalize.
     v_min: float
-        Minimum input value which will map to minimum output value.
+        Minimum input value to map to minimum output value.
     v_max: float
-        Maximum input value which will map to maximum output value.
+        Maximum input value to map to maximum output value.
     m_min: float
         Minimum output value.
     m_max: float

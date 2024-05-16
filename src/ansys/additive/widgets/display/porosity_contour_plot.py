@@ -107,7 +107,7 @@ def __data_frame(ps: ParametricStudy) -> pd.DataFrame:
         & (df[ColumnNames.STATUS] == SimulationStatus.COMPLETED)
     ]
     if len(df.index) < 2:
-        raise ValueError("Too few data points to plot")
+        raise ValueError("There are too few data points to plot.")
     # convert build rate from m^3/s to mm^3/s
     df.loc[:, ColumnNames.BUILD_RATE] *= 1e9
     return df

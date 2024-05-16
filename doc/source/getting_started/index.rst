@@ -6,117 +6,66 @@
 Getting started
 ###############
 
-PyAdditive-Widgets is a widget toolkit for PyAdditive Simulations.
-The widget provides methods to visualize the results of parametric additive simulations.
-You can view the study as a table, view the single bead simulation results as a heat map,
-view the porosity relative density results as a contour plot and more.
+This section describes how to install PyAdditive-Widgets in user mode and quickly begin
+using it. If you are interested in contributing to PyAdditive-Widgets, see :ref:`contribute`
+for information on installing in developer mode.
 
-.. note::
-   Requires Ansys 2024 R1 or later.
-   Requires PyAdditive 0.17.2 or later.
+Prerequisites
+=============
 
-.. warning::
-   The simulations described in this documentation require an Additive Suite license. To obtain a license,
-   contact your Ansys sales representative or see https://www.ansys.com/contact-us.
+The use of PyAdditive-Widgets requires the installation of a licensed copy of Ansys 2024 R1
+or later and PyAdditive 0.17.2 or later.
+
+The `PyAdditive`_ simulations described in this documentation also require a license for the
+`Ansys Additive Suite <https://www.ansys.com/products/additive/ansys-additive-suite>`_.
+To obtain a license, contact your Ansys sales representative or complete this
+`inquiry form <https://www.ansys.com/contact-us>`_.
 
 Package dependencies
 ====================
 
 PyAdditive-Widgets is supported on Python version 3.9 and later. Previous versions of Python are
-no longer supported as outlined in this `Moving to require Python 3 <https://python3statement.org/>`_
-statement.
+no longer supported as outlined on the `History <https://python3statement.github.io/>`_ page
+describing the transition from Python 2 to Python 3.
 
 PyAdditive-Widgets dependencies are automatically checked when packages are installed. Included
 in these dependencies are these projects:
 
-* `ansys-additive-core <https://pypi.org/project/ansys-additive-core/>`_: PyAdditive is a Python client library
-   for the `Ansys Additive`_: service.
-* `Panel <https://panel.holoviz.org/>`_: Web app framework used for interactive visualization
-  of PyAdditive results.
+* `ansys-additive-core <https://pypi.org/project/ansys-additive-core/>`_: PyAdditive is a Python
+  client library for the `Ansys Additive`_ service.
+* `Panel <https://panel.holoviz.org/>`_: A web app framework for Python that is used for interactive
+   visualization of PyAdditive results.
 
 Install the package
 ===================
 
-In order to install PyAdditive-Widgets, make sure you
-have the latest version of `pip`_. To do so, run:
-
-.. code:: bash
-
-    python -m pip install -U pip
-
-Then, you can simply execute:
-
-.. code:: bash
-
-    python -m pip install ansys-additive-widgets
-
-For developers
---------------
-
-Installing PyAdditive-Widgets in developer mode allows
-you to modify the source and enhance it.
-
-.. note::
-   Before contributing to the project, please refer to the `PyAnsys Developer's guide`_ and
-   `Contributing to PyAdditive-Widgets`_ section.
-
-Follow these steps to install PyAdditive-Widgets in developer mode:
-
-#. Start by cloning this repository:
+#. Before installing PyAdditive-Widgets, make sure that you
+   have the latest version of `pip`_ by running this command::
 
    .. code:: bash
 
-      git clone https://github.com/ansys/pyadditive-widgets
+       python -m pip install -U pip
 
-#. Create a Python virtual environment and activate it:
-
-   .. code:: bash
-
-      # Create a virtual environment
-      python -m venv .venv
-
-      # Activate it in a POSIX system
-      source .venv/bin/activate
-
-      # Activate it in Windows CMD environment
-      .venv\Scripts\activate.bat
-
-      # Activate it in Windows Powershell
-      .venv\Scripts\Activate.ps1
-
-#. Make sure you have the latest required build system and doc, testing, and CI tools:
+#. Install PyAdditive-Widgets by running this command:
 
    .. code:: bash
 
-      python -m pip install -U pip flit tox
-      python -m pip install -e .[doc,tests]
+       python -m pip install ansys-additive-widgets
 
-#. Install the project in editable mode:
 
-    .. code:: bash
+Start a session
+===============
 
-      python -m pip install --editable ansys-additive-widgets
-
-    #. Finally, verify your development installation by running:
-
-   .. code:: bash
-
-      tox
-
-Consider using a virtual environment for the installation.
-
-Starting a session
-==================
-
-There are multiple ways to start a session with the PyAdditive client. You can start a local session or a remote session.
-A parametric study needs to be instantiated before visualizing the study or results.
+You can start a session with the PyAdditive client in multiple ways. For example,
+you can start a local session or a remote session. Also, before you can visualize
+the results of a parametric additive simulation, you must instantiate a parametric study.
 
 .. _ref_starting_a_local_session:
 
-Starting a local session
-------------------------
+Start a local session
+---------------------
 
-Instantiating an ``Additive`` object starts the local installation of the Additive server.
+Instantiating an ``Additive`` object starts the local installation of the Additive server:
 
 .. code:: python
 
@@ -129,10 +78,10 @@ Instantiating an ``Additive`` object starts the local installation of the Additi
    # Display the empty study as a table
    display.show_table(study)
 
-Starting a remote session
--------------------------
+Start a remote session
+----------------------
 
-You can start a remote session by specifying the host name and port of the server.
+You start a remote session by specifying the host name and port of the server:
 
 .. code:: python
 
@@ -147,22 +96,24 @@ You can start a remote session by specifying the host name and port of the serve
    display.show_table(study)
 
 
-Alternative startup methods
----------------------------
+Use alternative startup methods
+-------------------------------
 
-For additional session startup methods, see the documentation for the
-`Additive class <https://additive.docs.pyansys.com/version/stable/api/ansys/additive/core/additive/Additive.html>`_.
+The ``Additive`` class in the PyAdditive API provides additional session
+startup methods that you can use. For more information, see
+`Additive <https://additive.docs.pyansys.com/version/stable/api/ansys/additive/core/additive/Additive.html>`_
+in the PyAdditive documentation.
 
 
 Run simulations
 ===============
+Once a session is started, you can run simulations.
 
 Basic usage
 -----------
 
 This code shows how to import PyAdditive-Widgets and use some basic capabilities
-to visualize the results of a parametric study generated using the `PyAdditive`_ library
-as a table:
+to visualize the `PyAdditive`_-generated results of a parametric study as a table:
 
 .. code:: python
 
@@ -194,78 +145,9 @@ as a table:
 Advanced usage
 --------------
 
-For comprehensive usage information, see `Examples`_ in the `PyAdditive-Widgets documentation`_.
-For information on how to use the PyAdditive library for the `Ansys Additive`_ service,
-refer to the documentation hosted at `PyAdditive documentation`_.
-
-Testing
-=======
-
-This project takes advantage of `tox`_. This tool allows to automate common
-development tasks (similar to Makefile) but it is oriented towards Python
-development.
-
-Using tox
----------
-
-As Makefile has rules, `tox`_ has environments. In fact, the tool creates its
-own virtual environment so anything being tested is isolated from the project in
-order to guarantee project's integrity. The following environments commands are provided:
-
-- **tox -e style**: checks for coding style quality.
-- **tox -e py**: checks for unit tests.
-- **tox -e py-coverage**: checks for unit testing and code coverage.
-- **tox -e doc**: checks for documentation building process.
-
-
-Raw testing
------------
-
-If required, you can always call the style commands (`black`_, `isort`_,
-`flake8`_) or unit testing ones (`pytest`_) from the command line. However,
-this does not guarantee that your project is being tested in an isolated
-environment, which is the reason why tools like `tox`_ exist.
-
-
-A note on pre-commit
---------------------
-
-The style checks take advantage of `pre-commit`_. Developers are not forced but
-encouraged to install this tool via:
-
-.. code:: bash
-
-    python -m pip install pre-commit && pre-commit install
-
-
-Documentation
-=============
-
-For building documentation, you can either run the usual rules provided in the
-`Sphinx`_ Makefile, such as:
-
-.. code:: bash
-
-    make -C doc/ html && open doc/html/index.html
-
-However, the recommended way of checking documentation integrity is using:
-
-.. code:: bash
-
-    tox -e doc && open .tox/doc_out/index.html
-
-
-Distributing
-============
-
-If you would like to create either source or wheel files, start by installing
-the building requirements and then executing the build module:
-
-.. code:: bash
-
-    python -m pip install -r requirements/requirements_build.txt
-    python -m build
-    python -m twine check dist/*
+The `Examples`_ section provides comprehensive usage information.
+For information on how to use PyAdditive for the `Ansys Additive`_ service,
+see the `PyAdditive documentation`_.
 
 .. LINKS AND REFERENCES
 .. _black: https://github.com/psf/black

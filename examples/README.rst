@@ -27,7 +27,7 @@
 ========
 Examples
 ========
-End-to-end examples show how you can use PyAdditve-Widgets. You can download
+End-to-end examples show how to use PyAdditve-Widgets. You can download
 these examples as Python files or Jupyter notebooks and run them locally.
 
 .. toctree::

@@ -19,7 +19,7 @@
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 # SOFTWARE.
-"""Provides interactive plot of porosity results."""
+"""Provides an interactive plot of porosity results."""
 
 from __future__ import annotations
 
@@ -47,7 +47,7 @@ def porosity_eval_plot(ps: ParametricStudy):
 
     Parameters
     ----------
-    ps : ParametricStudy to plot.
+    ps : Parametric study to plot.
 
     Returns
     -------

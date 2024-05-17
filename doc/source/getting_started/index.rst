@@ -1,5 +1,3 @@
-:orphan:
-
 .. _ref_getting_started:
 
 ###############
@@ -7,7 +5,7 @@ Getting started
 ###############
 
 This section describes how to install PyAdditive-Widgets in user mode and quickly begin
-using it. If you are interested in contributing to PyAdditive-Widgets, see :ref:`contribute`
+using it. If you are interested in contributing to PyAdditive-Widgets, see :ref:`ref_contribute`
 for information on installing in developer mode.
 
 .. _prerequisites:
@@ -32,25 +30,25 @@ PyAdditive-Widgets is supported on Python version 3.9 and later. Previous versio
 no longer supported as outlined on the `History <https://python3statement.github.io/>`_ page
 describing the transition from Python 2 to Python 3.
 
-PyAdditive-Widgets dependencies are automatically checked when packages are installed. Included
+Dependencies for PyAdditive-Widgets are automatically checked when packages are installed. Included
 in these dependencies are these projects:
 
 * `ansys-additive-core <https://pypi.org/project/ansys-additive-core/>`_: PyAdditive is a Python
   client library for the `Ansys Additive`_ service.
 * `Panel <https://panel.holoviz.org/>`_: A web app framework for Python that is used for interactive
-   visualization of PyAdditive results.
+  visualization of PyAdditive results.
 
 Install the package
 ===================
 
 #. Before installing PyAdditive-Widgets, make sure that you
-   have the latest version of `pip`_ by running this command::
+   have the latest version of `pip`_ with this command:
 
    .. code:: bash
 
        python -m pip install -U pip
 
-#. Install PyAdditive-Widgets by running this command:
+#. Install PyAdditive-Widgets with this command:
 
    .. code:: bash
 
@@ -61,8 +59,10 @@ Start a session
 ===============
 
 You can start a session with the PyAdditive client in multiple ways. For example,
-you can start a local session or a remote session. Also, before you can visualize
-the results of a parametric additive simulation, you must instantiate a parametric study.
+you can start a local session or a remote session.
+
+Before you can visualize the results of a parametric additive simulation, you must
+instantiate a parametric study.
 
 .. _ref_starting_a_local_session:
 
@@ -85,7 +85,7 @@ Instantiating an ``Additive`` object starts the local installation of the Additi
 Start a remote session
 ----------------------
 
-You start a remote session by specifying the host name and port of the server:
+Start a remote session by specifying the host name and port of the server:
 
 .. code:: python
 
@@ -117,7 +117,7 @@ Basic usage
 -----------
 
 This code shows how to import PyAdditive-Widgets and use some basic capabilities
-to visualize the `PyAdditive`_-generated results of a parametric study as a table:
+to visualize `PyAdditive`_-generated results of a parametric study as a table:
 
 .. code:: python
 
@@ -149,24 +149,12 @@ to visualize the `PyAdditive`_-generated results of a parametric study as a tabl
 Advanced usage
 --------------
 
-The `Examples`_ section provides comprehensive usage information.
+The `Examples`_ section provides comprehensive examples of how to use PyAdditive-Widgets.
 For information on how to use PyAdditive for the `Ansys Additive`_ service,
 see the `PyAdditive documentation`_.
 
 .. LINKS AND REFERENCES
-.. _black: https://github.com/psf/black
-.. _flake8: https://flake8.pycqa.org/en/latest/
-.. _isort: https://github.com/PyCQA/isort
-.. _pip: https://pypi.org/project/pip/
-.. _pre-commit: https://pre-commit.com/
-.. _PyAnsys Developer's guide: https://dev.docs.pyansys.com/
-.. _pytest: https://docs.pytest.org/en/stable/
-.. _Sphinx: https://www.sphinx-doc.org/en/master/
-.. _tox: https://tox.wiki/
 .. _Ansys Additive: https://www.ansys.com/products/additive
 .. _PyAdditive: https://additive.docs.pyansys.com/version/stable/index.html
-.. _PyAdditive documentation: https://additive.docs.pyansys.com/version/stable/index.html
-.. _PyAdditive Getting Started: https://additive.docs.pyansys.com/version/stable/getting_started/index.html
-.. _PyAdditive-Widgets documentation: https://widgets.additive.docs.pyansys.com/version/stable/index.html
-.. _Contributing to PyAdditive-Widgets: https://widgets.additive.docs.pyansys.com/version/stable/contributing.html
 .. _Examples: https://widgets.additive.docs.pyansys.com/version/stable/examples/gallery_examples/index.html
+.. _PyAdditive documentation: https://additive.docs.pyansys.com/version/stable/index.html

@@ -12,7 +12,7 @@ with this guide before attempting to contribute to PyAdditive.
 The following contribution information is specific to PyAdditive-Widgets.
 
 Install in developer mode
--------------------=-----
+-------------------------
 
 Installing PyAdditive-Widgets in developer mode allows you to modify and enhance
 the source.
@@ -56,9 +56,9 @@ Perform these steps to install PyAdditive-Widgets in developer mode:
 
 #. Install the project in editable mode:
 
-    .. code:: bash
+   .. code:: bash
 
-       python -m pip install --editable ansys-additive-widgets
+      python -m pip install --editable ansys-additive-widgets
 
 #. Verify your development installation:
 
@@ -90,8 +90,8 @@ The following environments commands are provided:
 Raw testing
 -----------
 
-If required, you can always call code style commands, such as `black`_, `isort`_,
-and `flake8`_, or unit testing tools, such as `pytest`_, from the command line. However,
+If required, you can always call code style commands, such as `Black`_, `isort`_,
+and `Flake8`_, or unit testing tools, such as `pytest`_, from the command line. However,
 using these tools do not guarantee that your project is being tested in an isolated
 environment, which is the reason why a tool like ``tox`` exists.
 
@@ -112,15 +112,15 @@ Adhere to code style
 
 PyAdditive follows the PEP8 standard as indicated in
 `PEP 8 <https://dev.docs.pyansys.com/coding-style/pep8.html>`_ in
-the `PyAnsys developer's guide <https://dev.docs.pyansys.com/>`_. It
-also implements style checking using `pre-commit <https://pre-commit.com/>`_.
+the *PyAnsys developer's guide*. It also implements style checking
+using `pre-commit`_.
 
 To ensure your code meets minimum code styling standards, run these commands::
 
   pip install pre-commit
   pre-commit run --all-files
 
-You can also install this as a `git` pre-commit hook by running this command::
+You can also install this as a Git pre-commit hook by running this command::
 
   pre-commit install
 
@@ -182,3 +182,12 @@ If you have general questions about the PyAnsys ecosystem, email
 `pyansys.core@ansys.com <pyansys.core@ansys.com>`_. If your
 question is specific to PyAdditive-Widgets, ask your question
 in an issue as described in the previous paragraph.
+
+.. LINKS AND REFERENCES
+.. _tox: https://tox.wiki/
+.. _Black: https://github.com/psf/black
+.. _isort: https://github.com/PyCQA/isort
+.. _Flake8: https://flake8.pycqa.org/en/latest/
+.. _pytest: https://docs.pytest.org/en/stable/
+.. _pre-commit: https://pre-commit.com/
+.. _Sphinx: https://www.sphinx-doc.org/en/master/

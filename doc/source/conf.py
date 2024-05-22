@@ -5,7 +5,6 @@ from pathlib import Path
 import sys
 
 from ansys_sphinx_theme import (
-    get_autoapi_templates_dir_relative_path,
     get_version_match,
     pyansys_logo_black,
 )
@@ -79,6 +78,9 @@ html_theme_options = {
         "version_match": switcher_version,
     },
     "check_switcher": False,
+    "ansys_sphinx_theme_autoapi": {
+        "project": project,
+    },
 }
 
 html_context = {
@@ -91,6 +93,7 @@ html_context = {
 
 # Sphinx extensions
 extensions = [
+    "ansys_sphinx_theme.extension.autoapi",
     "enum_tools.autoenum",
     "jupyter_sphinx",
     "notfound.extension",
@@ -146,7 +149,7 @@ numpydoc_validate = True
 numpydoc_validation_checks = {
     "GL06",  # Found unknown section
     "GL07",  # Sections are in the wrong order.
-    "GL08",  # The object does not have a docstring
+    # "GL08",  # The object does not have a docstring
     "GL09",  # Deprecation warning should precede extended summary
     "GL10",  # reST directives {directives} must be followed by two colons
     "SS01",  # No summary found
@@ -157,7 +160,6 @@ numpydoc_validation_checks = {
     "RT02",  # The first line of the Returns section should contain only the
     # type, unless multiple values are being returned"
 }
-
 
 # static path
 html_static_path = ["_static"]
@@ -177,22 +179,8 @@ if not BUILD_API:
     exclude_patterns.append("autoapi")
 else:
     # Configuration for Sphinx autoapi
-    extensions.append("autoapi.extension")
-    autoapi_root = "api"
-    autoapi_type = "python"
-    autoapi_dirs = ["../../src/ansys"]
-    autoapi_options = [
-        "members",
-        "undoc-members",
-        "show-inheritance",
-        "show-module-summary",
-        # "special-members", - don't doc dunder methods
-    ]
-    autoapi_template_dir = get_autoapi_templates_dir_relative_path(Path(__file__))
-    suppress_warnings = ["autoapi.python_import_resolution"]
+    suppress_warnings = ["autoapi.python_import_resolution", "design.grid", "config.cache"]
     exclude_patterns.append("_autoapi_templates/index.rst")
-    autoapi_python_use_implicit_namespaces = True
-    autoapi_keep_files = True
     autoapi_render_in_single_page = ["class", "enum", "exception"]
 
 
@@ -239,26 +227,10 @@ jinja_contexts = {
     },
 }
 
+# Remove GitHub and PyPI links once the repository becomes public
 linkcheck_ignore = [
     r"https://ansyshelp.ansys.com/.*",
     r"https://ansysproducthelpqa.win.ansys.com/.*",
-]
-
-
-def prepare_jinja_env(jinja_env) -> None:
-    """Customize the jinja environment.
-
-    Notes
-    -----
-    See https://jinja.palletsprojects.com/en/3.0.x/api/#jinja2.Environment
-    """
-    jinja_env.globals["project_name"] = project
-
-
-autoapi_prepare_jinja_env = prepare_jinja_env
-
-# Remove GitHub and PyPI links once the repository becomes public
-linkcheck_ignore = [
     "https://github.com/ansys/pyadditive-widgets/*",
     "https://pypi.org/project/pyadditive-widgets",
     "https://www.ansys.com/products/additive",

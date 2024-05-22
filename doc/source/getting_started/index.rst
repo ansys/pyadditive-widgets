@@ -158,3 +158,4 @@ see the `PyAdditive documentation`_.
 .. _PyAdditive: https://additive.docs.pyansys.com/version/stable/index.html
 .. _Examples: https://widgets.additive.docs.pyansys.com/version/stable/examples/gallery_examples/index.html
 .. _PyAdditive documentation: https://additive.docs.pyansys.com/version/stable/index.html
+.. _pip: https://pypi.org/project/pip/

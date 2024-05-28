@@ -4,10 +4,7 @@ import os
 from pathlib import Path
 import sys
 
-from ansys_sphinx_theme import (
-    get_version_match,
-    pyansys_logo_black,
-)
+from ansys_sphinx_theme import get_version_match, pyansys_logo_black
 import numpy as np
 import pyvista
 from sphinx_gallery.sorting import FileNameSortKey
@@ -180,9 +177,6 @@ if not BUILD_API:
 else:
     # Configuration for Sphinx autoapi
     suppress_warnings = ["autoapi.python_import_resolution", "design.grid", "config.cache"]
-    exclude_patterns.append("_autoapi_templates/index.rst")
-    autoapi_render_in_single_page = ["class", "enum", "exception"]
-
 
 BUILD_EXAMPLES = True if os.environ.get("BUILD_EXAMPLES", "true") == "true" else False
 PLOT_GALLERY = True if os.environ.get("PLOT_GALLERY", "true") == "true" else False

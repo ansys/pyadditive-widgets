@@ -173,7 +173,7 @@ master_doc = "index"
 # -- Declare the Jinja context -----------------------------------------------
 BUILD_API = True if os.environ.get("BUILD_API", "true") == "true" else False
 if not BUILD_API:
-    exclude_patterns.append("autoapi")
+    exclude_patterns.append("api")
 else:
     # Configuration for Sphinx autoapi
     suppress_warnings = ["autoapi.python_import_resolution", "design.grid", "config.cache"]

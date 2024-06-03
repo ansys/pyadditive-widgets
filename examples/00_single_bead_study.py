@@ -23,9 +23,9 @@
 Single bead evaluation plot
 ===========================
 
-This example shows how you can use PyAdditive-Widgets to visualize the results
+This example shows how to use PyAdditive-Widgets to visualize the results
 of a parametric study containing single bead simulations.
-The :obj:`display <ansys.additive.widgets.display>` package is used to
+It uses the :obj:`display <ansys.additive.widgets.display>` package to
 visualize the results of the study.
 
 Units are SI (m, kg, s, K) unless otherwise noted.
@@ -33,7 +33,8 @@ Units are SI (m, kg, s, K) unless otherwise noted.
 ###############################################################################
 # Perform required imports and create a study
 # -------------------------------------------
-# Perform the required import and create a :class:`ParametricStudy` instance.
+# Perform the required imports and create a :class:`ParametricStudy` instance.
+
 from ansys.additive.core import Additive, SimulationStatus, SimulationType
 from ansys.additive.core.parametric_study import ColumnNames, ParametricStudy
 
@@ -44,8 +45,8 @@ study = ParametricStudy("single-bead-study")
 ###############################################################################
 # Get the study file name
 # -----------------------
-# The current state of the parametric study is saved to a file upon each
-# update. You can retrieve the name of the file as shown below. This file
+# The current state of the parametric study is saved to a file on each
+# update. The following code retrieves the name of the file. This file
 # uses a binary format and is not human readable.
 
 print(study.file_name)
@@ -64,12 +65,13 @@ material = "IN718"
 ###############################################################################
 # Create a single bead evaluation
 # -------------------------------
-# Here, the :meth:`~ParametricStudy.generate_single_bead_permutations` method is used to
-# generate single bead simulation permutations. The parameters
-# for the :meth:`~ParametricStudy.generate_single_bead_permutations` method allow you to
-# specify a range of machine parameters and filter them by energy density. Not all
-# the parameters shown are required. Optional parameters that are not specified
-# use default values defined in the :class:`MachineConstants` class.
+# Generate single bead simulation permutations using the
+# :meth:`~ParametricStudy.generate_single_bead_permutations` method. This method's
+# parameters allow you to specify a range of machine parameters and filter them by
+# energy density. Not all the parameters shown are required. Optional parameters
+# that are not specified use the default values defined in the
+# :class:`MachineConstants` class.
+
 import numpy as np
 
 # Specify a range of laser powers. Valid values are 50 to 700 W.
@@ -83,7 +85,7 @@ initial_beam_diameters = [80e-6]
 # Specify heater temperatures. Valid values are 20 - 500 C.
 initial_heater_temps = [80]
 # Restrict the permutations within a range of energy densities
-# For single bead, the energy density is laser power / (laser scan speed * layer thickness).
+# For a single bead, the energy density is laser power / (laser scan speed * layer thickness).
 min_energy_density = 2e6
 max_energy_density = 8e6
 # Specify a bead length in meters.
@@ -104,7 +106,7 @@ study.generate_single_bead_permutations(
 ###############################################################################
 # Show the simulations as a table
 # -------------------------------
-# You can use the :obj:`display <ansys.additive.widgets.display>`
+# Use the :obj:`display <ansys.additive.widgets.display>`
 # package to list the simulations as a table.
 
 display.show_table(study)
@@ -112,12 +114,12 @@ display.show_table(study)
 ###############################################################################
 # Skip some simulations
 # ---------------------
-# If you are working with a large parametric study, you may want to skip some
-# simulations to reduce processing time. To do so, set the simulation status
-# to :obj:`SimulationStatus.SKIP` which is defined in the :class:`SimulationStatus`
-# class. Here, a :class:`~pandas.DataFrame` object is obtained, a filter is
-# applied to get a list of simulation IDs, and then the status is updated on the
-# simulations with those IDs.
+# If you are working with a large parametric study, you might want to skip some
+# simulations to reduce processing time. To do so, set the simulation status,
+# which is defined in the :class:`SimulationStatus` class, to :obj:`SimulationStatus.SKIP`.
+# The following code obtains a :class:`~pandas.DataFrame` object, applies a filter to
+# get a list of simulation IDs, and then updates the status on the simulations
+# with those IDs.
 
 df = study.data_frame()
 # Get IDs for single bead simulations with laser power below 75 W.
@@ -131,8 +133,8 @@ display.show_table(study)
 ###############################################################################
 # Run single bead simulations
 # ---------------------------
-# Run the simulations using the :meth:`~ParametricStudy.run_simulations` method. All simulations
-# with a :obj:`SimulationStatus.PENDING` status are executed.
+# Run the simulations using the :meth:`~ParametricStudy.run_simulations` method.
+# All simulations with a :obj:`SimulationStatus.PENDING` status are executed.
 
 study.run_simulations(additive)
 
@@ -140,6 +142,6 @@ study.run_simulations(additive)
 # Plot single bead results
 # ------------------------
 # Plot the single bead results using the
-# :func:`~ansys.additive.widgets.display.single_bead_eval_plot` method.
+# :func:`~ansys.additive.widgets.display.single_bead_eval_plot` function.
 
 display.single_bead_eval_plot(study)

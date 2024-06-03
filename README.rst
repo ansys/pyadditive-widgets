@@ -43,43 +43,59 @@ PyAdditive-Widgets
 Overview
 ========
 
-PyAdditive-Widgets is a widget toolkit for `PyAdditive`_ Simulations.
+PyAdditive-Widgets is a widget toolkit for `PyAdditive`_ simulations. It provides
+methods for visualizing the results of parametric additive simulations. Some examples
+include viewing the study as a table, viewing the single bead simulation results as
+a heat map, and viewing the porosity relative density results as a contour plot.
 
-Installation
-============
+Documentation and issues
+========================
 
-For instructions on setting up your development environment, see `Getting Started`_.
+Documentation for the latest stable release of PyAdditive-Widgets is hosted
+at `PyAdditive-Widgets documentation`_.
 
-Documentation
-=============
+The documentation has these sections:
 
-Documentation for the latest stable release of PyAdditive-Widgets is hosted at `PyAdditive-Widgets documentation`_.
+- `Getting started`_: Learn how to install PyAdditive-Widgets in user mode and quickly begin using it.
+- `API reference`_: Understand how to use Python to interact programmatically with PyAdditive-Widgets.
+- `Examples`_: Explore examples that show how to use PyAdditive-Widgets to perform many different types
+  of operations.
+- `Contribute <https://widgets.additive.docs.pyansys.com/version/stable/contributing.html>`_: Learn how to
+  contribute to the PyAdditive-Widgets codebase or documentation.
 
-In the upper right corner of the documentation's title bar, there is an option for switching from
-viewing the documentation for the latest stable release to viewing the documentation for the
-development version or previously released versions.
+In the upper right corner of the documentation's title bar, there is an option
+for switching from viewing the documentation for the latest stable release
+to viewing the documentation for the development version or previously
+released versions.
 
-On the `PyAdditive-Widgets Issues <https://github.com/ansys/pyadditive-widgets/issues>`_ page,
-you can create issues to report bugs and request new features. On the `PyAdditive-Widgets Discussions
-<https://github.com/ansys/pyadditive-widgets/discussions>`_ page or the `Discussions <https://discuss.ansys.com/>`_
-page on the Ansys Developer portal, you can post questions, share ideas, and get community feedback.
+On the `PyAdditive-Widgets Issues <https://github.com/ansys-internal/pyadditive-widgets/issues>`_
+page, you can create issues to report bugs and request new features. On the
+`Discussions <https://discuss.ansys.com/>`_ page on the Ansys Developer portal,
+you can post questions, share ideas, and get community feedback.
 
-To reach the project support team, email `pyansys.core@ansys.com <mailto:pyansys.core@ansys.com>`_.
+If you have general questions about the PyAnsys ecosystem, email
+`pyansys.core@ansys.com <pyansys.core@ansys.com>`_. If your
+question is specific to PyAdditive-Widgets, ask your
+question in an issue as described in the previous paragraph.
+
+License
+-------
+
+PyAdditive-Widgets is licensed under the `MIT License <https://github.com/ansys-internal/pyadditive-widget/blob/main/LICENSE>`_.
+
+PyAdditive-Widgets makes no commercial claim over Ansys whatsoever. This library adds a
+toolkit interface for visualizing the results of `PyAdditive`_ simulations.
+
+Using PyAdditive-Widgets requires the prerequisites and package dependencies indicated
+in the `Getting started <https://widgets.additive.docs.pyansys.com/version/stable/getting_started/index.html>`_
+section of the PyAdditive-Widgets documentation.
 
 .. LINKS AND REFERENCES
-.. _black: https://github.com/psf/black
-.. _flake8: https://flake8.pycqa.org/en/latest/
-.. _isort: https://github.com/PyCQA/isort
-.. _pip: https://pypi.org/project/pip/
-.. _pre-commit: https://pre-commit.com/
-.. _PyAnsys Developer's guide: https://dev.docs.pyansys.com/
-.. _pytest: https://docs.pytest.org/en/stable/
-.. _Sphinx: https://www.sphinx-doc.org/en/master/
-.. _tox: https://tox.wiki/
 .. _Ansys Additive: https://www.ansys.com/products/additive
 .. _PyAdditive: https://additive.docs.pyansys.com/version/stable/index.html
 .. _PyAdditive documentation: https://additive.docs.pyansys.com/version/stable/index.html
 .. _PyAdditive Getting Started: https://additive.docs.pyansys.com/version/stable/getting_started/index.html
 .. _PyAdditive-Widgets documentation: https://widgets.additive.docs.pyansys.com/version/stable/index.html
-.. _Getting Started: https://widgets.additive.docs.pyansys.com/version/stable/getting_started/index.html
+.. _Getting started: https://widgets.additive.docs.pyansys.com/version/stable/getting_started/index.html
+.. _API reference: https://widgets.additive.docs.pyansys.com/version/stable/api/index.html
 .. _Examples: https://widgets.additive.docs.pyansys.com/version/stable/examples/gallery_examples/index.html

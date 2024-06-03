@@ -20,7 +20,7 @@
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 # SOFTWARE.
 
-"""Python library to add user interface widgets to PyAdditive simulations."""
+"""Python library that adds user interface widgets to PyAdditive simulations."""
 
 try:
     import importlib.metadata as importlib_metadata

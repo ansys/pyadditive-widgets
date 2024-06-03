@@ -23,12 +23,11 @@
 Parametric study
 ================
 
-This example shows how you can use PyAdditive to perform a parametric study.
+This example shows how to use PyAdditive to perform a parametric study.
 You perform a parametric study if you want to optimize additive machine parameters
-to achieve a specific result. Here, the :class:`ParametricStudy` class is used to
-conduct a parametric study. The PyAdditive-Widgets can be used to visualize the
-results of the study. The :obj:`display <ansys.additive.widgets.display>` package
-is used to visualize the results of the study.
+to achieve a specific result. This examples first uses the :class:`ParametricStudy`
+class to perform the parametric study. It then uses the :obj:`display <ansys.additive.widgets.display>`
+package in PyAdditive-Widgets to visualize the results of the study.
 
 Units are SI (m, kg, s, K) unless otherwise noted.
 """
@@ -36,7 +35,8 @@ Units are SI (m, kg, s, K) unless otherwise noted.
 ###############################################################################
 # Perform required imports and create a study
 # -------------------------------------------
-# Perform the required import and create a :class:`ParametricStudy` instance.
+# Perform the required imports and create a :class:`ParametricStudy` instance.
+
 from ansys.additive.core import Additive, SimulationStatus, SimulationType
 from ansys.additive.core.parametric_study import ColumnNames, ParametricStudy
 import ansys.additive.core.parametric_study.display as display
@@ -47,7 +47,7 @@ study = ParametricStudy("demo-study")
 # Get the study file name
 # -----------------------
 # The current state of the parametric study is saved to a file upon each
-# update. You can retrieve the name of the file as shown below. This file
+# update. This code retrieves the name of the file. This file
 # uses a binary format and is not human readable.
 
 print(study.file_name)
@@ -67,12 +67,12 @@ material = "IN718"
 # Create a single bead evaluation
 # -------------------------------
 # Parametric studies often start with single bead simulations to determine melt
-# pool statistics. Here, the :meth:`~ParametricStudy.generate_single_bead_permutations`
-# method is used to generate single bead simulation permutations. The parameters
-# for the :meth:`~ParametricStudy.generate_single_bead_permutations` method allow you to
-# specify a range of machine parameters and filter them by energy density. Not all
-# of the parameters listed are required. Optional parameters that are not specified
-# use default values defined in the :class:`MachineConstants` class.
+# pool statistics. The following code uses the :meth:`~ParametricStudy.generate_single_bead_permutations`
+# method to generate single bead simulation permutations. This method's parameters
+# allow you to specify a range of machine parameters and filter them by energy density.
+# Not all of the parameters listed are required. Optional parameters that are not specified
+# use the default values defined in the :class:`MachineConstants` class.
+
 import numpy as np
 
 # Specify a range of laser powers. Valid values are 50 to 700 W.
@@ -116,10 +116,10 @@ display.show_table(study)
 # Skip some simulations
 # ---------------------
 # If you are working with a large parametric study, you may want to skip some
-# simulations to reduce processing time. To do so, set the simulation status
-# to :obj:`SimulationStatus.SKIP`, which is defined in the :class:`SimulationStatus`
-# class. Here, a :class:`~pandas.DataFrame` object is obtained, a filter is
-# applied to get a list of simulation IDs, and then the status is updated on the
+# simulations to reduce processing time. To do so, set the simulation status,
+# which is defined in the :class:`SimulationStatus` class, to :obj:`SimulationStatus.SKIP`.
+# The following code obtains a :class:`~pandas.DataFrame` object, applies a filter
+# to get a list of simulation IDs, and then updates the status on the
 # simulations with those IDs.
 
 df = study.data_frame()
@@ -151,7 +151,7 @@ study.data_frame().to_csv("demo-study.csv")
 # Plot single bead results
 # ------------------------
 # Plot the single bead results using the
-# :func:`~ansys.additive.widgets.display.single_bead_eval_plot` method.
+# :func:`~ansys.additive.widgets.display.single_bead_eval_plot` function.
 
 display.single_bead_eval_plot(study)
 
@@ -161,12 +161,12 @@ display.single_bead_eval_plot(study)
 # You can use the insights gained from the single bead evaluation to
 # generate parameters for a porosity evaluation. Alternatively, you can
 # perform a porosity evaluation without a previous single bead evaluation.
-# Here, the laser power and scan speeds are determined by filtering the
-# single bead results where the ratio of the melt pool reference depth
-# to reference width is within a specified range. Additionally, the simulations
-# are restricted to a minimum build rate, which is calculated as
-# scan speed * layer thickness * hatch spacing. The
-# :meth:`~ParametricStudy.generate_porosity_permutations` method is used to add
+# The following code determines the laser power and scan speeds by filtering the
+# single bead results, where the ratio of the melt pool reference depth
+# to reference width is within a specified range. Additionally, it restricts the
+# simulations to a minimum build rate, which is calculated as
+# scan speed * layer thickness * hatch spacing. Finally, it uses the
+# :meth:`~ParametricStudy.generate_porosity_permutations` method to add
 # porosity simulations to the study.
 
 df = study.data_frame()
@@ -210,11 +210,11 @@ display.porosity_contour_plot(study)
 ###############################################################################
 # Create a microstructure evaluation
 # ----------------------------------
-# Here a set of microstructure simulations is generated using many of the same
-# parameters used for the porosity simulations. The parameters ``cooling_rate``,
-# ``thermal_gradient``, ``melt_pool_width``, and ``melt_pool_depth`` are not
-# specified so they are calculated. The
-# :meth:`~ParametricStudy.generate_microstructure_permutations` method is used to add
+# The following code generates a set of microstructure simulations using many of the same
+# parameters used for the porosity simulations. Because the ``cooling_rate``,
+# ``thermal_gradient``, ``melt_pool_width``, and ``melt_pool_depth`` parameters are not
+# specified, they are calculated. The code then uses the
+# :meth:`~ParametricStudy.generate_microstructure_permutations` method to add
 # microstructure simulations to the study.
 
 df = study.data_frame()
@@ -249,6 +249,6 @@ study.run_simulations(additive)
 # ---------------------------
 # Plot and compare the average grain sizes from the microstructure simulations
 # using the :func:`~ansys.additive.widgets.display.ave_grain_size_plot`
-# method.
+# function.
 
 display.ave_grain_size_plot(study)

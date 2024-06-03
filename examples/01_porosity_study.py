@@ -23,9 +23,9 @@
 Porosity evaluation plot
 ========================
 
-This example shows how you can use PyAdditive-Widgets to visualize the results
+This example shows how to use PyAdditive-Widgets to visualize the results
 of a parametric study containing porosity simulations.
-The :obj:`display <ansys.additive.widgets.display>` package is used to
+It uses the :obj:`display <ansys.additive.widgets.display>` package to
 visualize the results of the study.
 
 Units are SI (m, kg, s, K) unless otherwise noted.
@@ -33,7 +33,7 @@ Units are SI (m, kg, s, K) unless otherwise noted.
 ###############################################################################
 # Perform required imports and create a study
 # -------------------------------------------
-# Perform the required import and create a :class:`ParametricStudy` instance.
+# Perform the required imports and create a :class:`ParametricStudy` instance.
 from ansys.additive.core import Additive
 from ansys.additive.core.parametric_study import ParametricStudy
 
@@ -44,8 +44,8 @@ study = ParametricStudy("porosity-study")
 ###############################################################################
 # Get the study file name
 # -----------------------
-# The current state of the parametric study is saved to a file upon each
-# update. You can retrieve the name of the file as shown below. This file
+# The current state of the parametric study is saved to a file on each
+# update. This code retrieves the name of the file. This file
 # uses a binary format and is not human readable.
 
 print(study.file_name)
@@ -64,12 +64,12 @@ material = "IN718"
 ###############################################################################
 # Create a porosity evaluation
 # ----------------------------
-# You can generate a set of porosity simulations using the
-# :meth:`~ParametricStudy.generate_porosity_permutations` method. The parameters
-# for the :meth:`~ParametricStudy.generate_porosity_permutations` method allow you to
-# specify the material and machine parameters for the simulations. Not all
-# parameters are required. Optional parameters that are not specified use default
-# values defined in the :class:`MachineConstants` class.
+# Generate a set of porosity simulations using the
+# :meth:`~ParametricStudy.generate_porosity_permutations` method.
+# This method's parameters allow you to specify the material
+# and machine parameters for the simulations. Not all parameters
+# are required. Optional parameters that are not specified
+# use the default values defined in the :class:`MachineConstants` class.
 
 # Specify a range of laser powers. Valid values are 50 to 700 W.
 laser_powers = [50, 150, 250, 350]
@@ -107,7 +107,7 @@ study.generate_porosity_permutations(
 ###############################################################################
 # Show the simulations as a table
 # -------------------------------
-# You can use the :obj:`display <ansys.additive.widgets.display>`
+# Use the :obj:`display <ansys.additive.widgets.display>`
 # package to list the simulations as a table.
 
 display.show_table(study)
@@ -123,14 +123,14 @@ study.run_simulations(additive)
 # Plot porosity results
 # ---------------------
 # Visualize porosity simulation results for relative density and build rate
-# as a contour plot using the
-# :func:`~ansys.additive.widgets.display.porosity_contour_plot` method.
+# as a contour plot using the :func:`~ansys.additive.widgets.display.porosity_contour_plot`
+# function.
 
 display.porosity_contour_plot(study)
 
 ###############################################################################
 # Visualize a heat map plot of porosity results to determine parametric regions
 # with desirable relative density statistics using the
-# :func:`~ansys.additive.widgets.display.porosity_eval_plot` method.
+# :func:`~ansys.additive.widgets.display.porosity_eval_plot` function.
 
 display.porosity_eval_plot(study)

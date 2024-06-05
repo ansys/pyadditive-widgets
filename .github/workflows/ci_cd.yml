@@ -8,9 +8,9 @@ on:
       - main
 
 env:
-  MAIN_PYTHON_VERSION: '3.9'
-  DOCUMENTATION_CNAME: 'widgets.additive.docs.pyansys.com'
-  LIBRARY_NAME: 'ansys-additive-widgets'
+  MAIN_PYTHON_VERSION: "3.9"
+  DOCUMENTATION_CNAME: "widgets.additive.docs.pyansys.com"
+  LIBRARY_NAME: "ansys-additive-widgets"
   ANSYS_PRODUCT_IMAGE: "ghcr.io/ansys-internal/additive:latest"
   ANSYS_PRODUCT_CONTAINER: "ansys-additive-container"
   MEILISEARCH_API_KEY: ${{ secrets.MEILISEARCH_API_KEY }}
@@ -21,7 +21,6 @@ concurrency:
   cancel-in-progress: true
 
 jobs:
-
   update-changelog:
     name: "Update CHANGELOG (on release)"
     if: github.event_name == 'push' && contains(github.ref, 'refs/tags')
@@ -73,8 +72,8 @@ jobs:
     needs: [smoke-tests]
     strategy:
       matrix:
-       os: [ubuntu-latest, windows-latest]
-       python-version: ["3.9", "3.10", "3.11", "3.12"]
+        os: [ubuntu-latest, windows-latest]
+        python-version: ["3.9", "3.10", "3.11", "3.12"]
       fail-fast: false
     steps:
       - name: PyAnsys tests check
@@ -156,23 +155,12 @@ jobs:
       - name: "Checkout code"
         uses: actions/checkout@v4
 
-      - name: "Build documentation with short examples"
+      - name: "Build documentation"
         uses: ansys/actions/doc-build@v6
         with:
           checkout: false
           sphinxopts: "-j auto"
           dependencies: "pandoc"
-        env:
-          GENERATING_DOCS: 1
-          ANSYS_ADDITIVE_ADDRESS: "localhost:50052"
-          BUILD_EXAMPLES_LONG: false
-
-      - name: "Build documentation with long examples"
-        if: github.event_name == 'push'
-        uses: ansys/actions/doc-build@v6
-        with:
-          checkout: false
-          sphinxopts: "-j auto"
         env:
           GENERATING_DOCS: 1
           ANSYS_ADDITIVE_ADDRESS: "localhost:50052"

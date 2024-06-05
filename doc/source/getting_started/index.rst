@@ -106,7 +106,7 @@ Use alternative startup methods
 The ``Additive`` class in the PyAdditive API provides additional session
 startup methods that you can use. For more information, see
 `Additive <https://additive.docs.pyansys.com/version/stable/api/ansys/additive/core/additive/Additive.html>`_
-in the PyAdditive documentation.
+in the PyAdditive API reference documentation.
 
 
 Run simulations

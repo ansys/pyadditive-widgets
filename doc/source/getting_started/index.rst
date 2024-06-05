@@ -54,7 +54,7 @@ Install the package
 
        python -m pip install ansys-additive-widgets
 
-For information on starting a session and running simulations, see :ref:`ref_user_guide`.
+For information on starting a session with the PyAdditive client and running simulations, see :ref:`ref_user_guide`.
 
 .. LINKS AND REFERENCES
 .. _Ansys Additive: https://www.ansys.com/products/additive

@@ -12,7 +12,7 @@ with this guide before attempting to contribute to PyAdditive.
 The following contribution information is specific to PyAdditive-Widgets.
 
 Install in developer mode
--------------------------
+=========================
 
 Installing PyAdditive-Widgets in developer mode allows you to modify and enhance
 the source.
@@ -73,8 +73,8 @@ This project takes advantage of `tox`_. Similar to Makefile, this tool
 allows you to automate common development tasks, but it is oriented towards
 Python development.
 
-Using ``tox``
--------------
+Use ``tox``
+-----------
 
 While Makefile has rules, ``tox`` has environments. In fact, the tool creates its
 own virtual environment so that anything being tested is isolated from the project
@@ -87,8 +87,8 @@ The following environments commands are provided:
 - **tox -e py-coverage**: Checks for unit testing and code coverage.
 - **tox -e doc**: Checks for the documentation-building process.
 
-Raw testing
------------
+Perform raw testing
+-------------------
 
 If required, you can always call code style commands, such as `Black`_, `isort`_,
 and `Flake8`_, or unit testing tools, such as `pytest`_, from the command line. However,
@@ -96,8 +96,8 @@ using these tools do not guarantee that your project is being tested in an isola
 environment, which is the reason why a tool like ``tox`` exists.
 
 
-Style checks
-============
+Run style checks
+----------------
 
 The style checks take advantage of `pre-commit`_. Developers are not forced but
 encouraged to install this tool by running this command:
@@ -172,7 +172,7 @@ commands to install the building requirements and execute the build module:
     python -m twine check dist/*
 
 Post issues
------------
+===========
 
 Use the `PyAdditive-Widgets Issues <https://github.com/ansys/pyadditive-widgets/issues>`_
 page to report bugs and request new features. When possible, use the issue templates provided.

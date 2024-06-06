@@ -31,7 +31,7 @@ no longer supported as outlined on the `History <https://python3statement.github
 describing the transition from Python 2 to Python 3.
 
 Dependencies for PyAdditive-Widgets are automatically checked when packages are installed. Included
-in these dependencies are these projects:
+in the dependencies are these projects:
 
 * `ansys-additive-core <https://pypi.org/project/ansys-additive-core/>`_: PyAdditive is a Python
   client library for the `Ansys Additive`_ service.

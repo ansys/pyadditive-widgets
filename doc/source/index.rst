@@ -15,8 +15,14 @@ a heat map, and viewing the porosity relative density results as a contour plot.
         :link: getting_started/index
         :link-type: doc
 
-        Learn how to install PyAdditive-Widgets in user mode and quickly
-        begin using it.
+        Learn how to install PyAdditive-Widgets in user mode.
+
+    .. grid-item-card:: User guide :material-regular:`menu_book`
+        :padding: 2 2 2 2
+        :link: user_guide/index
+        :link-type: doc
+
+        Learn how to start a session with the PyAdditive client and run simulations.
 
     .. jinja:: main_toctree
 
@@ -37,7 +43,7 @@ a heat map, and viewing the porosity relative density results as a contour plot.
             :link-type: doc
 
             Explore examples that show how to use PyAdditive-Widgets to
-            perform many different types of operations.
+            visualize the results of parametric additive simulations.
         {% endif %}
 
         .. grid-item-card:: Contribute :material-regular:`group`
@@ -55,6 +61,7 @@ a heat map, and viewing the porosity relative density results as a contour plot.
        :maxdepth: 3
 
        getting_started/index
+       user_guide/index
        {% if build_api %}
        api/index
        {% endif %}

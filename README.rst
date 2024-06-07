@@ -59,8 +59,8 @@ The documentation has these sections:
 - `Getting started`_: Learn how to install PyAdditive-Widgets in user mode.
 - `User guide`_: Learn how to start a session with the PyAdditive client and run simulations.
 - `API reference`_: Understand how to use Python to interact programmatically with PyAdditive-Widgets.
-- `Examples`_: Explore examples that show how to use PyAdditive-Widgets to perform many different types
-  of operations.
+- `Examples`_: Explore examples that show how to use PyAdditive-Widgets to visualize the results of
+  parametric additive simulations.
 - `Contribute <https://widgets.additive.docs.pyansys.com/version/stable/contributing.html>`_: Learn how to
   contribute to the PyAdditive-Widgets codebase or documentation.
 

@@ -43,7 +43,7 @@ a heat map, and viewing the porosity relative density results as a contour plot.
             :link-type: doc
 
             Explore examples that show how to use PyAdditive-Widgets to
-            perform many different types of operations.
+            visualize the results of parametric additive simulations.
         {% endif %}
 
         .. grid-item-card:: Contribute :material-regular:`group`
@@ -61,6 +61,7 @@ a heat map, and viewing the porosity relative density results as a contour plot.
        :maxdepth: 3
 
        getting_started/index
+       user_guide/index
        {% if build_api %}
        api/index
        {% endif %}

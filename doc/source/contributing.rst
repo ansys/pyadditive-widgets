@@ -66,8 +66,8 @@ Perform these steps to install PyAdditive-Widgets in developer mode:
 
       tox
 
-Testing
-=======
+Test
+====
 
 This project takes advantage of `tox`_. Similar to Makefile, this tool
 allows you to automate common development tasks, but it is oriented towards
@@ -142,8 +142,8 @@ This way, it's not possible for you to push code that fails the code style check
   Add License Headers......................................................Passed
   Validate GitHub Workflows................................................Passed
 
-Documentation builds
-====================
+Build documentation
+===================
 
 To build documentation, you can run the usual rules provided in the
 `Sphinx`_ Makefile with a command like this:
@@ -159,8 +159,8 @@ command like this:
 
     tox -e doc && open .tox/doc_out/index.html
 
-Distribution
-============
+Distribute
+==========
 
 If you would like to create either source or wheel files, run the following
 commands to install the building requirements and execute the build module:

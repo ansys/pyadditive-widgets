@@ -1,6 +1,7 @@
 name: CI
 on:
   pull_request:
+  merge_group:
   push:
     tags:
       - "*"
@@ -8,10 +9,10 @@ on:
       - main
 
 env:
-  MAIN_PYTHON_VERSION: '3.9'
-  DOCUMENTATION_CNAME: 'widgets.additive.docs.pyansys.com'
-  LIBRARY_NAME: 'ansys-additive-widgets'
-  ANSYS_PRODUCT_IMAGE: "ghcr.io/ansys-internal/additive:latest"
+  MAIN_PYTHON_VERSION: "3.9"
+  DOCUMENTATION_CNAME: "widgets.additive.docs.pyansys.com"
+  LIBRARY_NAME: "ansys-additive-widgets"
+  ANSYS_PRODUCT_IMAGE: "ghcr.io/ansys-internal/additive:25.1.0-alpha3"
   ANSYS_PRODUCT_CONTAINER: "ansys-additive-container"
   MEILISEARCH_API_KEY: ${{ secrets.MEILISEARCH_API_KEY }}
   MEILISEARCH_HOST_URL: ${{ vars.MEILISEARCH_HOST_URL }}
@@ -21,7 +22,6 @@ concurrency:
   cancel-in-progress: true
 
 jobs:
-
   update-changelog:
     name: "Update CHANGELOG (on release)"
     if: github.event_name == 'push' && contains(github.ref, 'refs/tags')
@@ -73,14 +73,15 @@ jobs:
     needs: [smoke-tests]
     strategy:
       matrix:
-       os: [ubuntu-latest, windows-latest]
-       python-version: ["3.9", "3.10", "3.11", "3.12"]
+        os: [ubuntu-latest, windows-latest]
+        python-version: ["3.9", "3.10", "3.11", "3.12"]
       fail-fast: false
     steps:
       - name: PyAnsys tests check
         uses: ansys/actions/tests-pytest@v6
         with:
           pytest-extra-args: "--cov=ansys --cov-report=term --cov-report=html:.cov/html --cov-report=xml:.cov/xml"
+          python-version: ${{ matrix.python-version }}
 
       - name: Upload coverage results
         uses: actions/upload-artifact@v4
@@ -156,23 +157,12 @@ jobs:
       - name: "Checkout code"
         uses: actions/checkout@v4
 
-      - name: "Build documentation with short examples"
+      - name: "Build documentation"
         uses: ansys/actions/doc-build@v6
         with:
           checkout: false
           sphinxopts: "-j auto"
           dependencies: "pandoc"
-        env:
-          GENERATING_DOCS: 1
-          ANSYS_ADDITIVE_ADDRESS: "localhost:50052"
-          BUILD_EXAMPLES_LONG: false
-
-      - name: "Build documentation with long examples"
-        if: github.event_name == 'push'
-        uses: ansys/actions/doc-build@v6
-        with:
-          checkout: false
-          sphinxopts: "-j auto"
         env:
           GENERATING_DOCS: 1
           ANSYS_ADDITIVE_ADDRESS: "localhost:50052"

@@ -31,8 +31,8 @@ visualize the results of the study.
 Units are SI (m, kg, s, K) unless otherwise noted.
 """
 ###############################################################################
-# Perform required imports and create a study
-# -------------------------------------------
+# Perform required imports and create study
+# -----------------------------------------
 # Perform the required imports and create a :class:`ParametricStudy` instance.
 
 from ansys.additive.core import Additive, SimulationStatus, SimulationType
@@ -43,8 +43,8 @@ from ansys.additive.widgets import display
 study = ParametricStudy("single-bead-study")
 
 ###############################################################################
-# Get the study file name
-# -----------------------
+# Get name of study file
+# ----------------------
 # The current state of the parametric study is saved to a file on each
 # update. The following code retrieves the name of the file. This file
 # uses a binary format and is not human readable.
@@ -52,8 +52,8 @@ study = ParametricStudy("single-bead-study")
 print(study.file_name)
 
 ###############################################################################
-# Select a material for the study
-# -------------------------------
+# Select material for study
+# -------------------------
 # Select a material to use in the study. The material name must be known by
 # the Additive service. You can connect to the Additive service
 # and print a list of available materials prior to selecting one.
@@ -63,8 +63,8 @@ additive.materials_list()
 material = "IN718"
 
 ###############################################################################
-# Create a single bead evaluation
-# -------------------------------
+# Create single bead evaluation
+# -----------------------------
 # Generate single bead simulation permutations using the
 # :meth:`~ParametricStudy.generate_single_bead_permutations` method. This method's
 # parameters allow you to specify a range of machine parameters and filter them by
@@ -104,8 +104,8 @@ study.generate_single_bead_permutations(
 )
 
 ###############################################################################
-# Show the simulations as a table
-# -------------------------------
+# Show simulations as a table
+# ---------------------------
 # Use the :obj:`display <ansys.additive.widgets.display>`
 # package to list the simulations as a table.
 

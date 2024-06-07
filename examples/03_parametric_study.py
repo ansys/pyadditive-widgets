@@ -33,8 +33,8 @@ Units are SI (m, kg, s, K) unless otherwise noted.
 """
 
 ###############################################################################
-# Perform required imports and create a study
-# -------------------------------------------
+# Perform required imports and create study
+# -----------------------------------------
 # Perform the required imports and create a :class:`ParametricStudy` instance.
 
 from ansys.additive.core import Additive, SimulationStatus, SimulationType
@@ -44,8 +44,8 @@ import ansys.additive.core.parametric_study.display as display
 study = ParametricStudy("demo-study")
 
 ###############################################################################
-# Get the study file name
-# -----------------------
+# Get name of study file
+# ----------------------
 # The current state of the parametric study is saved to a file upon each
 # update. This code retrieves the name of the file. This file
 # uses a binary format and is not human readable.
@@ -53,8 +53,8 @@ study = ParametricStudy("demo-study")
 print(study.file_name)
 
 ###############################################################################
-# Select a material for the study
-# -------------------------------
+# Select material for study
+# -------------------------
 # Select a material to use in the study. The material name must be known by
 # the Additive service. You can connect to the Additive service
 # and print a list of available materials prior to selecting one.
@@ -64,8 +64,8 @@ print("Available material names: {}".format(additive.materials_list()))
 material = "IN718"
 
 ###############################################################################
-# Create a single bead evaluation
-# -------------------------------
+# Create single bead evaluation
+# -----------------------------
 # Parametric studies often start with single bead simulations to determine melt
 # pool statistics. The following code uses the :meth:`~ParametricStudy.generate_single_bead_permutations`
 # method to generate single bead simulation permutations. This method's parameters
@@ -105,8 +105,8 @@ study.generate_single_bead_permutations(
 )
 
 ###############################################################################
-# Show the simulations as a table
-# -------------------------------
+# Show simulations as a table
+# ---------------------------
 # You can use the :obj:`display <ansys.additive.core.parametric_study.display>`
 # package to list the simulations as a table.
 
@@ -140,8 +140,8 @@ display.show_table(study)
 study.run_simulations(additive)
 
 ###############################################################################
-# Save the study to a CSV file
-# ----------------------------
+# Save study to CSV file
+# ----------------------
 # The parametric study is saved with each update in a binary format.
 # For other formats, use the ``to_*`` methods provided by the :class:`~pandas.DataFrame` class.
 
@@ -156,8 +156,8 @@ study.data_frame().to_csv("demo-study.csv")
 display.single_bead_eval_plot(study)
 
 ###############################################################################
-# Create a porosity evaluation
-# ----------------------------
+# Create porosity evaluation
+# --------------------------
 # You can use the insights gained from the single bead evaluation to
 # generate parameters for a porosity evaluation. Alternatively, you can
 # perform a porosity evaluation without a previous single bead evaluation.
@@ -208,8 +208,8 @@ study.run_simulations(additive)
 display.porosity_contour_plot(study)
 
 ###############################################################################
-# Create a microstructure evaluation
-# ----------------------------------
+# Create microstructure evaluation
+# --------------------------------
 # The following code generates a set of microstructure simulations using many of the same
 # parameters used for the porosity simulations. Because the ``cooling_rate``,
 # ``thermal_gradient``, ``melt_pool_width``, and ``melt_pool_depth`` parameters are not

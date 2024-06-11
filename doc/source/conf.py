@@ -230,3 +230,10 @@ linkcheck_ignore = [
     "https://www.ansys.com/products/additive",
     "https://www.ansys.com/contact-us",
 ]
+
+# If we are on a release, we have to ignore the "release" URLs, since it is not
+# available until the release is published.
+if switcher_version != "dev":
+    linkcheck_ignore.append(
+        f"https://github.com/ansys/pyadditive-widgets/releases/tag/v{__version__}"
+    )

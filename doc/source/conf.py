@@ -78,6 +78,12 @@ html_theme_options = {
     "ansys_sphinx_theme_autoapi": {
         "project": project,
     },
+    "use_meilisearch": {
+        "api_key": os.getenv("MEILISEARCH_PUBLIC_API_KEY", ""),
+        "index_uids": {
+            f"ansys-additive-widgets-v{get_version_match(__version__).replace('.', '-')}": "PyAdditive-Widgets",  # noqa: E501
+        },
+    },
 }
 
 html_context = {

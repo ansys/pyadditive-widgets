@@ -12,10 +12,6 @@ PyAdditive-Widgets
    :target: https://docs.pyansys.com/
    :alt: PyAnsys
 
-.. |pyadditive| image:: https://img.shields.io/pypi/pyversions/ansys-additive-widgets?logo=pypi
-   :target: https://pypi.org/project/ansys-additive-widgets/
-   :alt: Python
-
 .. |python| image:: https://img.shields.io/pypi/pyversions/ansys-additive-widgets?logo=pypi
    :target: https://pypi.org/project/ansys-additive-widgets/
    :alt: Python

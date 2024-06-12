@@ -1,17 +1,6 @@
 # CHANGELOG
 
-## PyAdditive-Widgets 0.1.0
+This project uses [towncrier](https://towncrier.readthedocs.io/) to generate the changelog.
 
-### Breaking Changes
-
-### New Features
-* Added a script to show how to visualize a parametric study
-
-### Bug Fixes
-
-### Doc Improvements
-* Include correct hyperlink for pyadditive documentation
-
-### Contributors
-* Peter Krull - <peter.krull@ansys.com>
-* Safee Rehman - <safee.rehman@ansys.com>
+Refer to the [raw release notes](doc/source/changelog.rst) for more information.
+[Published release notes](https://widgets.additive.docs.pyansys.com/version/stable/changelog.html) can be found in the online documentation.

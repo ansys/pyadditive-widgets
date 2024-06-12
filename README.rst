@@ -69,7 +69,7 @@ for switching from viewing the documentation for the latest stable release
 to viewing the documentation for the development version or previously
 released versions.
 
-On the `PyAdditive-Widgets Issues <https://github.com/ansys-internal/pyadditive-widgets/issues>`_
+On the `PyAdditive-Widgets Issues <https://github.com/ansys/pyadditive-widgets/issues>`_
 page, you can create issues to report bugs and request new features. On the
 `Discussions <https://discuss.ansys.com/>`_ page on the Ansys Developer portal,
 you can post questions, share ideas, and get community feedback.
@@ -82,7 +82,7 @@ question in an issue as described in the previous paragraph.
 License
 -------
 
-PyAdditive-Widgets is licensed under the `MIT License <https://github.com/ansys-internal/pyadditive-widget/blob/main/LICENSE>`_.
+PyAdditive-Widgets is licensed under the `MIT License <https://github.com/ansys/pyadditive-widget/blob/main/LICENSE>`_.
 
 PyAdditive-Widgets makes no commercial claim over Ansys whatsoever. This library adds a
 toolkit interface for visualizing the results of `PyAdditive`_ simulations.

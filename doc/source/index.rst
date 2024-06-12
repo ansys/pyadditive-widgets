@@ -69,6 +69,7 @@ a heat map, and viewing the porosity relative density results as a contour plot.
        examples/gallery_examples/index
        {% endif %}
        contributing
+       changelog
 
 .. LINKS AND REFERENCES
 .. _PyAdditive: https://additive.docs.pyansys.com/version/stable/index.html

@@ -78,6 +78,12 @@ html_theme_options = {
     "ansys_sphinx_theme_autoapi": {
         "project": project,
     },
+    "use_meilisearch": {
+        "api_key": os.getenv("MEILISEARCH_PUBLIC_API_KEY", ""),
+        "index_uids": {
+            f"ansys-additive-widgets-v{get_version_match(__version__).replace('.', '-')}": "PyAdditive-Widgets",  # noqa: E501
+        },
+    },
 }
 
 html_context = {
@@ -230,3 +236,10 @@ linkcheck_ignore = [
     "https://www.ansys.com/products/additive",
     "https://www.ansys.com/contact-us",
 ]
+
+# If we are on a release, we have to ignore the "release" URLs, since it is not
+# available until the release is published.
+if switcher_version != "dev":
+    linkcheck_ignore.append(
+        f"https://github.com/ansys/pyadditive-widgets/releases/tag/v{__version__}"
+    )

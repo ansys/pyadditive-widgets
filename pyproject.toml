@@ -5,7 +5,7 @@ build-backend = "flit_core.buildapi"
 [project]
 # Check https://flit.readthedocs.io/en/latest/pyproject_toml.html for all available sections
 name = "ansys-additive-widgets"
-version = "0.1.dev2"
+version = "0.2.0"
 description = "Visualization toolkit for parametric additive simulations "
 readme = "README.rst"
 requires-python = ">=3.9,<4"

@@ -13,15 +13,15 @@ PyAdditive-Widgets
    :alt: PyAnsys
 
 .. |pyadditive| image:: https://img.shields.io/pypi/pyversions/ansys-additive-core?logo=pypi
-   :target: https://pypi.org/project/ansys-additive-core/
+   :target: https://pypi.org/project/ansys-additive-widgets/
    :alt: Python
 
-.. |python| image:: https://img.shields.io/pypi/pyversions/pyadditive-widgets?logo=pypi
-   :target: https://pypi.org/project/pyadditive-widgets/
+.. |python| image:: https://img.shields.io/pypi/pyversions/ansys-additive-widgets?logo=pypi
+   :target: https://pypi.org/project/ansys-additive-widgets/
    :alt: Python
 
-.. |pypi| image:: https://img.shields.io/pypi/v/pyadditive-widgets.svg?logo=python&logoColor=white
-   :target: https://pypi.org/project/pyadditive-widgets
+.. |pypi| image:: https://img.shields.io/pypi/v/ansys-additive-widgets.svg?logo=python&logoColor=white
+   :target: https://pypi.org/project/ansys-additive-widgets
    :alt: PyPI
 
 .. |codecov| image:: https://codecov.io/gh/ansys/pyadditive-widgets/branch/main/graph/badge.svg

@@ -31,16 +31,34 @@ visualize the results of the study.
 Units are SI (m, kg, s, K) unless otherwise noted.
 """
 ###############################################################################
-# Perform required imports and create study
-# -----------------------------------------
-# Perform the required imports and create a :class:`ParametricStudy` instance.
+# Perform required imports
+# ------------------------
+# Perform the required imports.
 
 from ansys.additive.core import Additive, SimulationStatus, SimulationType
 from ansys.additive.core.parametric_study import ColumnNames, ParametricStudy
+import numpy as np
 
 from ansys.additive.widgets import display
 
-study = ParametricStudy("single-bead-study")
+###############################################################################
+# Select material for study
+# -------------------------
+# Each parametric study uses a single material. The material name must be known
+# by the Additive service. You can connect to the Additive service
+# and print a list of available materials prior to selecting one.
+
+additive = Additive(host="localhost")
+additive.materials_list()
+material = "IN718"
+
+###############################################################################
+# Create parametric study
+# -----------------------
+# Create a parametric study object using the :class:`Parametric
+# Study <ansys.additive.core.parametric_study.ParametricStudy>` class.
+
+study = ParametricStudy("single-bead-study", material)
 
 ###############################################################################
 # Get name of study file
@@ -52,17 +70,6 @@ study = ParametricStudy("single-bead-study")
 print(study.file_name)
 
 ###############################################################################
-# Select material for study
-# -------------------------
-# Select a material to use in the study. The material name must be known by
-# the Additive service. You can connect to the Additive service
-# and print a list of available materials prior to selecting one.
-
-additive = Additive()
-additive.materials_list()
-material = "IN718"
-
-###############################################################################
 # Create single bead evaluation
 # -----------------------------
 # Generate single bead simulation permutations using the
@@ -71,8 +78,6 @@ material = "IN718"
 # energy density. Not all the parameters shown are required. Optional parameters
 # that are not specified use the default values defined in the
 # :class:`MachineConstants` class.
-
-import numpy as np
 
 # Specify a range of laser powers. Valid values are 50 to 700 W.
 initial_powers = np.linspace(50, 700, 7)
@@ -84,23 +89,22 @@ initial_layer_thicknesses = [40e-6, 50e-6]
 initial_beam_diameters = [80e-6]
 # Specify heater temperatures. Valid values are 20 - 500 C.
 initial_heater_temps = [80]
-# Restrict the permutations within a range of energy densities
-# For a single bead, the energy density is laser power / (laser scan speed * layer thickness).
-min_energy_density = 2e6
-max_energy_density = 8e6
+# Restrict the permutations within a range of laser power/velocity
+# (a.k.a. scan speed) ratios.
+min_pv_ratio = 50
+max_pv_ratio = 1500
 # Specify a bead length in meters.
 bead_length = 0.001
 
 study.generate_single_bead_permutations(
-    material_name=material,
     bead_length=bead_length,
     laser_powers=initial_powers,
     scan_speeds=initial_scan_speeds,
     layer_thicknesses=initial_layer_thicknesses,
     beam_diameters=initial_beam_diameters,
     heater_temperatures=initial_heater_temps,
-    min_area_energy_density=min_energy_density,
-    max_area_energy_density=max_energy_density,
+    min_pv_ratio=min_pv_ratio,
+    max_pv_ratio=max_pv_ratio,
 )
 
 ###############################################################################
@@ -127,16 +131,16 @@ ids = df.loc[
     (df[ColumnNames.LASER_POWER] < 75) & (df[ColumnNames.TYPE] == SimulationType.SINGLE_BEAD),
     ColumnNames.ID,
 ].tolist()
-study.set_status(ids, SimulationStatus.SKIP)
+study.set_simulation_status(ids, SimulationStatus.SKIP)
 display.show_table(study)
 
 ###############################################################################
-# Run single bead simulations
-# ---------------------------
-# Run the simulations using the :meth:`~ParametricStudy.run_simulations` method.
+# Run study
+# ---------
+# Run the simulations using the :meth:`~Additive.simulate_study` method.
 # All simulations with a :obj:`SimulationStatus.PENDING` status are executed.
 
-study.run_simulations(additive)
+additive.simulate_study(study)
 
 ###############################################################################
 # Plot single bead results

@@ -31,24 +31,14 @@ visualize the results of the study.
 Units are SI (m, kg, s, K) unless otherwise noted.
 """
 ###############################################################################
-# Perform required imports and create study
-# -----------------------------------------
-# Perform the required imports and create a :class:`ParametricStudy` instance.
+# Perform required imports
+# ------------------------
+# Perform the required imports.
+
 from ansys.additive.core import Additive
 from ansys.additive.core.parametric_study import ParametricStudy
 
 from ansys.additive.widgets import display
-
-study = ParametricStudy("microstructure-study")
-
-###############################################################################
-# Get name of study file
-# ----------------------
-# The current state of the parametric study is saved to a file on each
-# update. This code retrieves the name of the file. This file
-# uses a binary format and is not human readable.
-
-print(study.file_name)
 
 ###############################################################################
 # Select material for study
@@ -60,6 +50,23 @@ print(study.file_name)
 additive = Additive()
 additive.materials_list()
 material = "IN718"
+
+###############################################################################
+# Create parametric study
+# -----------------------
+# Create a parametric study object using the :class:`Parametric
+# Study <ansys.additive.core.parametric_study.ParametricStudy>` class.
+
+study = ParametricStudy("microstructure-study", material)
+
+###############################################################################
+# Get name of study file
+# ----------------------
+# The current state of the parametric study is saved to a file on each
+# update. This code retrieves the name of the file. This file
+# uses a binary format and is not human readable.
+
+print(study.file_name)
 
 ###############################################################################
 # Create microstructure evaluation
@@ -112,11 +119,12 @@ study.generate_microstructure_permutations(
 display.show_table(study)
 
 ###############################################################################
-# Run microstructure simulations
-# ------------------------------
-# Run the simulations using the :meth:`~ParametricStudy.run_simulations` method.
+# Run study
+# ---------
+# Run the simulations using the :meth:`~Additive.simulate_study` method.
+# All simulations with a :obj:`SimulationStatus.PENDING` status are executed.
 
-study.run_simulations(additive)
+additive.simulate_study(study)
 
 ###############################################################################
 # Plot microstructure results

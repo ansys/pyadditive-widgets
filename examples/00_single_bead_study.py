@@ -48,7 +48,7 @@ from ansys.additive.widgets import display
 # by the Additive service. You can connect to the Additive service
 # and print a list of available materials prior to selecting one.
 
-additive = Additive(host="localhost")
+additive = Additive()
 additive.materials_list()
 material = "IN718"
 

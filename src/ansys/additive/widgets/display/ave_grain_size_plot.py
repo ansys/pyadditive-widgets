@@ -1,4 +1,4 @@
-# Copyright (C) 2024 ANSYS, Inc. and/or its affiliates.
+# Copyright (C) 2024 - 2025 ANSYS, Inc. and/or its affiliates.
 # SPDX-License-Identifier: MIT
 #
 #
@@ -142,7 +142,7 @@ def __update_plot(
         x=x,
         y=y,
         mode="markers+text",
-        text=[f"{z:.2f}" for z in xy],
+        text=[f"{z:.2f}" for z in xy],  # noqa: E231
         textposition="top center",
         marker=dict(color="darkred", size=__normalized_markers(xy, min_ags, max_ags)),
         cliponaxis=False,
@@ -151,7 +151,7 @@ def __update_plot(
         x=x,
         y=y,
         mode="markers+text",
-        text=[f"{z:.2f}" for z in xz],
+        text=[f"{z:.2f}" for z in xz],  # noqa: E231
         textposition="top center",
         marker=dict(color="darkorchid", size=__normalized_markers(xz, min_ags, max_ags)),
         cliponaxis=False,
@@ -160,7 +160,7 @@ def __update_plot(
         x=x,
         y=y,
         mode="markers+text",
-        text=[f"{z:.2f}" for z in yz],
+        text=[f"{z:.2f}" for z in yz],  # noqa: E231
         textposition="top center",
         marker=dict(color="steelblue", size=__normalized_markers(yz, min_ags, max_ags)),
         cliponaxis=False,

@@ -1,4 +1,4 @@
-# Copyright (C) 2024 ANSYS, Inc. and/or its affiliates.
+# Copyright (C) 2024 - 2025 ANSYS, Inc. and/or its affiliates.
 # SPDX-License-Identifier: MIT
 #
 #
@@ -209,7 +209,7 @@ def __update_plot(
         x=scatter_x,
         y=scatter_y,
         mode="markers+text",
-        text=[f"{z:.4f}" for z in rd_scatter],
+        text=[f"{z:.4f}" for z in rd_scatter],  # noqa: E231
         textposition="top center",
         visible=show_scatter,
         marker=dict(color="slategrey", size=5),

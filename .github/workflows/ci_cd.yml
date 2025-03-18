@@ -12,7 +12,7 @@ env:
   MAIN_PYTHON_VERSION: "3.12"
   DOCUMENTATION_CNAME: "widgets.additive.docs.pyansys.com"
   LIBRARY_NAME: "ansys-additive-widgets"
-  ANSYS_PRODUCT_IMAGE: "ghcr.io/ansys-internal/additive:25.1.0-alpha3"
+  ANSYS_PRODUCT_IMAGE: "ghcr.io/ansys-internal/additive:25.1.0"
   ANSYS_PRODUCT_CONTAINER: "ansys-additive-container"
   MEILISEARCH_API_KEY: ${{ secrets.MEILISEARCH_API_KEY }}
   MEILISEARCH_HOST_URL: ${{ vars.MEILISEARCH_HOST_URL }}

@@ -91,7 +91,7 @@ initial_beam_diameters = [80e-6]
 initial_heater_temps = [80]
 # Restrict the permutations within a range of laser power/velocity
 # (a.k.a. scan speed) ratios.
-min_pv_ratio = 50
+min_pv_ratio = 500
 max_pv_ratio = 1500
 # Specify a bead length in meters.
 bead_length = 0.001

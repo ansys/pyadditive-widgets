@@ -109,6 +109,8 @@ study.generate_single_bead_permutations(
     max_pv_ratio=max_pv_ratio,
 )
 
+print("Number of simulations: {}".format(len(study.data_frame())))
+
 ###############################################################################
 # Show simulations as a table
 # ---------------------------
@@ -168,16 +170,14 @@ display.single_bead_eval_plot(study)
 # perform a porosity evaluation without a previous single bead evaluation.
 # The following code determines the laser power and scan speeds by filtering the
 # single bead results, where the ratio of the melt pool reference depth
-# to reference width is within a specified range. Additionally, it restricts the
-# simulations to a minimum build rate, which is calculated as
-# scan speed * layer thickness * hatch spacing. Finally, it uses the
+# to reference width is within a specified range. Then, it uses the
 # :meth:`~ParametricStudy.generate_porosity_permutations` method to add
 # porosity simulations to the study.
 
 df = study.data_frame()
 df = df[
-    (df[ColumnNames.MELT_POOL_REFERENCE_DEPTH_OVER_WIDTH] >= 0.3)
-    & (df[ColumnNames.MELT_POOL_REFERENCE_DEPTH_OVER_WIDTH] <= 0.65)
+    (df[ColumnNames.MELT_POOL_REFERENCE_DEPTH_OVER_WIDTH] >= 1.3)
+    & (df[ColumnNames.MELT_POOL_REFERENCE_DEPTH_OVER_WIDTH] <= 1.7)
 ]
 
 study.generate_porosity_permutations(
@@ -192,7 +192,6 @@ study.generate_porosity_permutations(
     start_angles=[45],
     rotation_angles=[67.5],
     hatch_spacings=[100e-6],
-    min_build_rate=5e-9,
     iteration=1,
 )
 
@@ -216,11 +215,11 @@ display.porosity_contour_plot(study)
 # Create microstructure evaluation
 # --------------------------------
 # The following code generates a set of microstructure simulations using many of the same
-# parameters used for the porosity simulations. Because the ``cooling_rate``,
-# ``thermal_gradient``, ``melt_pool_width``, and ``melt_pool_depth`` parameters are not
-# specified, they are calculated. The code then uses the
+# parameters used for the porosity simulations. The code then uses the
 # :meth:`~ParametricStudy.generate_microstructure_permutations` method to add
-# microstructure simulations to the study.
+# microstructure simulations to the study. Because the ``cooling_rate``,
+# ``thermal_gradient``, ``melt_pool_width``, and ``melt_pool_depth`` parameters
+# are not specified, they are calculated when the simulations are run.
 
 df = study.data_frame()
 df = df[(df[ColumnNames.TYPE] == SimulationType.POROSITY)]

@@ -99,7 +99,6 @@ max_pv_ratio = 1500
 bead_length = 0.001
 
 study.generate_single_bead_permutations(
-    material_name=material,
     bead_length=bead_length,
     laser_powers=initial_powers,
     scan_speeds=initial_scan_speeds,
@@ -182,7 +181,6 @@ df = df[
 ]
 
 study.generate_porosity_permutations(
-    material_name=material,
     laser_powers=df[ColumnNames.LASER_POWER].unique(),
     scan_speeds=df[ColumnNames.SCAN_SPEED].unique(),
     size_x=1e-3,
@@ -228,7 +226,6 @@ df = study.data_frame()
 df = df[(df[ColumnNames.TYPE] == SimulationType.POROSITY)]
 
 study.generate_microstructure_permutations(
-    material_name=material,
     laser_powers=df[ColumnNames.LASER_POWER].unique(),
     scan_speeds=df[ColumnNames.SCAN_SPEED].unique(),
     size_x=1e-3,

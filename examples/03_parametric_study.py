@@ -133,7 +133,7 @@ ids = df.loc[
     (df[ColumnNames.LASER_POWER] < 75) & (df[ColumnNames.TYPE] == SimulationType.SINGLE_BEAD),
     ColumnNames.ID,
 ].tolist()
-study.set_status(ids, SimulationStatus.SKIP)
+study.set_simulation_status(ids, SimulationStatus.SKIP)
 display.show_table(study)
 
 ###############################################################################

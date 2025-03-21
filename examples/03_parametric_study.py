@@ -37,7 +37,7 @@ Units are SI (m, kg, s, K) unless otherwise noted.
 # -----------------------------------------
 # Perform the required imports and create a :class:`ParametricStudy` instance.
 
-from ansys.additive.core import Additive, SimulationStatus, SimulationType
+from ansys.additive.core import Additive, SimulationType
 from ansys.additive.core.parametric_study import ColumnNames, ParametricStudy
 import numpy as np
 
@@ -109,33 +109,12 @@ study.generate_single_bead_permutations(
     max_pv_ratio=max_pv_ratio,
 )
 
-print("Number of simulations: {}".format(len(study.data_frame())))
-
 ###############################################################################
 # Show simulations as a table
 # ---------------------------
 # You can use the :obj:`display <ansys.additive.core.parametric_study.display>`
 # package to list the simulations as a table.
 
-display.show_table(study)
-
-###############################################################################
-# Skip some simulations
-# ---------------------
-# If you are working with a large parametric study, you may want to skip some
-# simulations to reduce processing time. To do so, set the simulation status,
-# which is defined in the :class:`SimulationStatus` class, to :obj:`SimulationStatus.SKIP`.
-# The following code obtains a :class:`~pandas.DataFrame` object, applies a filter
-# to get a list of simulation IDs, and then updates the status on the
-# simulations with those IDs.
-
-df = study.data_frame()
-# Get IDs for single bead simulations with laser power below 75 W.
-ids = df.loc[
-    (df[ColumnNames.LASER_POWER] < 75) & (df[ColumnNames.TYPE] == SimulationType.SINGLE_BEAD),
-    ColumnNames.ID,
-].tolist()
-study.set_simulation_status(ids, SimulationStatus.SKIP)
 display.show_table(study)
 
 ###############################################################################
@@ -170,14 +149,15 @@ display.single_bead_eval_plot(study)
 # perform a porosity evaluation without a previous single bead evaluation.
 # The following code determines the laser power and scan speeds by filtering the
 # single bead results, where the ratio of the melt pool reference depth
-# to reference width is within a specified range. Then, it uses the
-# :meth:`~ParametricStudy.generate_porosity_permutations` method to add
-# porosity simulations to the study.
+# to reference width is within a specified range for a specific layer thickness.
+# Then, it uses the :meth:`~ParametricStudy.generate_porosity_permutations`
+# method to add porosity simulations to the study.
 
 df = study.data_frame()
 df = df[
     (df[ColumnNames.MELT_POOL_REFERENCE_DEPTH_OVER_WIDTH] >= 1.3)
-    & (df[ColumnNames.MELT_POOL_REFERENCE_DEPTH_OVER_WIDTH] <= 1.7)
+    & (df[ColumnNames.MELT_POOL_REFERENCE_DEPTH_OVER_WIDTH] <= 1.75)
+    & (df[ColumnNames.LAYER_THICKNESS] == 40e-6)
 ]
 
 study.generate_porosity_permutations(

@@ -93,8 +93,8 @@ initial_beam_diameters = [80e-6]
 initial_heater_temps = [80]
 # Restrict the permutations within a range of laser power/velocity
 # (a.k.a. scan speed) ratios.
-min_pv_ratio = 500
-max_pv_ratio = 1500
+min_pv_ratio = 200
+max_pv_ratio = 1000
 # Specify a bead length in meters.
 bead_length = 0.001
 
@@ -149,15 +149,16 @@ display.single_bead_eval_plot(study)
 # perform a porosity evaluation without a previous single bead evaluation.
 # The following code determines the laser power and scan speeds by filtering the
 # single bead results, where the ratio of the melt pool reference depth
-# to reference width is within a specified range for a specific layer thickness.
-# Then, it uses the :meth:`~ParametricStudy.generate_porosity_permutations`
-# method to add porosity simulations to the study.
+# to reference width is within a specified range. Then, it uses the
+# :meth:`~ParametricStudy.generate_porosity_permutations` method to
+# add porosity simulations to the study, further restricting the permutations
+# by specifying the minimum build rate, which is equal to the layer thickness
+# times the scan speed times the hatch spacing in m^3/s.
 
 df = study.data_frame()
 df = df[
-    (df[ColumnNames.MELT_POOL_REFERENCE_DEPTH_OVER_WIDTH] >= 1.3)
-    & (df[ColumnNames.MELT_POOL_REFERENCE_DEPTH_OVER_WIDTH] <= 1.75)
-    & (df[ColumnNames.LAYER_THICKNESS] == 40e-6)
+    (df[ColumnNames.MELT_POOL_REFERENCE_DEPTH_OVER_WIDTH] >= 0.6)
+    & (df[ColumnNames.MELT_POOL_REFERENCE_DEPTH_OVER_WIDTH] <= 1.0)
 ]
 
 study.generate_porosity_permutations(
@@ -172,6 +173,7 @@ study.generate_porosity_permutations(
     start_angles=[45],
     rotation_angles=[67.5],
     hatch_spacings=[100e-6],
+    min_build_rate=4e-9,
     iteration=1,
 )
 
@@ -211,7 +213,7 @@ study.generate_microstructure_permutations(
     size_y=1e-3,
     size_z=1.1e-3,
     sensor_dimension=1e-4,
-    layer_thicknesses=df[ColumnNames.LAYER_THICKNESS].unique(),
+    layer_thicknesses=[40e-6],
     heater_temperatures=df[ColumnNames.HEATER_TEMPERATURE].unique(),
     beam_diameters=df[ColumnNames.BEAM_DIAMETER].unique(),
     start_angles=df[ColumnNames.START_ANGLE].unique(),

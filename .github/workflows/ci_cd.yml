@@ -115,7 +115,6 @@ jobs:
 
   doc-build:
     name: "Building library documentation"
-    if: github.event_name != 'merge_group'
     strategy:
       matrix:
         runner: [public-ubuntu-latest-8-cores]

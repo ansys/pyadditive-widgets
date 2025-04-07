@@ -1,0 +1,611 @@
+[
+    {
+        "objectID": "api/ansys/additive/widgets/display/show_table/index",
+        "href": "api/ansys/additive/widgets/display/show_table/index.html#the-show_tablepy-module",
+        "title": "The show_table.py module",
+        "section": "The show_table.py module",
+        "text": "The show_table.py module\nshow_table.py"
+    },
+    {
+        "objectID": "api/ansys/additive/widgets/display/show_table/index",
+        "href": "api/ansys/additive/widgets/display/show_table/index.html#summary",
+        "title": "The show_table.py module > Summary",
+        "section": "Summary",
+        "text": "show_table\nGenerate an interactive display of the parametric study table.\nSummary\nshow_table"
+    },
+    {
+        "objectID": "api/ansys/additive/widgets/display/show_table/index",
+        "href": "api/ansys/additive/widgets/display/show_table/index.html#description",
+        "title": "The show_table.py module > Description",
+        "section": "Description",
+        "text": "Provides an interactive interface for the parametric study simulation table.\nDescription"
+    },
+    {
+        "objectID": "api/ansys/additive/widgets/display/show_table/index",
+        "href": "api/ansys/additive/widgets/display/show_table/index.html#module-detail",
+        "title": "The show_table.py module > Module detail",
+        "section": "Module detail",
+        "text": "Generate an interactive display of the parametric study table.\nParametric study to display.\nNumber of table rows to display per page.\nInteractive table.\nModule detail\nParametricStudy\npython:int\npanel.Column"
+    },
+    {
+        "objectID": "api/ansys/additive/widgets/display/show_table/index",
+        "href": "api/ansys/additive/widgets/display/show_table/index.html#show_table.show_table",
+        "title": "The show_table.py module > Module detail > show_table",
+        "section": "Module detail > show_table",
+        "text": "show_table.show_table(ps: ansys.additive.core.parametric_study.ParametricStudy, page_size: int = 10)\n\nGenerate an interactive display of the parametric study table.\n\nParameters\n\nps\n\nParametricStudy\n\nParametric study to display.\n\npage_size\n\npython:int, default: 10\n\nNumber of table rows to display per page.\n\nReturns\n\npanel.Column\n\nInteractive table.\n\n!! processed by numpydoc !!"
+    },
+    {
+        "objectID": "examples/gallery_examples/sg_execution_times",
+        "href": "examples/gallery_examples/sg_execution_times.html#computation-times",
+        "title": "Computation times",
+        "section": "Computation times",
+        "text": "132:25.272 total execution time for 1 file from examples/gallery_examples:\nExample\nTime\nMem (MB)\nsphx_glr_examples_gallery_examples_03_parametric_study.py (03_parametric_study.py)\n132:25.272\n0.0\nComputation times\n03_parametric_study.py"
+    },
+    {
+        "objectID": "changelog",
+        "href": "changelog.html#release-notes",
+        "title": "Release notes",
+        "section": "Release notes",
+        "text": "This document contains the release notes for the project.\nRelease notes"
+    },
+    {
+        "objectID": "changelog",
+        "href": "changelog.html#020---2024-06-12",
+        "title": "Release notes > 0.2.0 - 2024-06-12",
+        "section": "0.2.0 - 2024-06-12",
+        "text": "0.2.0 - 2024-06-12"
+    },
+    {
+        "objectID": "changelog",
+        "href": "changelog.html#added",
+        "title": "Release notes > Added",
+        "section": "Added",
+        "text": "Add parametric study example #37\nAdded"
+    },
+    {
+        "objectID": "changelog",
+        "href": "changelog.html#changed",
+        "title": "Release notes > Changed",
+        "section": "Changed",
+        "text": "Update documentation #34\nTechnical review #39\nOverall documentation review #40\nMinor documentation edits #46\nChanged"
+    },
+    {
+        "objectID": "changelog",
+        "href": "changelog.html#fixed",
+        "title": "Release notes > Fixed",
+        "section": "Fixed",
+        "text": "fix: remove hardcoded version from metadata test #50\nfix: change ubuntu-latest-8-cores to public-ubuntu-latest-8-cores #52\nFixed"
+    },
+    {
+        "objectID": "changelog",
+        "href": "changelog.html#dependencies",
+        "title": "Release notes > Dependencies",
+        "section": "Dependencies",
+        "text": "maint: pre-release tasks #47\nDependencies"
+    },
+    {
+        "objectID": "changelog",
+        "href": "changelog.html#010---2024-04-30",
+        "title": "Release notes > 0.1.0 - 2024-04-30",
+        "section": "0.1.0 - 2024-04-30",
+        "text": "0.1.0 - 2024-04-30"
+    },
+    {
+        "objectID": "changelog",
+        "href": "changelog.html#added",
+        "title": "Release notes > Added",
+        "section": "Added",
+        "text": "Added a script to show how to visualize a parametric study\nAdded"
+    },
+    {
+        "objectID": "changelog",
+        "href": "changelog.html#changed",
+        "title": "Release notes > Changed",
+        "section": "Changed",
+        "text": "Include correct hyperlink for pyadditive documentation\nChanged"
+    },
+    {
+        "objectID": "index",
+        "href": "index.html#pyadditive-widgets-documentation-03dev0",
+        "title": "PyAdditive-Widgets documentation 0.3.dev0",
+        "section": "PyAdditive-Widgets documentation 0.3.dev0",
+        "text": "PyAdditive-Widgets is a widget toolkit for PyAdditive simulations. It provides\nmethods for visualizing the results of parametric additive simulations. Some examples\ninclude viewing the study as a table, viewing the single bead simulation results as\na heat map, and viewing the porosity relative density results as a contour plot.\nLearn how to install PyAdditive-Widgets in user mode.\nLearn how to start a session with the PyAdditive client and run simulations.\nUnderstand how to use Python to interact programmatically with\nPyAdditive-Widgets.\nExplore examples that show how to use PyAdditive-Widgets to\nvisualize the results of parametric additive simulations.\nLearn how to contribute to the PyAdditive-Widgets codebase or documentation.\nPyAdditive-Widgets documentation 0.3.dev0"
+    },
+    {
+        "objectID": "api/ansys/additive/widgets/display/porosity_contour_plot/index",
+        "href": "api/ansys/additive/widgets/display/porosity_contour_plot/index.html#the-porosity_contour_plotpy-module",
+        "title": "The porosity_contour_plot.py module",
+        "section": "The porosity_contour_plot.py module",
+        "text": "The porosity_contour_plot.py module\nporosity_contour_plot.py"
+    },
+    {
+        "objectID": "api/ansys/additive/widgets/display/porosity_contour_plot/index",
+        "href": "api/ansys/additive/widgets/display/porosity_contour_plot/index.html#summary",
+        "title": "The porosity_contour_plot.py module > Summary",
+        "section": "Summary",
+        "text": "porosity_contour_plot\nGenerates a contour plot of build rate and relative density.\nSummary\nporosity_contour_plot"
+    },
+    {
+        "objectID": "api/ansys/additive/widgets/display/porosity_contour_plot/index",
+        "href": "api/ansys/additive/widgets/display/porosity_contour_plot/index.html#description",
+        "title": "The porosity_contour_plot.py module > Description",
+        "section": "Description",
+        "text": "Provides a contour plot for relative density and build rate.\nDescription"
+    },
+    {
+        "objectID": "api/ansys/additive/widgets/display/porosity_contour_plot/index",
+        "href": "api/ansys/additive/widgets/display/porosity_contour_plot/index.html#module-detail",
+        "title": "The porosity_contour_plot.py module > Module detail",
+        "section": "Module detail",
+        "text": "Generates a contour plot of build rate and relative density.\nParametric study to plot.\nInteractive plot.\nModule detail\nParametricStudy\npanel.Row"
+    },
+    {
+        "objectID": "api/ansys/additive/widgets/display/porosity_contour_plot/index",
+        "href": "api/ansys/additive/widgets/display/porosity_contour_plot/index.html#porosity_contour_plot.porosity_contour_plot",
+        "title": "The porosity_contour_plot.py module > Module detail > porosity_contour_plot",
+        "section": "Module detail > porosity_contour_plot",
+        "text": "porosity_contour_plot.porosity_contour_plot(ps: ansys.additive.core.parametric_study.ParametricStudy)\n\nGenerates a contour plot of build rate and relative density.\n\nParameters\n\nps\n\nParametricStudy\n\nParametric study to plot.\n\nReturns\n\npanel.Row\n\nInteractive plot.\n\n!! processed by numpydoc !!"
+    },
+    {
+        "objectID": "user_guide/index",
+        "href": "user_guide/index.html#user-guide",
+        "title": "User guide",
+        "section": "User guide",
+        "text": "This section describes how to start a session with the PyAdditive client and run simulations.\nUser guide"
+    },
+    {
+        "objectID": "user_guide/index",
+        "href": "user_guide/index.html#start-a-session",
+        "title": "User guide > Start a session",
+        "section": "Start a session",
+        "text": "You can start a session with the PyAdditive client in multiple ways. For example,\nyou can start a local session or a remote session.\nBefore you can visualize the results of a parametric additive simulation, you must\ninstantiate a parametric study.\nStart a session"
+    },
+    {
+        "objectID": "user_guide/index",
+        "href": "user_guide/index.html#start-a-local-session",
+        "title": "User guide > Start a local session",
+        "section": "Start a local session",
+        "text": "Instantiating an Additive object starts the local installation of the Additive server:\nStart a local session\nAdditive"
+    },
+    {
+        "objectID": "user_guide/index",
+        "href": "user_guide/index.html#start-a-remote-session",
+        "title": "User guide > Start a remote session",
+        "section": "Start a remote session",
+        "text": "Start a remote session by specifying the host name and port of the server:\nStart a remote session"
+    },
+    {
+        "objectID": "user_guide/index",
+        "href": "user_guide/index.html#use-alternative-startup-methods",
+        "title": "User guide > Use alternative startup methods",
+        "section": "Use alternative startup methods",
+        "text": "The Additive class in the PyAdditive API provides additional session\nstartup methods that you can use. For more information, see\nAdditive\nin the PyAdditive API reference documentation.\nUse alternative startup methods\nAdditive"
+    },
+    {
+        "objectID": "user_guide/index",
+        "href": "user_guide/index.html#run-simulations",
+        "title": "User guide > Run simulations",
+        "section": "Run simulations",
+        "text": "Once a session is started, you can run simulations.\nRun simulations"
+    },
+    {
+        "objectID": "user_guide/index",
+        "href": "user_guide/index.html#basic-usage",
+        "title": "User guide > Basic usage",
+        "section": "Basic usage",
+        "text": "This code shows how to import PyAdditive-Widgets and use some basic capabilities\nto visualize PyAdditive-generated results of a parametric study as a table:\nBasic usage"
+    },
+    {
+        "objectID": "user_guide/index",
+        "href": "user_guide/index.html#advanced-usage",
+        "title": "User guide > Advanced usage",
+        "section": "Advanced usage",
+        "text": "The Examples section provides comprehensive examples of how to use PyAdditive-Widgets.\nFor information on how to use PyAdditive for the Ansys Additive service,\nsee the PyAdditive documentation.\nAdvanced usage"
+    },
+    {
+        "objectID": "getting_started/index",
+        "href": "getting_started/index.html#getting-started",
+        "title": "Getting started",
+        "section": "Getting started",
+        "text": "This section describes how to install PyAdditive-Widgets in user mode and quickly begin\nusing it. If you are interested in contributing to PyAdditive-Widgets, see ref_contribute\nfor information on installing in developer mode.\nGetting started"
+    },
+    {
+        "objectID": "getting_started/index",
+        "href": "getting_started/index.html#prerequisites",
+        "title": "Getting started > Prerequisites",
+        "section": "Prerequisites",
+        "text": "The use of PyAdditive-Widgets requires the installation of a licensed copy of Ansys 2024 R1\nor later and PyAdditive 0.17.2 or later.\nThe PyAdditive simulations described in this documentation also require a license for the\nAnsys Additive Suite.\nTo obtain a license, contact your Ansys sales representative or complete this\ninquiry form.\nPrerequisites"
+    },
+    {
+        "objectID": "getting_started/index",
+        "href": "getting_started/index.html#package-dependencies",
+        "title": "Getting started > Package dependencies",
+        "section": "Package dependencies",
+        "text": "PyAdditive-Widgets is supported on Python version 3.9 and later. Previous versions of Python are\nno longer supported as outlined on the History page\ndescribing the transition from Python 2 to Python 3.\nDependencies for PyAdditive-Widgets are automatically checked when packages are installed. Included\nin the dependencies are these projects:\nansys-additive-core: PyAdditive is a Python\nclient library for the Ansys Additive service.\nPanel: A web app framework for Python that is used for interactive\nvisualization of PyAdditive results.\nPackage dependencies"
+    },
+    {
+        "objectID": "getting_started/index",
+        "href": "getting_started/index.html#install-the-package",
+        "title": "Getting started > Install the package",
+        "section": "Install the package",
+        "text": "Before installing PyAdditive-Widgets, make sure that you\nhave the latest version of pip with this command:\nInstall PyAdditive-Widgets with this command:\nFor information on starting a session with the PyAdditive client and running simulations, see ref_user_guide.\nInstall the package"
+    },
+    {
+        "objectID": "examples/gallery_examples/03_parametric_study",
+        "href": "examples/gallery_examples/03_parametric_study.html#parametric-study",
+        "title": "Parametric study",
+        "section": "Parametric study",
+        "text": "This example shows how to use PyAdditive to perform a parametric study.\nYou perform a parametric study if you want to optimize additive machine parameters\nto achieve a specific result. This examples first uses the ParametricStudy\nclass to perform the parametric study. It then uses the display\npackage in PyAdditive-Widgets to visualize the results of the study.\nUnits are SI (m, kg, s, K) unless otherwise noted.\nParametric study\nParametricStudy\ndisplay"
+    },
+    {
+        "objectID": "examples/gallery_examples/03_parametric_study",
+        "href": "examples/gallery_examples/03_parametric_study.html#perform-required-imports-and-create-study",
+        "title": "Parametric study > Perform required imports and create study",
+        "section": "Perform required imports and create study",
+        "text": "Perform the required imports and create a ParametricStudy instance.\nPerform required imports and create study\nParametricStudy"
+    },
+    {
+        "objectID": "examples/gallery_examples/03_parametric_study",
+        "href": "examples/gallery_examples/03_parametric_study.html#select-material-for-study",
+        "title": "Parametric study > Select material for study",
+        "section": "Select material for study",
+        "text": "Select a material to use in the study. The material name must be known by\nthe Additive service. You can connect to the Additive service\nand print a list of available materials prior to selecting one.\nSelect material for study"
+    },
+    {
+        "objectID": "examples/gallery_examples/03_parametric_study",
+        "href": "examples/gallery_examples/03_parametric_study.html#create-parametric-study",
+        "title": "Parametric study > Create parametric study",
+        "section": "Create parametric study",
+        "text": "Create a parametric study object using the Parametric\nStudy class.\nCreate parametric study\nParametric\nStudy"
+    },
+    {
+        "objectID": "examples/gallery_examples/03_parametric_study",
+        "href": "examples/gallery_examples/03_parametric_study.html#get-name-of-study-file",
+        "title": "Parametric study > Get name of study file",
+        "section": "Get name of study file",
+        "text": "The current state of the parametric study is saved to a file upon each\nupdate. This code retrieves the name of the file. This file\nuses a binary format and is not human readable.\nGet name of study file"
+    },
+    {
+        "objectID": "examples/gallery_examples/03_parametric_study",
+        "href": "examples/gallery_examples/03_parametric_study.html#create-single-bead-evaluation",
+        "title": "Parametric study > Create single bead evaluation",
+        "section": "Create single bead evaluation",
+        "text": "Parametric studies often start with single bead simulations to determine melt\npool statistics. The following code uses the generate_single_bead_permutations()\nmethod to generate single bead simulation permutations. This method’s parameters\nallow you to specify a range of machine parameters and filter them by energy density.\nNot all of the parameters listed are required. Optional parameters that are not specified\nuse the default values defined in the MachineConstants class.\nCreate single bead evaluation\ngenerate_single_bead_permutations()\nMachineConstants"
+    },
+    {
+        "objectID": "examples/gallery_examples/03_parametric_study",
+        "href": "examples/gallery_examples/03_parametric_study.html#show-simulations-as-a-table",
+        "title": "Parametric study > Show simulations as a table",
+        "section": "Show simulations as a table",
+        "text": "You can use the display\npackage to list the simulations as a table.\nShow simulations as a table\ndisplay"
+    },
+    {
+        "objectID": "examples/gallery_examples/03_parametric_study",
+        "href": "examples/gallery_examples/03_parametric_study.html#run-study",
+        "title": "Parametric study > Run study",
+        "section": "Run study",
+        "text": "Run the simulations using the simulate_study() method.\nAll simulations with a SimulationStatus.PENDING status are executed.\nRun study\nsimulate_study()\nSimulationStatus.PENDING"
+    },
+    {
+        "objectID": "examples/gallery_examples/03_parametric_study",
+        "href": "examples/gallery_examples/03_parametric_study.html#save-study-to-csv-file",
+        "title": "Parametric study > Save study to CSV file",
+        "section": "Save study to CSV file",
+        "text": "The parametric study is saved with each update in a binary format.\nFor other formats, use the to_* methods provided by the DataFrame class.\nSave study to CSV file\nto_*\nDataFrame"
+    },
+    {
+        "objectID": "examples/gallery_examples/03_parametric_study",
+        "href": "examples/gallery_examples/03_parametric_study.html#plot-single-bead-results",
+        "title": "Parametric study > Plot single bead results",
+        "section": "Plot single bead results",
+        "text": "Plot the single bead results using the\nsingle_bead_eval_plot() function.\nPlot single bead results\nsingle_bead_eval_plot()"
+    },
+    {
+        "objectID": "examples/gallery_examples/03_parametric_study",
+        "href": "examples/gallery_examples/03_parametric_study.html#create-porosity-evaluation",
+        "title": "Parametric study > Create porosity evaluation",
+        "section": "Create porosity evaluation",
+        "text": "You can use the insights gained from the single bead evaluation to\ngenerate parameters for a porosity evaluation. Alternatively, you can\nperform a porosity evaluation without a previous single bead evaluation.\nThe following code determines the laser power and scan speeds by filtering the\nsingle bead results, where the ratio of the melt pool reference depth\nto reference width is within a specified range. Then, it uses the\ngenerate_porosity_permutations() method to\nadd porosity simulations to the study, further restricting the permutations\nby specifying the minimum build rate, which is equal to the layer thickness\ntimes the scan speed times the hatch spacing in m^3/s.\nCreate porosity evaluation\ngenerate_porosity_permutations()"
+    },
+    {
+        "objectID": "examples/gallery_examples/03_parametric_study",
+        "href": "examples/gallery_examples/03_parametric_study.html#run-study",
+        "title": "Parametric study > Run study",
+        "section": "Run study",
+        "text": "Run the simulations using the simulate_study() method.\nAll simulations with a SimulationStatus.PENDING status are executed.\nRun study\nsimulate_study()\nSimulationStatus.PENDING"
+    },
+    {
+        "objectID": "examples/gallery_examples/03_parametric_study",
+        "href": "examples/gallery_examples/03_parametric_study.html#plot-porosity-results",
+        "title": "Parametric study > Plot porosity results",
+        "section": "Plot porosity results",
+        "text": "Plot the porosity simulation results using the\nporosity_contour_plot() method.\nPlot porosity results\nporosity_contour_plot()"
+    },
+    {
+        "objectID": "examples/gallery_examples/03_parametric_study",
+        "href": "examples/gallery_examples/03_parametric_study.html#create-microstructure-evaluation",
+        "title": "Parametric study > Create microstructure evaluation",
+        "section": "Create microstructure evaluation",
+        "text": "The following code generates a set of microstructure simulations using many of the same\nparameters used for the porosity simulations. The code then uses the\ngenerate_microstructure_permutations() method to add\nmicrostructure simulations to the study. Because the cooling_rate,\nthermal_gradient, melt_pool_width, and melt_pool_depth parameters\nare not specified, they are calculated when the simulations are run.\nCreate microstructure evaluation\ngenerate_microstructure_permutations()\ncooling_rate\nthermal_gradient\nmelt_pool_width\nmelt_pool_depth"
+    },
+    {
+        "objectID": "examples/gallery_examples/03_parametric_study",
+        "href": "examples/gallery_examples/03_parametric_study.html#run-study",
+        "title": "Parametric study > Run study",
+        "section": "Run study",
+        "text": "Run the simulations using the simulate_study() method.\nAll simulations with a SimulationStatus.PENDING status are executed.\nRun study\nsimulate_study()\nSimulationStatus.PENDING"
+    },
+    {
+        "objectID": "examples/gallery_examples/03_parametric_study",
+        "href": "examples/gallery_examples/03_parametric_study.html#plot-microstructure-results",
+        "title": "Parametric study > Plot microstructure results",
+        "section": "Plot microstructure results",
+        "text": "Plot and compare the average grain sizes from the microstructure simulations\nusing the ave_grain_size_plot()\nfunction.\nTotal running time of the script: (132 minutes 25.272 seconds)\nDownload Jupyter notebook: 03_parametric_study.ipynb\nDownload Python source code: 03_parametric_study.py\nDownload zipped: 03_parametric_study.zip\nGallery generated by Sphinx-Gallery\nPlot microstructure results\nave_grain_size_plot()\nDownload Jupyter notebook: 03_parametric_study.ipynb\nDownload Python source code: 03_parametric_study.py\nDownload zipped: 03_parametric_study.zip"
+    },
+    {
+        "objectID": "api/index",
+        "href": "api/index.html#api-reference",
+        "title": "API reference",
+        "section": "API reference",
+        "text": "This section describes PyAdditive-Widgets endpoints, their capabilities, and how\nto interact with them programmatically.\nAPI reference"
+    },
+    {
+        "objectID": "sg_execution_times",
+        "href": "sg_execution_times.html#computation-times",
+        "title": "Computation times",
+        "section": "Computation times",
+        "text": "132:25.272 total execution time for 1 file from all galleries:\nExample\nTime\nMem (MB)\nsphx_glr_examples_gallery_examples_03_parametric_study.py (../../examples/03_parametric_study.py)\n132:25.272\n0.0\nComputation times\n../../examples/03_parametric_study.py"
+    },
+    {
+        "objectID": "contributing",
+        "href": "contributing.html#contribute",
+        "title": "Contribute",
+        "section": "Contribute",
+        "text": "Overall guidance on contributing to a PyAnsys library appears in the\nContributing topic\nin the PyAnsys developer’s guide. Ensure that you are thoroughly familiar\nwith this guide before attempting to contribute to PyAdditive.\nThe following contribution information is specific to PyAdditive-Widgets.\nContribute"
+    },
+    {
+        "objectID": "contributing",
+        "href": "contributing.html#install-in-developer-mode",
+        "title": "Contribute > Install in developer mode",
+        "section": "Install in developer mode",
+        "text": "Installing PyAdditive-Widgets in developer mode allows you to modify and enhance\nthe source.\nFor information on required Ansys products and Python packages, see\nprerequisites and package_dependencies.\nPerform these steps to install PyAdditive-Widgets in developer mode:\nClone the repository:\nCreate a fresh-clean Python virtual environment\nand activate it:\nMake sure that you have the latest required build system and documentation,\ntesting, and CI tools:\nInstall the project in editable mode:\nVerify your development installation:\nInstall in developer mode"
+    },
+    {
+        "objectID": "contributing",
+        "href": "contributing.html#test",
+        "title": "Contribute > Test",
+        "section": "Test",
+        "text": "This project takes advantage of tox. Similar to Makefile, this tool\nallows you to automate common development tasks, but it is oriented towards\nPython development.\nTest"
+    },
+    {
+        "objectID": "contributing",
+        "href": "contributing.html#use-tox",
+        "title": "Contribute > Use tox",
+        "section": "Use tox",
+        "text": "While Makefile has rules, tox has environments. In fact, the tool creates its\nown virtual environment so that anything being tested is isolated from the project\nto guarantee the project’s integrity.\nThe following environments commands are provided:\ntox -e style: Checks for coding style quality.\ntox -e py: Checks for unit tests.\ntox -e py-coverage: Checks for unit testing and code coverage.\ntox -e doc: Checks for the documentation-building process.\nUse tox\ntox\ntox"
+    },
+    {
+        "objectID": "contributing",
+        "href": "contributing.html#perform-raw-testing",
+        "title": "Contribute > Perform raw testing",
+        "section": "Perform raw testing",
+        "text": "If required, you can always call code style commands, such as Black, isort,\nand Flake8, or unit testing tools, such as pytest, from the command line. However,\nusing these tools do not guarantee that your project is being tested in an isolated\nenvironment, which is the reason why a tool like tox exists.\nPerform raw testing\ntox"
+    },
+    {
+        "objectID": "contributing",
+        "href": "contributing.html#run-style-checks",
+        "title": "Contribute > Run style checks",
+        "section": "Run style checks",
+        "text": "The style checks take advantage of pre-commit. Developers are not forced but\nencouraged to install this tool by running this command:\nRun style checks"
+    },
+    {
+        "objectID": "contributing",
+        "href": "contributing.html#adhere-to-code-style",
+        "title": "Contribute > Adhere to code style",
+        "section": "Adhere to code style",
+        "text": "PyAdditive follows the PEP8 standard as indicated in\nPEP 8 in\nthe PyAnsys developer’s guide. It also implements style checking\nusing pre-commit.\nTo ensure your code meets minimum code styling standards, run these commands:\nYou can also install this as a Git pre-commit hook by running this command:\nThis way, it’s not possible for you to push code that fails the code style checks:\nAdhere to code style"
+    },
+    {
+        "objectID": "contributing",
+        "href": "contributing.html#build-documentation",
+        "title": "Contribute > Build documentation",
+        "section": "Build documentation",
+        "text": "To build documentation, you can run the usual rules provided in the\nSphinx Makefile with a command like this:\nHowever, the recommended way of checking documentation integrity is to use a tox\ncommand like this:\nBuild documentation\ntox"
+    },
+    {
+        "objectID": "contributing",
+        "href": "contributing.html#distribute",
+        "title": "Contribute > Distribute",
+        "section": "Distribute",
+        "text": "If you would like to create either source or wheel files, run the following\ncommands to install the building requirements and execute the build module:\nDistribute"
+    },
+    {
+        "objectID": "contributing",
+        "href": "contributing.html#post-issues",
+        "title": "Contribute > Post issues",
+        "section": "Post issues",
+        "text": "Use the PyAdditive-Widgets Issues\npage to report bugs and request new features. When possible, use the issue templates provided.\nIf your issue does not fit into one of these templates, click the link for opening a blank issue.\nIf you have general questions about the PyAnsys ecosystem, email\npyansys.core@ansys.com. If your\nquestion is specific to PyAdditive-Widgets, ask your question\nin an issue as described in the previous paragraph.\nPost issues"
+    },
+    {
+        "objectID": "examples/gallery_examples/index",
+        "href": "examples/gallery_examples/index.html#examples",
+        "title": "Examples",
+        "section": "Examples",
+        "text": "End-to-end examples show how to use PyAdditve-Widgets. You can download\nthese examples as Python files or Jupyter notebooks and run them locally.\nsphx_glr_examples_gallery_examples_03_parametric_study.py\nGallery generated by Sphinx-Gallery\nExamples"
+    },
+    {
+        "objectID": "api/ansys/additive/widgets/display/porosity_eval_plot/index",
+        "href": "api/ansys/additive/widgets/display/porosity_eval_plot/index.html#the-porosity_eval_plotpy-module",
+        "title": "The porosity_eval_plot.py module",
+        "section": "The porosity_eval_plot.py module",
+        "text": "The porosity_eval_plot.py module\nporosity_eval_plot.py"
+    },
+    {
+        "objectID": "api/ansys/additive/widgets/display/porosity_eval_plot/index",
+        "href": "api/ansys/additive/widgets/display/porosity_eval_plot/index.html#summary",
+        "title": "The porosity_eval_plot.py module > Summary",
+        "section": "Summary",
+        "text": "porosity_eval_plot\nGenerate a heat map plot of porosity results to determine parametric regions with desirable relative density statistics.\nSummary\nporosity_eval_plot"
+    },
+    {
+        "objectID": "api/ansys/additive/widgets/display/porosity_eval_plot/index",
+        "href": "api/ansys/additive/widgets/display/porosity_eval_plot/index.html#description",
+        "title": "The porosity_eval_plot.py module > Description",
+        "section": "Description",
+        "text": "Provides an interactive plot of porosity results.\nDescription"
+    },
+    {
+        "objectID": "api/ansys/additive/widgets/display/porosity_eval_plot/index",
+        "href": "api/ansys/additive/widgets/display/porosity_eval_plot/index.html#module-detail",
+        "title": "The porosity_eval_plot.py module > Module detail",
+        "section": "Module detail",
+        "text": "Generate a heat map plot of porosity results to determine parametric regions with desirable relative density statistics.\npanel.Row <panel.Row>\nInteractive plot.\nModule detail\nParametric\nstudy\nto"
+    },
+    {
+        "objectID": "api/ansys/additive/widgets/display/porosity_eval_plot/index",
+        "href": "api/ansys/additive/widgets/display/porosity_eval_plot/index.html#porosity_eval_plot.porosity_eval_plot",
+        "title": "The porosity_eval_plot.py module > Module detail > porosity_eval_plot",
+        "section": "Module detail > porosity_eval_plot",
+        "text": "porosity_eval_plot.porosity_eval_plot(ps: ansys.additive.core.parametric_study.ParametricStudy)\n\nGenerate a heat map plot of porosity results to determine parametric regions with desirable relative density statistics.\n\nParameters\n\nps\n\nParametric study to plot.\n\n\n\nReturns\n\nclass\n\npanel.Row <panel.Row>\nInteractive plot.\n\n!! processed by numpydoc !!"
+    },
+    {
+        "objectID": "api/ansys/additive/widgets/display/ave_grain_size_plot/index",
+        "href": "api/ansys/additive/widgets/display/ave_grain_size_plot/index.html#the-ave_grain_size_plotpy-module",
+        "title": "The ave_grain_size_plot.py module",
+        "section": "The ave_grain_size_plot.py module",
+        "text": "The ave_grain_size_plot.py module\nave_grain_size_plot.py"
+    },
+    {
+        "objectID": "api/ansys/additive/widgets/display/ave_grain_size_plot/index",
+        "href": "api/ansys/additive/widgets/display/ave_grain_size_plot/index.html#summary",
+        "title": "The ave_grain_size_plot.py module > Summary",
+        "section": "Summary",
+        "text": "ave_grain_size_plot\nPlot average grain size for laser power versus scan speed.\nmin_ags\nmax_ags\nSummary\nave_grain_size_plot\nmin_ags\nmax_ags"
+    },
+    {
+        "objectID": "api/ansys/additive/widgets/display/ave_grain_size_plot/index",
+        "href": "api/ansys/additive/widgets/display/ave_grain_size_plot/index.html#description",
+        "title": "The ave_grain_size_plot.py module > Description",
+        "section": "Description",
+        "text": "Provides a plot for average grain size.\nDescription"
+    },
+    {
+        "objectID": "api/ansys/additive/widgets/display/ave_grain_size_plot/index",
+        "href": "api/ansys/additive/widgets/display/ave_grain_size_plot/index.html#module-detail",
+        "title": "The ave_grain_size_plot.py module > Module detail",
+        "section": "Module detail",
+        "text": "Plot average grain size for laser power versus scan speed.\nParametric study to plot.\nInteractive plot.\nModule detail\nParametricStudy\npanel.Row"
+    },
+    {
+        "objectID": "api/ansys/additive/widgets/display/ave_grain_size_plot/index",
+        "href": "api/ansys/additive/widgets/display/ave_grain_size_plot/index.html#ave_grain_size_plot.ave_grain_size_plot",
+        "title": "The ave_grain_size_plot.py module > Module detail > ave_grain_size_plot",
+        "section": "Module detail > ave_grain_size_plot",
+        "text": "ave_grain_size_plot.ave_grain_size_plot(ps: ansys.additive.core.parametric_study.ParametricStudy)\n\nPlot average grain size for laser power versus scan speed.\n\nParameters\n\nps\n\nParametricStudy\n\nParametric study to plot.\n\nReturns\n\npanel.Row\n\nInteractive plot.\n\n!! processed by numpydoc !!"
+    },
+    {
+        "objectID": "api/ansys/additive/widgets/display/ave_grain_size_plot/index",
+        "href": "api/ansys/additive/widgets/display/ave_grain_size_plot/index.html#ave_grain_size_plot.min_ags",
+        "title": "The ave_grain_size_plot.py module > Module detail > min_ags",
+        "section": "Module detail > min_ags",
+        "text": "ave_grain_size_plot.min_ags = None\n\n"
+    },
+    {
+        "objectID": "api/ansys/additive/widgets/display/ave_grain_size_plot/index",
+        "href": "api/ansys/additive/widgets/display/ave_grain_size_plot/index.html#ave_grain_size_plot.max_ags",
+        "title": "The ave_grain_size_plot.py module > Module detail > max_ags",
+        "section": "Module detail > max_ags",
+        "text": "ave_grain_size_plot.max_ags = None\n\n"
+    },
+    {
+        "objectID": "api/ansys/additive/widgets/index",
+        "href": "api/ansys/additive/widgets/index.html#the-ansysadditivewidgets-library",
+        "title": "The ansys.additive.widgets library",
+        "section": "The ansys.additive.widgets library",
+        "text": "The ansys.additive.widgets library\nansys.additive.widgets"
+    },
+    {
+        "objectID": "api/ansys/additive/widgets/index",
+        "href": "api/ansys/additive/widgets/index.html#summary",
+        "title": "The ansys.additive.widgets library > Summary",
+        "section": "Summary",
+        "text": "display\nProvides plots and interactive interfaces for parametric study results.\n__version__\nSummary\ndisplay\n__version__"
+    },
+    {
+        "objectID": "api/ansys/additive/widgets/index",
+        "href": "api/ansys/additive/widgets/index.html#description",
+        "title": "The ansys.additive.widgets library > Description",
+        "section": "Description",
+        "text": "Python library that adds user interface widgets to PyAdditive simulations.\nDescription"
+    },
+    {
+        "objectID": "api/ansys/additive/widgets/index",
+        "href": "api/ansys/additive/widgets/index.html#module-detail",
+        "title": "The ansys.additive.widgets library > Module detail",
+        "section": "Module detail",
+        "text": "Module detail"
+    },
+    {
+        "objectID": "api/ansys/additive/widgets/index",
+        "href": "api/ansys/additive/widgets/index.html#widgets.__version__",
+        "title": "The ansys.additive.widgets library > Module detail > __version__",
+        "section": "Module detail > __version__",
+        "text": "widgets.__version__\n\n"
+    },
+    {
+        "objectID": "api/ansys/additive/widgets/display/single_bead_eval_plot/index",
+        "href": "api/ansys/additive/widgets/display/single_bead_eval_plot/index.html#the-single_bead_eval_plotpy-module",
+        "title": "The single_bead_eval_plot.py module",
+        "section": "The single_bead_eval_plot.py module",
+        "text": "The single_bead_eval_plot.py module\nsingle_bead_eval_plot.py"
+    },
+    {
+        "objectID": "api/ansys/additive/widgets/display/single_bead_eval_plot/index",
+        "href": "api/ansys/additive/widgets/display/single_bead_eval_plot/index.html#summary",
+        "title": "The single_bead_eval_plot.py module > Summary",
+        "section": "Summary",
+        "text": "single_bead_eval_plot\nGenerate a heatmap to identify optimal melt pool statistics.\nSummary\nsingle_bead_eval_plot"
+    },
+    {
+        "objectID": "api/ansys/additive/widgets/display/single_bead_eval_plot/index",
+        "href": "api/ansys/additive/widgets/display/single_bead_eval_plot/index.html#description",
+        "title": "The single_bead_eval_plot.py module > Description",
+        "section": "Description",
+        "text": "Provides an interactive heatmap to evaluate single bead results.\nDescription"
+    },
+    {
+        "objectID": "api/ansys/additive/widgets/display/single_bead_eval_plot/index",
+        "href": "api/ansys/additive/widgets/display/single_bead_eval_plot/index.html#module-detail",
+        "title": "The single_bead_eval_plot.py module > Module detail",
+        "section": "Module detail",
+        "text": "Generate a heatmap to identify optimal melt pool statistics.\nParametric study to plot.\nInteractive plot.\nModule detail\nParametricStudy\npanel.Row"
+    },
+    {
+        "objectID": "api/ansys/additive/widgets/display/single_bead_eval_plot/index",
+        "href": "api/ansys/additive/widgets/display/single_bead_eval_plot/index.html#single_bead_eval_plot.single_bead_eval_plot",
+        "title": "The single_bead_eval_plot.py module > Module detail > single_bead_eval_plot",
+        "section": "Module detail > single_bead_eval_plot",
+        "text": "single_bead_eval_plot.single_bead_eval_plot(ps: ansys.additive.core.parametric_study.ParametricStudy)\n\nGenerate a heatmap to identify optimal melt pool statistics.\n\nParameters\n\nps\n\nParametricStudy\n\nParametric study to plot.\n\nReturns\n\npanel.Row\n\nInteractive plot.\n\n!! processed by numpydoc !!"
+    },
+    {
+        "objectID": "api/ansys/additive/widgets/display/index",
+        "href": "api/ansys/additive/widgets/display/index.html#the-display-package",
+        "title": "The display package",
+        "section": "The display package",
+        "text": "The display package\ndisplay"
+    },
+    {
+        "objectID": "api/ansys/additive/widgets/display/index",
+        "href": "api/ansys/additive/widgets/display/index.html#summary",
+        "title": "The display package > Summary",
+        "section": "Summary",
+        "text": "ave_grain_size_plot\nProvides a plot for average grain size.\nporosity_contour_plot\nProvides a contour plot for relative density and build rate.\nporosity_eval_plot\nProvides an interactive plot of porosity results.\nshow_table\nProvides an interactive interface for the parametric study simulation table.\nsingle_bead_eval_plot\nProvides an interactive heatmap to evaluate single bead results.\nSummary\nave_grain_size_plot\nporosity_contour_plot\nporosity_eval_plot\nshow_table\nsingle_bead_eval_plot"
+    },
+    {
+        "objectID": "api/ansys/additive/widgets/display/index",
+        "href": "api/ansys/additive/widgets/display/index.html#description",
+        "title": "The display package > Description",
+        "section": "Description",
+        "text": "Provides plots and interactive interfaces for parametric study results.\nDescription"
+    }
+]

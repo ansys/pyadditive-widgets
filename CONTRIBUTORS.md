@@ -7,6 +7,7 @@
 
 ## Individual Contributors
 
-* [Roberto Pastor Muela](https://github.com/RobPasMue)
 * [Kathy Pippert](https://github.com/PipKat)
 * [Kerry McAdams](https://github.com/klmcadams)
+* [Revathy Venugopal](https://github.com/Revathyvenugopal162)
+* [Roberto Pastor Muela](https://github.com/RobPasMue)

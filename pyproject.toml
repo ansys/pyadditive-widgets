@@ -38,7 +38,7 @@ doc = [
   "numpydoc==1.8.0",
   "phantomjs==1.4.1",
   "pypandoc==1.15",
-  "pyvista==0.44.2",
+  "pyvista==0.45.2",
   "selenium==4.31.0",
   "sphinx==8.2.3",
   "sphinx-autodoc-typehints==3.1.0",

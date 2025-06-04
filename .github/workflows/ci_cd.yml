@@ -159,6 +159,7 @@ jobs:
           checkout: false
           sphinxopts: "-j auto"
           dependencies: "pandoc"
+          check-links: false
         env:
           GENERATING_DOCS: 1
           ANSYS_ADDITIVE_ADDRESS: "localhost:50052"

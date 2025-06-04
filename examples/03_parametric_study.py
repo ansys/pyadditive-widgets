@@ -1,4 +1,4 @@
-# Copyright (C) 2024 ANSYS, Inc. and/or its affiliates.
+# Copyright (C) 2024 - 2025 ANSYS, Inc. and/or its affiliates.
 # SPDX-License-Identifier: MIT
 #
 #
@@ -37,20 +37,11 @@ Units are SI (m, kg, s, K) unless otherwise noted.
 # -----------------------------------------
 # Perform the required imports and create a :class:`ParametricStudy` instance.
 
-from ansys.additive.core import Additive, SimulationStatus, SimulationType
+from ansys.additive.core import Additive, SimulationType
 from ansys.additive.core.parametric_study import ColumnNames, ParametricStudy
-import ansys.additive.core.parametric_study.display as display
+import numpy as np
 
-study = ParametricStudy("demo-study")
-
-###############################################################################
-# Get name of study file
-# ----------------------
-# The current state of the parametric study is saved to a file upon each
-# update. This code retrieves the name of the file. This file
-# uses a binary format and is not human readable.
-
-print(study.file_name)
+from ansys.additive.widgets import display
 
 ###############################################################################
 # Select material for study
@@ -64,6 +55,23 @@ print("Available material names: {}".format(additive.materials_list()))
 material = "IN718"
 
 ###############################################################################
+# Create parametric study
+# -----------------------
+# Create a parametric study object using the :class:`Parametric
+# Study <ansys.additive.core.parametric_study.ParametricStudy>` class.
+
+study = ParametricStudy("demo-study", material)
+
+###############################################################################
+# Get name of study file
+# ----------------------
+# The current state of the parametric study is saved to a file upon each
+# update. This code retrieves the name of the file. This file
+# uses a binary format and is not human readable.
+
+print(study.file_name)
+
+###############################################################################
 # Create single bead evaluation
 # -----------------------------
 # Parametric studies often start with single bead simulations to determine melt
@@ -72,8 +80,6 @@ material = "IN718"
 # allow you to specify a range of machine parameters and filter them by energy density.
 # Not all of the parameters listed are required. Optional parameters that are not specified
 # use the default values defined in the :class:`MachineConstants` class.
-
-import numpy as np
 
 # Specify a range of laser powers. Valid values are 50 to 700 W.
 initial_powers = np.linspace(50, 700, 7)
@@ -85,23 +91,22 @@ initial_layer_thicknesses = [40e-6, 50e-6]
 initial_beam_diameters = [80e-6]
 # Specify heater temperatures. Valid values are 20 - 500 C.
 initial_heater_temps = [80]
-# Restrict the permutations within a range of energy densities
-# For single bead, the energy density is laser power / (laser scan speed * layer thickness).
-min_energy_density = 2e6
-max_energy_density = 8e6
+# Restrict the permutations within a range of laser power/velocity
+# (a.k.a. scan speed) ratios.
+min_pv_ratio = 200
+max_pv_ratio = 1000
 # Specify a bead length in meters.
 bead_length = 0.001
 
 study.generate_single_bead_permutations(
-    material_name=material,
     bead_length=bead_length,
     laser_powers=initial_powers,
     scan_speeds=initial_scan_speeds,
     layer_thicknesses=initial_layer_thicknesses,
     beam_diameters=initial_beam_diameters,
     heater_temperatures=initial_heater_temps,
-    min_area_energy_density=min_energy_density,
-    max_area_energy_density=max_energy_density,
+    min_pv_ratio=min_pv_ratio,
+    max_pv_ratio=max_pv_ratio,
 )
 
 ###############################################################################
@@ -113,31 +118,12 @@ study.generate_single_bead_permutations(
 display.show_table(study)
 
 ###############################################################################
-# Skip some simulations
-# ---------------------
-# If you are working with a large parametric study, you may want to skip some
-# simulations to reduce processing time. To do so, set the simulation status,
-# which is defined in the :class:`SimulationStatus` class, to :obj:`SimulationStatus.SKIP`.
-# The following code obtains a :class:`~pandas.DataFrame` object, applies a filter
-# to get a list of simulation IDs, and then updates the status on the
-# simulations with those IDs.
+# Run study
+# ---------
+# Run the simulations using the :meth:`~Additive.simulate_study` method.
+# All simulations with a :obj:`SimulationStatus.PENDING` status are executed.
 
-df = study.data_frame()
-# Get IDs for single bead simulations with laser power below 75 W.
-ids = df.loc[
-    (df[ColumnNames.LASER_POWER] < 75) & (df[ColumnNames.TYPE] == SimulationType.SINGLE_BEAD),
-    ColumnNames.ID,
-].tolist()
-study.set_status(ids, SimulationStatus.SKIP)
-display.show_table(study)
-
-###############################################################################
-# Run single bead simulations
-# ---------------------------
-# Run the simulations using the :meth:`~ParametricStudy.run_simulations` method. All simulations
-# with a :obj:`SimulationStatus.PENDING` status are executed.
-
-study.run_simulations(additive)
+additive.simulate_study(study)
 
 ###############################################################################
 # Save study to CSV file
@@ -163,20 +149,19 @@ display.single_bead_eval_plot(study)
 # perform a porosity evaluation without a previous single bead evaluation.
 # The following code determines the laser power and scan speeds by filtering the
 # single bead results, where the ratio of the melt pool reference depth
-# to reference width is within a specified range. Additionally, it restricts the
-# simulations to a minimum build rate, which is calculated as
-# scan speed * layer thickness * hatch spacing. Finally, it uses the
-# :meth:`~ParametricStudy.generate_porosity_permutations` method to add
-# porosity simulations to the study.
+# to reference width is within a specified range. Then, it uses the
+# :meth:`~ParametricStudy.generate_porosity_permutations` method to
+# add porosity simulations to the study, further restricting the permutations
+# by specifying the minimum build rate, which is equal to the layer thickness
+# times the scan speed times the hatch spacing in m^3/s.
 
 df = study.data_frame()
 df = df[
-    (df[ColumnNames.MELT_POOL_REFERENCE_DEPTH_OVER_WIDTH] >= 0.3)
-    & (df[ColumnNames.MELT_POOL_REFERENCE_DEPTH_OVER_WIDTH] <= 0.65)
+    (df[ColumnNames.MELT_POOL_REFERENCE_DEPTH_OVER_WIDTH] >= 0.6)
+    & (df[ColumnNames.MELT_POOL_REFERENCE_DEPTH_OVER_WIDTH] <= 1.0)
 ]
 
 study.generate_porosity_permutations(
-    material_name=material,
     laser_powers=df[ColumnNames.LASER_POWER].unique(),
     scan_speeds=df[ColumnNames.SCAN_SPEED].unique(),
     size_x=1e-3,
@@ -188,16 +173,17 @@ study.generate_porosity_permutations(
     start_angles=[45],
     rotation_angles=[67.5],
     hatch_spacings=[100e-6],
-    min_build_rate=5e-9,
+    min_build_rate=4e-9,
     iteration=1,
 )
 
-################################################################################
-# Run porosity simulations
-# ------------------------
-# Run the simulations using the :meth:`~ParametricStudy.run_simulations` method.
+###############################################################################
+# Run study
+# ---------
+# Run the simulations using the :meth:`~Additive.simulate_study` method.
+# All simulations with a :obj:`SimulationStatus.PENDING` status are executed.
 
-study.run_simulations(additive)
+additive.simulate_study(study)
 
 ###############################################################################
 # Plot porosity results
@@ -211,24 +197,23 @@ display.porosity_contour_plot(study)
 # Create microstructure evaluation
 # --------------------------------
 # The following code generates a set of microstructure simulations using many of the same
-# parameters used for the porosity simulations. Because the ``cooling_rate``,
-# ``thermal_gradient``, ``melt_pool_width``, and ``melt_pool_depth`` parameters are not
-# specified, they are calculated. The code then uses the
+# parameters used for the porosity simulations. The code then uses the
 # :meth:`~ParametricStudy.generate_microstructure_permutations` method to add
-# microstructure simulations to the study.
+# microstructure simulations to the study. Because the ``cooling_rate``,
+# ``thermal_gradient``, ``melt_pool_width``, and ``melt_pool_depth`` parameters
+# are not specified, they are calculated when the simulations are run.
 
 df = study.data_frame()
 df = df[(df[ColumnNames.TYPE] == SimulationType.POROSITY)]
 
 study.generate_microstructure_permutations(
-    material_name=material,
     laser_powers=df[ColumnNames.LASER_POWER].unique(),
     scan_speeds=df[ColumnNames.SCAN_SPEED].unique(),
     size_x=1e-3,
     size_y=1e-3,
     size_z=1.1e-3,
     sensor_dimension=1e-4,
-    layer_thicknesses=df[ColumnNames.LAYER_THICKNESS].unique(),
+    layer_thicknesses=[40e-6],
     heater_temperatures=df[ColumnNames.HEATER_TEMPERATURE].unique(),
     beam_diameters=df[ColumnNames.BEAM_DIAMETER].unique(),
     start_angles=df[ColumnNames.START_ANGLE].unique(),
@@ -238,11 +223,12 @@ study.generate_microstructure_permutations(
 )
 
 ###############################################################################
-# Run microstructure simulations
-# ------------------------------
-# Run the simulations using the :meth:`~ParametricStudy.run_simulations` method.
+# Run study
+# ---------
+# Run the simulations using the :meth:`~Additive.simulate_study` method.
+# All simulations with a :obj:`SimulationStatus.PENDING` status are executed.
 
-study.run_simulations(additive)
+additive.simulate_study(study)
 
 ###############################################################################
 # Plot microstructure results

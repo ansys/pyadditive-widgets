@@ -1,0 +1,112 @@
+
+
+
+
+
+
+The ``display`` package
+===========================
+
+.. py:module:: ansys.additive.widgets.display
+
+
+Summary
+-------
+
+
+
+
+
+
+
+
+.. py:currentmodule:: display
+.. tab-set::
+
+
+    .. tab-item:: Submodules
+
+        .. list-table::
+          :header-rows: 0
+          :widths: auto
+
+
+          * - :py:obj:`~ansys.additive.widgets.display.ave_grain_size_plot`
+            - Provides a plot for average grain size.
+
+
+          * - :py:obj:`~ansys.additive.widgets.display.porosity_contour_plot`
+            - Provides a contour plot for relative density and build rate.
+
+
+          * - :py:obj:`~ansys.additive.widgets.display.porosity_eval_plot`
+            - Provides an interactive plot of porosity results.
+
+
+          * - :py:obj:`~ansys.additive.widgets.display.show_table`
+            - Provides an interactive interface for the parametric study simulation table.
+
+
+          * - :py:obj:`~ansys.additive.widgets.display.single_bead_eval_plot`
+            - Provides an interactive heatmap to evaluate single bead results.
+
+
+
+
+
+
+
+
+
+
+
+
+.. toctree::
+   :titlesonly:
+   :maxdepth: 1
+   :hidden:
+
+    <span class="nf nf-fa-file"></span> ave_grain_size_plot</api/ansys/additive/widgets/display/ave_grain_size_plot/index>
+    <span class="nf nf-fa-file"></span> porosity_contour_plot</api/ansys/additive/widgets/display/porosity_contour_plot/index>
+    <span class="nf nf-fa-file"></span> porosity_eval_plot</api/ansys/additive/widgets/display/porosity_eval_plot/index>
+    <span class="nf nf-fa-file"></span> show_table</api/ansys/additive/widgets/display/show_table/index>
+    <span class="nf nf-fa-file"></span> single_bead_eval_plot</api/ansys/additive/widgets/display/single_bead_eval_plot/index>
+
+
+
+
+
+
+
+
+
+
+
+Description
+-----------
+
+
+Provides plots and interactive interfaces for parametric study results.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+..
+    !! processed by numpydoc !!
+
+
+
+
+

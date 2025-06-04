@@ -1,0 +1,111 @@
+
+
+
+
+
+
+The ``ansys.additive.widgets`` library
+======================================
+
+.. py:module:: ansys.additive.widgets
+
+
+Summary
+-------
+
+
+
+
+
+
+
+
+.. py:currentmodule:: widgets
+.. tab-set::
+
+    .. tab-item:: Subpackages
+
+        .. list-table::
+          :header-rows: 0
+          :widths: auto
+
+
+          * - :py:obj:`~ansys.additive.widgets.display`
+            - Provides plots and interactive interfaces for parametric study results.
+
+
+
+
+
+
+
+
+
+    .. tab-item:: Attributes
+
+        .. list-table::
+          :header-rows: 0
+          :widths: auto
+
+
+          * - :py:obj:`~__version__`
+            - 
+
+
+
+
+
+.. toctree::
+   :titlesonly:
+   :maxdepth: 1
+   :hidden:
+
+    <span class="nf nf-md-package"></span> display</api/ansys/additive/widgets/display/index>
+
+
+
+
+
+
+
+
+
+
+
+
+Description
+-----------
+
+
+Python library that adds user interface widgets to PyAdditive simulations.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+..
+    !! processed by numpydoc !!
+
+
+
+
+
+
+Module detail
+-------------
+
+.. py:data:: __version__
+
+
+

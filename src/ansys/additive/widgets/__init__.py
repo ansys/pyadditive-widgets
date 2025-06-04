@@ -19,8 +19,15 @@
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 # SOFTWARE.
-
 """Python library that adds user interface widgets to PyAdditive simulations."""
+
+import warnings
+
+warnings.warn(
+    "This library is deprecated and will no longer be maintained. "
+    "Please consider using alternatives.",
+    DeprecationWarning,
+)
 
 try:
     import importlib.metadata as importlib_metadata

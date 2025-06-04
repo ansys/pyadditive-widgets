@@ -199,15 +199,15 @@ if BUILD_EXAMPLES is True:
         # convert rst to md for ipynb
         # "pypandoc": True,
         # path to your examples scripts
-        "examples_dirs": [f"{EXAMPLES_PATH_FOR_DOCS}"],
+        "examples_dirs": [], # [f"{EXAMPLES_PATH_FOR_DOCS}"],
         # where to save gallery generated examples
-        "gallery_dirs": [f"{GALLERY_EXAMPLES_PATH}"],
+        "gallery_dirs": [], # [f"{GALLERY_EXAMPLES_PATH}"],
         # Pattern to search for example files
-        "filename_pattern": r"(?!03_parametric)",
+        "filename_pattern": r"\.py",
         # Remove the "Download all examples" button from the top level gallery
         "download_all_examples": False,
         # Sort gallery examples by file name instead of number of lines (default)
-        "within_subsection_order": FileNameSortKey,
+        "within_subsection_order": "FileNameSortKey",
         # directory where function granular galleries are stored
         "backreferences_dir": None,
         # Modules for which function level galleries are created.

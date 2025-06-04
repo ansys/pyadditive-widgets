@@ -199,9 +199,9 @@ if BUILD_EXAMPLES is True:
         # convert rst to md for ipynb
         # "pypandoc": True,
         # path to your examples scripts
-        "examples_dirs": [], # [f"{EXAMPLES_PATH_FOR_DOCS}"],
+        "examples_dirs": [],  # [f"{EXAMPLES_PATH_FOR_DOCS}"],
         # where to save gallery generated examples
-        "gallery_dirs": [], # [f"{GALLERY_EXAMPLES_PATH}"],
+        "gallery_dirs": [],  # [f"{GALLERY_EXAMPLES_PATH}"],
         # Pattern to search for example files
         "filename_pattern": r"\.py",
         # Remove the "Download all examples" button from the top level gallery

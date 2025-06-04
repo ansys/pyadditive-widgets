@@ -203,7 +203,7 @@ if BUILD_EXAMPLES is True:
         # where to save gallery generated examples
         "gallery_dirs": [f"{GALLERY_EXAMPLES_PATH}"],
         # Pattern to search for example files
-        "filename_pattern": r"\.py",
+        "filename_pattern": r"(?!03_parametric)",
         # Remove the "Download all examples" button from the top level gallery
         "download_all_examples": False,
         # Sort gallery examples by file name instead of number of lines (default)
